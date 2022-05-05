@@ -18,23 +18,14 @@
                         <th><center>Action</center></th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th><center>No</center></th>
-                        <th><center>Email</center></th>
-                        <th><center>Username</center></th>
-                        <th><center>Role</center></th>
-                        <th><center>Action</center></th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                         <tr>
-                            <td width="5%"></td>
+                            <td width="2%">{{ $i++}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td width="20%">
+                            <td width="22%">
 
                                 <button type="button" class="btn btn-warning"
                                     onclick="window.location.href='/datakapasitasruangankelas/editkapasitasruangankelas/'"><i
@@ -64,7 +55,6 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-
                 <h4 class="modal-title">Nonaktifkan Akun</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -74,7 +64,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <button type="button" class="btn btn-danger"
-                    onclick="window.location.href='/datakapasitasruangankelas/deletekapasitasruangankelas/'">Hapus</button>
+                    onclick="window.location.href='/datakapasitasruangankelas/deletekapasitasruangankelas/'">Nonaktifkan</button>
             </div>
         </div>
     </div>

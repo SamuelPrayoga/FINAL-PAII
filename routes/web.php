@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admincontroller;
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\usercontroller;
 
 /*
@@ -262,48 +262,121 @@ Route::post('/updatedisptaman/{id}', [admincontroller::class, 'updatedisptaman']
 Route::get('datadisptaman/deletedisptaman/{id}', [admincontroller::class, 'deletedisptaman'])->name('datadisptaman.deletedisptaman');
 
 Route::get('/DosenAktif', [usercontroller::class, 'indexdosenaktif']);
+Route::get('/DosenAktif/export_excel', [usercontroller::class, 'export_excel']);
+
 Route::get('/DosenTugasBelajar', [usercontroller::class, 'indexdosentugas']);
+Route::get('/DosenTugasBelajar/export_excel', [usercontroller::class, 'export_excel1']);
+
 Route::get('/Staff', [usercontroller::class, 'indexstaf']);
+Route::get('/Staff/export_excel', [usercontroller::class, 'export_excel2']);
+
 Route::get('/AsistenDosen', [usercontroller::class, 'indexasistendosen']);
+Route::get('/AsistenDosen/export_excel', [usercontroller::class, 'export_excel3']);
+
 Route::get('/Keasramaan', [usercontroller::class, 'indexkeasramaan']);
+Route::get('/Keasramaan/export_excel', [usercontroller::class, 'export_excel4']);
+
 Route::get('/Pegawai', [usercontroller::class, 'indexpegawai']);
+Route::get('/Pegawai/export_excel', [usercontroller::class, 'export_excel5']);
+
 Route::get('/MahasiswaAktif', [usercontroller::class, 'indexmahasiswaaktif']);
+Route::get('/MahasiswaAktif/export_excel', [usercontroller::class, 'export_excel6']);
+
 Route::get('/MahasiswaAlumni', [usercontroller::class, 'indexmahasiswaalumni']);
+Route::get('/MahasiswaAlumni/export_excel', [usercontroller::class, 'export_excel7']);
+
 Route::get('/ListGedung', [usercontroller::class, 'indexlistgedung']);
+Route::get('/ListGedung/export_excel', [usercontroller::class, 'export_excel8']);
+
 Route::get('/KapasitasRuanganKelas', [usercontroller::class, 'indexkapasitasruangankelas']);
+Route::get('/KapasitasRuanganKelas/export_excel', [usercontroller::class, 'export_excel9']);
+
 Route::get('/Kantin', [usercontroller::class, 'indexkantin']);
+Route::get('/Kantin/export_excel', [usercontroller::class, 'export_excel10']);
+
 Route::get('/PerumahanDalam', [usercontroller::class, 'indexperumahandalam']);
+Route::get('/PerumahanDalam/export_excel', [usercontroller::class, 'export_excel11']);
+
 Route::get('/PerumahanLuar', [usercontroller::class, 'indexperumahanluar']);
+Route::get('/PerumahanLuar/export_excel', [usercontroller::class, 'export_excel12']);
+
 Route::get('/Asrama', [usercontroller::class, 'indexasrama']);
+Route::get('/Asrama/export_excel', [usercontroller::class, 'export_excel13']);
+
 Route::get('/Rusun3', [usercontroller::class, 'indexrusun3']);
+Route::get('/Rusun3/export_excel', [usercontroller::class, 'export_excel14']);
+
 Route::get('/Komputer', [usercontroller::class, 'indexkomputer']);
+Route::get('/Komputer/export_excel', [usercontroller::class, 'export_excel15']);
+
 Route::get('/KendaraanKampus', [usercontroller::class, 'indexkendaraan']);
+Route::get('/KendaraanKampus/export_excel', [usercontroller::class, 'export_excel16']);
+
 Route::get('/Mebeler', [usercontroller::class, 'indexmebeler']);
+Route::get('/Mebeler/export_excel', [usercontroller::class, 'export_excel17']);
+
 Route::get('/AlatTulis', [usercontroller::class, 'indexalattulis']);
+Route::get('/AlatTulis/export_excel', [usercontroller::class, 'export_excel18']);
+
 Route::get('/AudioVisual', [usercontroller::class, 'indexaudiovisual']);
+Route::get('/AudioVisual/export_excel', [usercontroller::class, 'export_excel19']);
+
 Route::get('/PeralatanRumahTangga', [usercontroller::class, 'indexperalatan']);
+Route::get('/PeralatanRumahTangga/export_excel', [usercontroller::class, 'export_excel20']);
+
 Route::get('/PersediaanKampus', [usercontroller::class, 'indexpersediaan']);
+Route::get('/PersediaanKampus/export_excel', [usercontroller::class, 'export_excel21']);
+
 Route::get('/AlatLaboratorium', [usercontroller::class, 'indexalatlab']);
+Route::get('/AlatLaboratorium/export_excel', [usercontroller::class, 'export_excel22']);
+
 Route::get('/Jaringan', [usercontroller::class, 'indexjaringan']);
+Route::get('/Jaringan/export_excel', [usercontroller::class, 'export_excel23']);
+
 Route::get('/PerlengkapanMaintanance', [usercontroller::class, 'indexmaintanance']);
+Route::get('/PerlengkapanMaintanance/export_excel', [usercontroller::class, 'export_excel24']);
+
 Route::get('/PerlengkapanTaman', [usercontroller::class, 'indextaman']);
+Route::get('/PerlengkapanTaman/export_excel', [usercontroller::class, 'export_excel25']);
 
 //DISPOSAL
 Route::get('/DisposalMebeler', [usercontroller::class, 'indexdispmebeler']);
+Route::get('/DisposalMebeler/export_excel', [usercontroller::class, 'export_excel26']);
+
 Route::get('/DisposalAlatTulis', [usercontroller::class, 'indexdispalattulis']);
+Route::get('/DisposalAlatTulis/export_excel', [usercontroller::class, 'export_excel27']);
+
 Route::get('/DisposalAudioVisual', [usercontroller::class, 'indexdispaudiovisual']);
+Route::get('/DisposalAudioVisual/export_excel', [usercontroller::class, 'export_excel28']);
+
 Route::get('/DisposalPeralatanRumahTangga', [usercontroller::class, 'indexdispperalatan']);
+Route::get('/DisposalPeralatanRumahTangga/export_excel', [usercontroller::class, 'export_excel29']);
+
 Route::get('/DisposalPersediaanKampus', [usercontroller::class, 'indexdisppersediaan']);
+Route::get('/DisposalPersediaanKampus/export_excel', [usercontroller::class, 'export_excel30']);
+
 Route::get('/DisposalAlatLaboratorium', [usercontroller::class, 'indexdispalatlab']);
+Route::get('/DisposalAlatLaboratorium/export_excel', [usercontroller::class, 'export_excel31']);
+
 Route::get('/DisposalJaringan', [usercontroller::class, 'indexdispjaringan']);
+Route::get('/DisposalJaringan/export_excel', [usercontroller::class, 'export_excel32']);
+
 Route::get('/DisposalPerlengkapanMaintanance', [usercontroller::class, 'indexdispmaintanance']);
+Route::get('/DisposalPerlengkapanMaintanance/export_excel', [usercontroller::class, 'export_excel33']);
+
 Route::get('/DisposalPerlengkapanTaman', [usercontroller::class, 'indexdisptaman']);
+Route::get('/DisposalPerlengkapanTaman/export_excel', [usercontroller::class, 'export_excel34']);
 
-Auth::routes();
+//Route::get('/', [LoginController::class, 'login'])->name('login');
+//Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+//Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
-Route::get('/FormLogin', function () {
-    return view('autentication.FormLogin');
+//Route::get('/', function () { return view('autentication.FormLogin'); });
+
+Route::get('/', function () {
+    return view('index');
 });
+
 
 Route::get('/FormRegister', function () {
     return view('autentication.Register');
@@ -324,13 +397,8 @@ Route::get('/settingsprofile', function () {
 });
 
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/index', function () {
-    return view('index');
-});
+
 
 Route::get('/PertemuanRektor', function () {
     return view('PertemuanRektor');

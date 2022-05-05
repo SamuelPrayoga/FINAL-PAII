@@ -189,7 +189,7 @@
                             </div>
                         </div>
                     </div>
-                    <form class="myform" action="" method="POST">
+                    <form class="myform" action="{{ route('actionlogin') }}" method="POST">
                         @csrf
                         <div class="form-group"> <input type="email" class="form-control" placeholder="Email">
                         </div>

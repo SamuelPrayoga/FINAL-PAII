@@ -1,4 +1,9 @@
 @include('navuser')
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">DASHBOARD REKTOR IT DEL</h1>
+    <a href="/MahasiswaAktif/export_excel" data-target="#dataTable" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-file-export fa-sm text-white-50"></i> Export Data</a>
+</div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -22,21 +27,6 @@
                             <th>Dosen Wali</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Prodi</th>
-                            <th>NIM</th>
-                            <th>Nama</th>
-                            <th>Fakultas</th>
-                            <th>Kelas</th>
-                            <th>Angkatan</th>
-                            <th>Jalur Masuk</th>
-                            <th>No.Telepon</th>
-                            <th>Email Aktif</th>
-                            <th>Dosen Wali</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @foreach($mahasiswaaktif as $aktif)
                         @php $i=1 @endphp

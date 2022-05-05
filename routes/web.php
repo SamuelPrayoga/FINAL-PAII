@@ -408,5 +408,8 @@ Route::get('/PertemuanRektor', function () {
 //    return view('Agenda');
 //});
 
+//Route::get('/AgendaRektor', function () {
+//    return view('Agenda');
+//});
 
 

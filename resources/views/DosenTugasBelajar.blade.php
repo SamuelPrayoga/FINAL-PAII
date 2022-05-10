@@ -26,19 +26,6 @@
                             <th>Rencana Aktif Kembali</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>NIDN</th>
-                            <th>Prodi</th>
-                            <th>Lokasi Tugas Belajar</th>
-                            <th>Program</th>
-                            <th>Program Studi</th>
-                            <th>Mulai Tugas Belajar</th>
-                            <th>Rencana Aktif Kembali</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach ($dosentugas as $dostug )

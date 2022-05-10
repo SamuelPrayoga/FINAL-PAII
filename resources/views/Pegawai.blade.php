@@ -26,20 +26,6 @@
                             <th>Aktif Start</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>ID Pegawai</th>
-                            <th>Bagian</th>
-                            <th>Jabatan</th>
-                            <th>Pendidikan Terakhir</th>
-                            <th>Alamat</th>
-                            <th>No.Telepon</th>
-                            <th>Aktif End</th>
-                            <th>Aktif Start</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach($pegawai as $peg)

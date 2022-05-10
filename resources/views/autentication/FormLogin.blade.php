@@ -191,10 +191,10 @@
                     </div>
                     <form class="myform" action="{{ route('actionlogin') }}" method="POST">
                         @csrf
-                        <div class="form-group"> <input type="email" class="form-control" placeholder="Email">
+                        <div class="form-group"> <input type="email" name="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group"> <input type="password" class="form-control"
-                                placeholder="Password"> </div>
+                                placeholder="Password" name="password"> </div>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group form-check"> <input type="checkbox" class="form-check-input"

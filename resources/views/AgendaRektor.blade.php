@@ -1,97 +1,48 @@
 @include('navuser')
 
-    <div class="calendar" id="calendar"></div>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">DASHBOARD REKTOR IT DEL</h1>
+    <a href="/AgendaRektor/export_excel" data-target="#dataTable" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-file-export fa-sm text-white-50"></i> Export Data</a>
 </div>
-<script>
-    const events = [{
-            summary: 'JS Conference',
-            start: {
-                date: Calendar.dayjs().format('DD/MM/YYYY'),
-            },
-            end: {
-                date: Calendar.dayjs().format('DD/MM/YYYY'),
-            },
-            color: {
-                background: '#cfe0fc',
-                foreground: '#0a47a9',
-            },
-        },
-        {
-            summary: 'Vue Meetup',
-            start: {
-                date: Calendar.dayjs().add(1, 'day').format('DD/MM/YYYY'),
-            },
-            end: {
-                date: Calendar.dayjs().add(5, 'day').format('DD/MM/YYYY'),
-            },
-            color: {
-                background: '#ebcdfe',
-                foreground: '#6e02b1',
-            },
-        },
-        {
-            summary: 'Angular Meetup',
-            description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
-            start: {
-                date: Calendar.dayjs().subtract(3, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().subtract(3, 'day').format('DD/MM/YYYY') + ' 10:00',
-            },
-            end: {
-                date: Calendar.dayjs().add(3, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().add(3, 'day').format('DD/MM/YYYY') + ' 14:00',
-            },
-            color: {
-                background: '#c7f5d9',
-                foreground: '#0b4121',
-            },
-        },
-        {
-            summary: 'React Meetup',
-            start: {
-                date: Calendar.dayjs().add(5, 'day').format('DD/MM/YYYY'),
-            },
-            end: {
-                date: Calendar.dayjs().add(8, 'day').format('DD/MM/YYYY'),
-            },
-            color: {
-                background: '#fdd8de',
-                foreground: '#790619',
-            },
-        },
-        {
-            summary: 'Meeting',
-            start: {
-                date: Calendar.dayjs().add(1, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().add(1, 'day').format('DD/MM/YYYY') + ' 8:00',
-            },
-            end: {
-                date: Calendar.dayjs().add(1, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().add(1, 'day').format('DD/MM/YYYY') + ' 12:00',
-            },
-            color: {
-                background: '#cfe0fc',
-                foreground: '#0a47a9',
-            },
-        },
-        {
-            summary: 'Call',
-            start: {
-                date: Calendar.dayjs().add(2, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().add(2, 'day').format('DD/MM/YYYY') + ' 11:00',
-            },
-            end: {
-                date: Calendar.dayjs().add(2, 'day').format('DD/MM/YYYY'),
-                dateTime: Calendar.dayjs().add(2, 'day').format('DD/MM/YYYY') + ' 14:00',
-            },
-            color: {
-                background: '#292929',
-                foreground: '#f5f5f5',
-            },
-        }
-    ];
-
-    const calendarElement = document.getElementById('calendar');
-    const calendarInstance = Calendar.getInstance(calendarElement);
-    calendarInstance.addEvents(events);
-</script>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Agenda dan Kegiatan Rektor</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Kegiatan</th>
+                            <th>Penyelenggara</th>
+                            <th>Lokasi</th>
+                            <th>Mulai</th>
+                            <th>Selesai</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($agendarektor as $agenda )
+                        @php $i=1 @endphp
+                        <tr>
+                            <td width="2%">{{ $i++ }}</td>
+                            <td>{{ $agenda->namakegiatan }}</td>
+                            <td>{{ $agenda->penyelenggara }}</td>
+                            <td>{{ $agenda->lokasi }}</td>
+                            <td>{{ $agenda->mulai }}</td>
+                            <td>{{ $agenda->selesai }}</td>
+                            <td><span style="{{ $agenda->color }}">{{ $agenda->status }}</span></td>
+                            <td>{{ $agenda->keterangan }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 @include('footeruser')

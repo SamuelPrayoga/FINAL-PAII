@@ -26,20 +26,6 @@
                             <th>Keterangan</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Penomoran Gedung</th>
-                            <th>Nama Gedung</th>
-                            <th>Nama Ruangan</th>
-                            <th>Kapasitas Ruangan</th>
-                            <th>Lokasi Meja</th>
-                            <th>Nama Pemakai Ruangan</th>
-                            <th>Terisi</th>
-                            <th>Ketersediaan</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @foreach ($listgedung as $list )
                         @php $i=1 @endphp

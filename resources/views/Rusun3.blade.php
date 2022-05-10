@@ -29,7 +29,6 @@
                             <td><center>DLL</center></td>
                             <td><center>Total</center></td>
                         </tr>
-
                     </thead>
                     <tbody>
                         @php $i=1 @endphp

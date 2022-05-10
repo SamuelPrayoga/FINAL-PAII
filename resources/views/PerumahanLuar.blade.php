@@ -22,16 +22,6 @@
                             <th>Keterangan</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Perumahan</th>
-                            <th>Jumlah Kamar</th>
-                            <th>Kapasitas / Kamar</th>
-                            <th>Jumlah</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach ($perumahanluar as $luar)

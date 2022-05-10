@@ -31,26 +31,6 @@
                             <th>Unit</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Item Barang</th>
-                            <th>Tipe Barang</th>
-                            <th>Kode Aset</th>
-                            <th>Jumlah Unit</th>
-                            <th>No PR</th>
-                            <th>No PO</th>
-                            <th>Nilai Invoice</th>
-                            <th>Umur Ekonomis</th>
-                            <th>Depresiasi/Bulan</th>
-                            <th>Sumber Dana</th>
-                            <th>Akumulasi Depresiasi</th>
-                            <th>Nilai Buku</th>
-                            <th>Lokasi</th>
-                            <th>Unit</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
                         @php $i=1 @endphp
                         @foreach ($audiovisual as $audio)
                         <tr>

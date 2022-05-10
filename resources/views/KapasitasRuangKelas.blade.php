@@ -22,16 +22,6 @@
                             <th>Perkiraan Kursi, Meja Hasil Survei Langsung (Sosial Distancing)</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Ruangan</th>
-                            <th>Keterangan</th>
-                            <th>Luas(m<sup>2</sup>)</th>
-                            <th>Kapasitas Normal</th>
-                            <th>Perkiraan Kursi, Meja Hasil Survei Langsung (Sosial Distancing)</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @foreach ($kapasitasruangankelas as $kapasitas)
                         @php $i=1 @endphp

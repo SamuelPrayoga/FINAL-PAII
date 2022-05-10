@@ -22,19 +22,6 @@
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Kegiatan Pertemuan</th>
-                            <th>Lokasi</th>
-                            <th>Tanggal</th>
-                            <th>Waktu</th>
-                            <th>Keterangan</th>
-                            <th>Konfirmasi</th>
-                            <th>Status Konfirmasi</th>
-                            <th>Status</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         <tr>
                             <td>1</td>

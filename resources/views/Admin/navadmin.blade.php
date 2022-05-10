@@ -44,12 +44,6 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="/index">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Beranda</span></a>
-            </li>
             <hr class="sidebar-divider d-none d-md-block">
 
             <div class="sidebar-heading">
@@ -57,7 +51,7 @@
             </div>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/AgendaRektor">
+                <a class="nav-link" href="/dataagendarektor">
                     <i class="fas fa-calendar"></i>
                     <span>Agenda Rektor</span></a>
             </li>

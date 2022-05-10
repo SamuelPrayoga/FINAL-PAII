@@ -31,7 +31,6 @@
                             <td>DLL</td>
                             <td>Total</td>
                         </tr>
-
                     </thead>
                     <tbody>
                         @php $i=1 @endphp

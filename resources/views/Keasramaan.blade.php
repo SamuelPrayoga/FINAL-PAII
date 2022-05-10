@@ -26,20 +26,6 @@
                             <th>Aktif End</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>ID Keasramaan</th>
-                            <th>Pendidikan Terakhir</th>
-                            <th>Jabatan</th>
-                            <th>Asrama</th>
-                            <th>Asal</th>
-                            <th>No.Telepon</th>
-                            <th>Aktif Start</th>
-                            <th>Aktif End</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach($keasramaan as $ke)

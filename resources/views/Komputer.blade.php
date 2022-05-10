@@ -23,17 +23,6 @@
                             <th>Keterangan</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Ruangan/Gedung</th>
-                            <th>Kategori</th>
-                            <th><center>Jumlah</center></th>
-                            <th>Penanggung Jawab</th>
-                            <th>Jabatan</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach ($komputer as $komp)

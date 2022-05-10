@@ -25,19 +25,6 @@
                             <th>No.Telepon</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Program Studi</th>
-                            <th>NIM</th>
-                            <th>Nama Alumni</th>
-                            <th>Angkatan</th>
-                            <th>Tahun Lulus</th>
-                            <th>Lokasi Kerja</th>
-                            <th>Posisi</th>
-                            <th>No.Telepon</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @foreach($mahasiswaalumni as $alumni)
                         @php $i=1 @endphp

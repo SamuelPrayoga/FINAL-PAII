@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admincontroller;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\usercontroller;
 
@@ -261,6 +262,13 @@ Route::get('/datadisptaman/editdisptaman/{id}', [admincontroller::class, 'editdi
 Route::post('/updatedisptaman/{id}', [admincontroller::class, 'updatedisptaman'])->name('datadisptaman.updatedisptaman');
 Route::get('datadisptaman/deletedisptaman/{id}', [admincontroller::class, 'deletedisptaman'])->name('datadisptaman.deletedisptaman');
 
+Route::get('/dataagendarektor', [EventController::class, 'showagendarektor']);
+Route::get('/tambahagendarektor', [EventController::class, 'tambahagendarektor']);
+Route::post('/tambahagendarektortambah', [EventController::class, 'tambahagendarektors'])->name('agendarektor.tambah');
+Route::get('/dataagendarektor/editagendarektor/{id}', [EventController::class, 'editagendarektor']);
+Route::post('/updateagendarektor/{id}', [EventController::class, 'updateagendarektor'])->name('dataagendarektor.updateagendarektor');
+Route::get('dataagendarektor/deleteagendarektor/{id}', [EventController::class, 'deleteagendarektor'])->name('dataagendarektor.deleteagendarektor');
+
 Route::get('/DosenAktif', [usercontroller::class, 'indexdosenaktif']);
 Route::get('/DosenAktif/export_excel', [usercontroller::class, 'export_excel']);
 
@@ -367,15 +375,20 @@ Route::get('/DisposalPerlengkapanMaintanance/export_excel', [usercontroller::cla
 Route::get('/DisposalPerlengkapanTaman', [usercontroller::class, 'indexdisptaman']);
 Route::get('/DisposalPerlengkapanTaman/export_excel', [usercontroller::class, 'export_excel34']);
 
-//Route::get('/', [LoginController::class, 'login'])->name('login');
-//Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
+Route::get('/AgendaRektor', [EventController::class, 'index']);
+
+
+
+
+Route::get('/', [LoginController::class, 'login'])->name('login');
+Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
 //Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
-//Route::get('/', function () { return view('autentication.FormLogin'); });
+Route::get('/', function () { return view('autentication.FormLogin'); });
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {
+//    return view('index');
+//});
 
 
 Route::get('/FormRegister', function () {
@@ -384,11 +397,6 @@ Route::get('/FormRegister', function () {
 
 Route::get('/KelolaAkunPengguna', function () {
     return view('Admin.KelolaAkunPengguna');
-});
-
-
-Route::get('/AgendaRektor', function () {
-    return view('AgendaRektor');
 });
 
 

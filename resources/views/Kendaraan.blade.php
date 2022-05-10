@@ -23,17 +23,6 @@
                             <th>Keterangan</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>No.Plat Kendaraan</th>
-                            <th>Driver</th>
-                            <th>Penanggungjawab</th>
-                            <th><center>Jenis Kendaraan</center></th>
-                            <th>Operasional</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach ($kendaraan as $kend )

@@ -21,15 +21,6 @@
                             <th><center>Jumlah</center></th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Perumahan</th>
-                            <th><center>Jumlah Meja</center></th>
-                            <th><center>Kapasitas / Kamar</center></th>
-                            <th><center>Jumlah</center></th>
-                        </tr>
-                    </tfoot>
                     <tbody>
                         @php $i=1 @endphp
                         @foreach ($kantin as $kan)

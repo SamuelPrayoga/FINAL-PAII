@@ -38,8 +38,8 @@
                             <td>{{$ke->asrama}}</td>
                             <td>{{$ke->asal}}</td>
                             <td>{{$ke->notelp}}</td>
-                            <td>{{$ke->aktifstart}}</td>
-                            <td>{{$ke->aktifend}}</td>
+                            <td>{{ date('d M Y', strtotime($ke->aktifstart))}}</td>
+                            <td>{{ date('d M Y', strtotime($ke->aktifend))}}</td>
                         </tr>
                         @endforeach
                     </tbody>

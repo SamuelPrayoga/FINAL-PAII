@@ -20,17 +20,6 @@
                         <th><center>Action</center></th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Ruangan/Gedung</th>
-                        <th>Kategori</th>
-                        <th>Jumlah</th>
-                        <th>Penanggungjawab</th>
-                        <th>Keterangan</th>
-                        <th><center>Action</center></th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($komputer as $komp)

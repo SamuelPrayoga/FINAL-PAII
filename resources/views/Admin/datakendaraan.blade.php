@@ -20,17 +20,6 @@
                         <th><center>Action</center></th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>No.Plat Kendaraan</th>
-                        <th>Driver</th>
-                        <th>Penanggungjawab</th>
-                        <th>Jenis Kendaraan</th>
-                        <th>Operasional</th>
-                        <th><center>Action</center></th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($kendaraan as $kend)

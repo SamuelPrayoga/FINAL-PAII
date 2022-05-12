@@ -20,17 +20,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Ruangan</th>
-                        <th>Keterangan</th>
-                        <th>Luas (m<sup>2</sup>)</th>
-                        <th>Kapasitas Normal</th>
-                        <th>Perkiraan Kursi, Meja Hasil survei Langsung (Social Distancing)</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($kapasitasruangankelas as $kapasitas)

@@ -22,19 +22,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Dosen</th>
-                        <th>NIDN</th>
-                        <th>Prodi Basis</th>
-                        <th>Lokasi Tugas Belajar</th>
-                        <th>Program</th>
-                        <th>Program Studi Lanjutan</th>
-                        <th>Mulai Belajar</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($dosentugas as $dt)
@@ -46,7 +33,7 @@
                             <td>{{ $dt->lokasi }}</td>
                             <td>{{ $dt->program }}</td>
                             <td>{{ $dt->programStudi }}</td>
-                            <td>{{ $dt->mulaiTugas }}</td>
+                            <td>{{ date('d M Y', strtotime($dt->mulaiTugas)) }}</td>
                             <td width="25%">
                                 <button type="button" class="btn btn-success" data-toggle="modal"
                                 data-target="#myModal1{{ $dt->nidn }}"><i class="fas fa-eye"></i>
@@ -135,12 +122,12 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Mulai Tugas Belajar</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$dt->mulaiTugas}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($dt->mulaiTugas))}}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Rencana Aktif</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$dt->rencanaAktif}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($dt->rencanaAktif))}}</div>
                     </div>
                 </div>
                 <div class="modal-footer">

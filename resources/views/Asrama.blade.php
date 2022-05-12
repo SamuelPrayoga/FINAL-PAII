@@ -29,23 +29,6 @@
                         <th>Keterangan</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Gedung</th>
-                        <th>Kategori</th>
-                        <th>
-                            <center>Jumlah Kamar</center>
-                        </th>
-                        <th>
-                            <center>Kapasitas / Kamar</center>
-                        </th>
-                        <th>
-                            <center>Total</center>
-                        </th>
-                        <th>Keterangan</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($asrama as $as)

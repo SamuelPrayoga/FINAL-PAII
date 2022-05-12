@@ -21,18 +21,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Gedung</th>
-                        <th>Kategori</th>
-                        <th>Jumlah Kamar</th>
-                        <th>Kapasitas/Kamar</th>
-                        <th>Total</th>
-                        <th>Keterangan</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($asrama as $as)

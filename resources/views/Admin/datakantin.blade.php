@@ -19,16 +19,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Perumahan</th>
-                        <th>Jumlah Meja</th>
-                        <th>Kapasitas/Kamar</th>
-                        <th>Jumlah</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($kantin as $kan)

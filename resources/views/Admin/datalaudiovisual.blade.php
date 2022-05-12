@@ -21,18 +21,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Item Barang</th>
-                        <th>Tipe Barang</th>
-                        <th>Kode Aset</th>
-                        <th>Jumlah Unit</th>
-                        <th>No PR</th>
-                        <th>No PO</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($laudiovisual as $lg)

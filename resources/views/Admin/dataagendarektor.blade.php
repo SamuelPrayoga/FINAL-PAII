@@ -28,7 +28,7 @@
                             <td>{{ $agenda->namakegiatan }}</td>
                             <td>{{ $agenda->penyelenggara }}</td>
                             <td>{{ $agenda->lokasi }}</td>
-                            <td>{{ date('l, D MMMM Y  H:i', strtotime($agenda->mulai)) }}</td>
+                            <td>{{ date('l, d M Y  H:i', strtotime($agenda->mulai)) }}</td>
                             <td>{{ date('l, d M Y  H:i', strtotime($agenda->selesai)) }}</td>
                             <td>{{ $agenda->status }}</td>
                             <td>{{ $agenda->keterangan }}</td>

@@ -23,20 +23,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Pegawai</th>
-                        <th>ID Pegawai</th>
-                        <th>Unit Kerja</th>
-                        <th>Jabatan</th>
-                        <th>Pendidikan</th>
-                        <th>Alamat</th>
-                        <th>No Telepon</th>
-                        <th>Aktif Start</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($pegawai as $pe)
@@ -49,8 +35,8 @@
                             <td>{{ $pe->pendidikan }}</td>
                             <td>{{ $pe->alamat }}</td>
                             <td>{{ $pe->notelp }}</td>
-                            <td>{{ $pe->aktifstart }}</td>
-                            <td width="23%"><button type="button" class="btn btn-warning"
+                            <td>{{ date('d M Y', strtotime($pe->aktifstart)) }}</td>
+                            <td width="18%"><button type="button" class="btn btn-warning"
                                     onclick="window.location.href='/datapegawai/editpegawai/{{ $pe->pegawaiID }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>

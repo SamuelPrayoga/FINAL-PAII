@@ -43,6 +43,7 @@
                 <label class="col-sm-3 col-form-label">Status</label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="status" aria-label="Default select example" >
+                        <option value="Terjadwal">Terjadwal</option>
                         <option value="Selesai">Selesai</option>
                         <option value="Sedang Berlangsung">Sedang Berlangsung</option>
                         <option value="Dibatalkan">Dibatalkan</option>

@@ -190,30 +190,29 @@
                             </div>
                         </div>
                     </div>
-                    <form class="myform" action="" method="POST">
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $err)
+                            <p class="alert alert-danger">{{ $err }}</p>
+                        @endforeach
+                    @endif
+                    <form class="myform" action="{{ route('register.action') }}" method="POST">
                         @csrf
+
                         <div class="form-group">
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"  value="{{old('email')}}" name="email">
-                            @error('email')
-                            <div class="invalid-feedback">
-                                {{$message}}
-                            </div>
-                            @enderror
+                            <input type="name" class="form-control" placeholder="Nama Pengguna" name="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control " placeholder="Email" name="email" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control " placeholder="Password" name="password">
                         </div>
                         <div class="form-group">
-                            <input type="name" class="form-control" placeholder="Nama Pengguna" name="name">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Jabatan" name="jabatan">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nomor Telepon" name="no_telepon">
+                            <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password_confirm">
                         </div>
                         <div class="form-group mt-3">
-                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small><i class="far fa-user pr-2"></i>Daftar Akun</small></button>
+                            <button type="submit" class="btn btn-block btn-primary btn-lg"><small><i
+                                        class="far fa-user pr-2"></i>Daftar Akun</small></button>
                         </div>
                     </form>
                 </div>

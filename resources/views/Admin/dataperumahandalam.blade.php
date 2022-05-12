@@ -20,17 +20,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Perumahan</th>
-                        <th>Nama Penghuni</th>
-                        <th>Jabatan</th>
-                        <th>Jumlah Kamar</th>
-                        <th>Kapasitas Kamar</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($perumahandalam as $pe)

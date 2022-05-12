@@ -378,38 +378,25 @@ Route::get('/DisposalPerlengkapanTaman/export_excel', [usercontroller::class, 'e
 Route::get('/AgendaRektor', [EventController::class, 'index']);
 
 
+Route::get('/beranda', function () {
+    return view('index', ['title' => 'Index']);
+})->name('index');
+
+Route::get('/', [LoginController::class, 'showFormLogin'])->name('index');
+Route::get('register', [LoginController::class, 'register'])->name('register');
+Route::post('register', [LoginController::class, 'register_action'])->name('register.action');
+Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::post('login', [LoginController::class, 'login_action'])->name('login.action');
+Route::get('password', [LoginController::class, 'password'])->name('password');
+Route::post('password', [LoginController::class, 'password_action'])->name('password.action');
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::get('/', [LoginController::class, 'login'])->name('login');
-Route::post('actionlogin', [LoginController::class, 'actionlogin'])->name('actionlogin');
-//Route::get('home', [HomeController::class, 'index'])->name('home')->middleware('auth');
-
-Route::get('/', function () { return view('autentication.FormLogin'); });
-
-//Route::get('/', function () {
-//    return view('index');
-//});
 
 
-Route::get('/FormRegister', function () {
-    return view('autentication.Register');
-});
 
 Route::get('/KelolaAkunPengguna', function () {
-    return view('Admin.KelolaAkunPengguna');
-});
-
-
-Route::get('/settingsprofile', function () {
-    return view('Admin.settingsprofile');
-});
-
-
-
-
-
-Route::get('/PertemuanRektor', function () {
-    return view('PertemuanRektor');
+    return view('Admin.kelolaakunpengguna');
 });
 
 //Route::get('/AgendaRektor', function () {

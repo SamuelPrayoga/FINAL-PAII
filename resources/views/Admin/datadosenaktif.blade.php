@@ -22,19 +22,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Dosen</th>
-                        <th>NIDN</th>
-                        <th>Prodi</th>
-                        <th>Jabatan Akademik</th>
-                        <th>Golongan Kepangkatan</th>
-                        <th>Status Ikatan</th>
-                        <th>Aktif Start</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($dosenaktif as $s)
@@ -46,7 +33,7 @@
                             <td>{{ $s->jabatanAkademik }}</td>
                             <td>{{ $s->golonganKepangkatan }}</td>
                             <td>{{ $s->statusIkatan }}</td>
-                            <td>{{ $s->aktifStart }}</td>
+                            <td>{{  date('d M Y', strtotime($s->aktifStart)) }}</td>
                             <td width="25%">
                                 <button type="button" class="btn btn-success" data-toggle="modal"
                                 data-target="#myModal1{{ $s->nidn }}"><i class="fas fa-eye"></i>
@@ -141,12 +128,12 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Aktif Start</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$s->aktifStart}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($s->aktifStart))}}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Aktif End</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$s->aktifEnd}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($s->aktifEnd))}}</div>
                     </div>
                 </div>
                 <div class="modal-footer">

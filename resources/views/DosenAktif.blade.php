@@ -37,8 +37,8 @@
                             <td width="10%">{{ $dos->jabatanAkademik }}</td>
                             <td width="7%">{{ $dos->golonganKepangkatan }}</td>
                             <td width="15%">{{ $dos->statusIkatan }}</td>
-                            <td width="10%">{{ $dos->aktifStart }}</td>
-                            <td width="10%">{{ $dos->aktifEnd }}</td>
+                            <td width="10%">{{ date('d M Y', strtotime($dos->aktifStart)) }}</td>
+                            <td width="10%">{{ date('d M Y', strtotime($dos->aktifEnd)) }}</td>
                         </tr>
                     @endforeach
                 </tbody>

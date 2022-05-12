@@ -37,8 +37,8 @@
                             <td>{{ $dostug->lokasi}}</td>
                             <td>{{ $dostug->program}}</td>
                             <td>{{ $dostug->programStudi}}</td>
-                            <td>{{ $dostug->mulaiTugas}}</td>
-                            <td>{{ $dostug->rencanaAktif}}</td>
+                            <td>{{ date('d M Y', strtotime($dostug->mulaiTugas)) }}</td>
+                            <td>{{ date('d M Y', strtotime($dostug->rencanaAktif))}}</td>
                         </tr>
                         @endforeach
                     </tbody>

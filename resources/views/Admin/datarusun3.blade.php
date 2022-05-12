@@ -20,17 +20,6 @@
                         <th><center>Action</center></th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nomor Kamar</th>
-                        <th>Nama Penghuni</th>
-                        <th>Jabatan</th>
-                        <th>Jumlah Kamar</th>
-                        <th>Kapasitas/Kamar</th>
-                        <th><center>Action</center></th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($rusun3 as $rus3)

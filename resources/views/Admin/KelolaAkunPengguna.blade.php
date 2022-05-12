@@ -25,10 +25,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td width="22%">
+                            <td width="20%">
 
                                 <button type="button" class="btn btn-warning"
-                                    onclick="window.location.href='/datakapasitasruangankelas/editkapasitasruangankelas/'"><i
+                                    onclick="window.location.href='/datakelolaakunpengguna/editkelolaakunpengguna/'"><i
                                         class="fas fa-edit" value="Edit"></i>
                                     Edit</button>
                                 <button type="button" class="btn btn-danger" data-toggle="modal"
@@ -39,7 +39,7 @@
 
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahkapasitasruangankelas'"><i
+            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahkelolaakunpengguna'"><i
                     class="fas fa-plus-square"></i> Tambah Akun Pengguna</button>
         </div>
     </div>
@@ -64,7 +64,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                 <button type="button" class="btn btn-danger"
-                    onclick="window.location.href='/datakapasitasruangankelas/deletekapasitasruangankelas/'">Nonaktifkan</button>
+                    onclick="window.location.href='/datakelolaakunpengguna/deletekelolaakunpengguna/'">Nonaktifkan</button>
             </div>
         </div>
     </div>

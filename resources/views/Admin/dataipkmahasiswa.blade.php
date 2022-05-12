@@ -13,18 +13,11 @@
                     <tr>
                         <th>No</th>
                         <th>Program Studi</th>
+                        <th>Angkatan</th>
                         <th>Rataan IPK</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Program Studi</th>
-                        <th>Rataan IPK</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                         <tr>

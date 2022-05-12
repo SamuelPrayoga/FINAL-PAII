@@ -30,7 +30,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Mulai</label>
                 <div class="col-sm-9">
-                    <input type="datetime-local" required="required" id="mulai" name="mulai" class="form-control" value="{{$editagendarektor->mulai}}">
+                    <input type="datetime-local" required="required" id="mulai" name="mulai" class="form-control" value="{{ old('time')?? date('l, d M Y', strtotime($editagendarektor))}}">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -44,6 +44,7 @@
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="status" aria-label="Default select example" >
                         <option value="{{$editagendarektor->status}}">{{$editagendarektor->status}}</option>
+                        <option value="Terjadwal">Terjadwal</option>
                         <option value="Selesai">Selesai</option>
                         <option value="Sedang Berlangsung">Sedang Berlangsung</option>
                         <option value="Dibatalkan">Dibatalkan</option>

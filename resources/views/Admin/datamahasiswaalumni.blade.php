@@ -22,19 +22,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Mahasiswa</th>
-                        <th>NIM</th>
-                        <th>Fakultas</th>
-                        <th>Program Studi</th>
-                        <th>Angkatan</th>
-                        <th>Tahun Lulus</th>
-                        <th>Lokasi Kerja</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($mahasiswaalumni as $s)

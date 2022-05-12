@@ -38,8 +38,8 @@
                             <td>{{ $peg->pendidikan }}</td>
                             <td>{{ $peg->alamat }}</td>
                             <td>{{ $peg->notelp }}</td>
-                            <td>{{ $peg->aktifstart }}</td>
-                            <td>{{ $peg->aktifend }}</td>
+                            <td>{{ date('d M Y', strtotime($peg->aktifstart)) }}</td>
+                            <td>{{ date('d M Y', strtotime($peg->aktifend)) }}</td>
                         </tr>
                         @endforeach
                     </tbody>

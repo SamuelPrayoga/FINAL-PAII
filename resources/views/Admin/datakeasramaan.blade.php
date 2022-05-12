@@ -20,17 +20,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Pembina</th>
-                        <th>ID Keasramaan</th>
-                        <th>Pendidikan Terakhir</th>
-                        <th>Jabatan</th>
-                        <th>Asrama</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($keasramaan as $ke)
@@ -140,12 +129,12 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Aktif Start</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$ke->aktifstart}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($ke->aktifstart))}}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Aktif End</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$ke->aktifend}}</div>
+                        <div class="col-md-6">{{date('d M Y', strtotime($ke->aktifend))}}</div>
                     </div>
                 </div>
                 <div class="modal-footer">

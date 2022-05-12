@@ -34,8 +34,8 @@
                             <td>{{ $st->bagian}}</td>
                             <td>{{ $st->jabatan}}</td>
                             <td width="15%">{{ $st->pendidikan}}</td>
-                            <td>{{ $st->aktifstart}}</td>
-                            <td>{{ $st->aktifend}}</td>
+                            <td>{{ date('d M Y', strtotime($st->aktifstart)) }} </td>
+                            <td>{{ date('d M Y', strtotime($st->aktifend)) }} </td>
                         </tr>
                         @endforeach
                     </tbody>

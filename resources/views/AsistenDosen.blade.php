@@ -38,8 +38,8 @@
                             <td>{{ $asdos->prodi }}</td>
                             <td>{{ $asdos->pendidikan }}</td>
                             <td>{{ $asdos->tahun }}</td>
-                            <td>{{ $asdos->aktifstart }}</td>
-                            <td>{{ $asdos->aktifend }}</td>
+                            <td>{{ date('d M Y', strtotime($asdos->aktifstart)) }}</td>
+                            <td>{{ date('d M Y', strtotime($asdos->aktifend)) }}</td>
                         </tr>
                         @endforeach
                     </tbody>

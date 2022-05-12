@@ -19,16 +19,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Penomoran Gedung</th>
-                        <th>Nama Gedung</th>
-                        <th>Nama Ruangan</th>
-                        <th>Kapasitas Ruangan</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($listgedung as $lg)

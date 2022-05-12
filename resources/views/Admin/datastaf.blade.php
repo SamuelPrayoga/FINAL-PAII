@@ -22,19 +22,6 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Staff</th>
-                        <th>ID Staff</th>
-                        <th>Unit Kerja</th>
-                        <th>Jabatan</th>
-                        <th>Pendidikan Terakhir</th>
-                        <th>Aktif Start</th>
-                        <th>Aktif End</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($staf as $st)
@@ -45,8 +32,8 @@
                             <td>{{ $st->bagian }}</td>
                             <td>{{ $st->jabatan }}</td>
                             <td>{{ $st->pendidikan }}</td>
-                            <td>{{ $st->aktifstart }}</td>
-                            <td>{{ $st->aktifend }}</td>
+                            <td>{{ date('d M Y', strtotime($st->aktifstart)) }}</td>
+                            <td>{{ date('d M Y', strtotime($st->aktifend)) }}</td>
                             <td width="20%"><button type="button" class="btn btn-warning"
                                     onclick="window.location.href='/datastaf/editstaf/{{ $st->stafID }}'"><i
                                         class="fas fa-edit"></i>

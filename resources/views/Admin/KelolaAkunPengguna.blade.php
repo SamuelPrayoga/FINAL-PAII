@@ -28,7 +28,7 @@
                             <td width="10%">{{$user->email}}</td>
                             <td width="2%"><center>{{$user->level}}</center></td>
                             <td width="5%"><center>{{$user->status}}</center></td>
-                            <td width="14%"><center>
+                            <td width="16%"><center>
                                 <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/dataakunpengguna/editakunpengguna/{{$user->user_id}}'"><i
                                         class="fas fa-edit"></i>

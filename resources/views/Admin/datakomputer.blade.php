@@ -17,7 +17,9 @@
                         <th>Jumlah</th>
                         <th>Penanggungjawab</th>
                         <th>Keterangan</th>
-                        <th><center>Action</center></th>
+                        <th>
+                            <center>Action</center>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,23 +32,25 @@
                             <td>{{ $komp->jumlah }}</td>
                             <td>{{ $komp->penanggungjawab }}</td>
                             <td>{{ $komp->keterangan }}</td>
-                            <td width="25%">
-                                <button type="button" class="btn btn-success" data-toggle="modal"
-                                data-target="#myModal1{{ $komp->id }}"><i class="fas fa-eye"></i>
-                                Lihat</button>
-                                <button type="button" class="btn btn-warning"
-                                    onclick="window.location.href='/datakomputer/editkomputer/{{ $komp->id }}'"><i
-                                        class="fas fa-edit"></i>
-                                    Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#myModal{{ $komp->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                            <td width="22%">
+                                <center>
+                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                        data-target="#myModal1{{ $komp->id }}"><i class="fas fa-eye"></i>
+                                        Lihat</button>
+                                    <button type="button" class="btn btn-warning btn-sm"
+                                        onclick="window.location.href='/datakomputer/editkomputer/{{ $komp->id }}'"><i
+                                            class="fas fa-edit"></i>
+                                        Edit</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#myModal{{ $komp->id }}"><i class="fas fa-trash-alt"></i>
+                                        Hapus</button>
+                                </center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahkomputer'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahkomputer'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -56,27 +60,27 @@
 
 <!-- Modal -->
 @foreach ($komputer as $komp)
-<div class="modal fade" id="myModal{{ $komp->id }}" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal fade" id="myModal{{ $komp->id }}" role="dialog">
+        <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
 
-                <h4 class="modal-title">Hapus Data Alat Elektronik dan Inventaris Lainnya</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Apakah Anda yakin ingin menghapusnya?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
-                    onclick="window.location.href='/datakomputer/deletekomputer/{{ $komp->id }}'">Hapus</button>
+                    <h4 class="modal-title">Hapus Data Alat Elektronik dan Inventaris Lainnya</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapusnya?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger btn-sm"
+                        onclick="window.location.href='/datakomputer/deletekomputer/{{ $komp->id }}'">Hapus</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endforeach
 
 @foreach ($komputer as $komp)
@@ -94,36 +98,36 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Gedung</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->gedung}}</div>
+                        <div class="col-md-6">{{ $komp->gedung }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Kategori</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->kategori}}</div>
+                        <div class="col-md-6">{{ $komp->kategori }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Jumlah </strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->jumlah}}</div>
+                        <div class="col-md-6">{{ $komp->jumlah }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Penanggung Jawab</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->penanggungjawab}}</div>
+                        <div class="col-md-6">{{ $komp->penanggungjawab }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Jabatan</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->jabatan}}</div>
+                        <div class="col-md-6">{{ $komp->jabatan }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Keterangan</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$komp->keterangan }}</div>
+                        <div class="col-md-6">{{ $komp->keterangan }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

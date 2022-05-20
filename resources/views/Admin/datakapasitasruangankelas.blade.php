@@ -14,10 +14,10 @@
                         <th>No</th>
                         <th>Ruangan</th>
                         <th>Keterangan</th>
-                        <th>Luas (m<sup>2</sup>)</th>
-                        <th>Kapasitas Normal</th>
-                        <th>Perkiraan Kursi, Meja Hasil survei Langsung (Social Distancing)</th>
-                        <th>Action</th>
+                        <th><center>Luas (m<sup>2</sup>)</center></th>
+                        <th><center>Kapasitas Normal</center></th>
+                        <th><center>Perkiraan Kursi, Meja Hasil survei Langsung (Social Distancing)</center></th>
+                        <th><center>Action</center></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,24 +27,23 @@
                             <td>{{ $i++ }}</td>
                             <td>{{ $kapasitas->ruangan }}</td>
                             <td>{{ $kapasitas->keterangan }}</td>
-                            <td>{{ $kapasitas->luas }}</td>
-                            <td>{{ $kapasitas->kapasitasnormal }}</td>
-                            <td>{{ $kapasitas->perkiraan }}</td>
-                            <td width="18%">
-
-                                <button type="button" class="btn btn-warning"
+                            <td><center>{{ $kapasitas->luas }}</center></td>
+                            <td><center>{{ $kapasitas->kapasitasnormal }}</center></td>
+                            <td><center>{{ $kapasitas->perkiraan }}</center></td>
+                            <td width="16%"><center>
+                                <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/datakapasitasruangankelas/editkapasitasruangankelas/{{ $kapasitas->id }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                     data-target="#myModal{{ $kapasitas->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                                    Hapus</button></center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahkapasitasruangankelas'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahkapasitasruangankelas'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -61,15 +60,15 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <h4 class="modal-title">Hapus Data Komentar</h4>
+                <h4 class="modal-title">Hapus Data Kapasitas Ruangan</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <p>Apakah Anda yakin ingin menghapusnya?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger btn-sm"
                     onclick="window.location.href='/datakapasitasruangankelas/deletekapasitasruangankelas/{{ $kapasitas->id }}'">Hapus</button>
             </div>
         </div>

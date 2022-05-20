@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -53,11 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'pendidikan' => ['required'],
-            'jabatan' => ['required'],
-            'no_telepon' => ['required'],
-            'alamat' => ['required'],
-
+            'avatar'=>['sometimes','image','mimes:jpeg,png,jpg,gif,svg','max:5000'],
         ]);
     }
 
@@ -69,14 +66,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if(request()->has('avatar')){
+            $avataruploaded = request()->file('avatar');
+            $avatarname = time().'.'.$avataruploaded->getClientOriginalExtension();
+            $avatarpath = public_path('img/avatar/');
+            $avataruploaded->move($avatarpath,$avatarname);
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'level'=>$data['level'],
+                'avatar'=>'img/avatar/'.$avatarname,
+
+            ]);
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'jabatan' => $data['jabatan'],
-            'pendidikan' => $data['pendidikan'],
-            'no_telepon' => $data['no_telepon'],
-            'alamat' => $data['alamat']
+            'level'=>$data['level'],
+
         ]);
     }
+
 }

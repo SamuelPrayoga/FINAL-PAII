@@ -28,21 +28,23 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Mulai</label>
+                <label class="col-sm-3 col-form-label">Tanggal</label>
                 <div class="col-sm-9">
-                    <input type="datetime-local" required="required" id="mulai" name="mulai" class="form-control">
+                    <input type="date" required="required" id="tanggal" name="tanggal" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Selesai</label>
+                <label class="col-sm-3 col-form-label">Waktu</label>
                 <div class="col-sm-9">
-                    <input type="datetime-local" id="selesai" name="selesai" class="form-control">
+                    <input type="time" id="waktu" name="waktu" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Status</label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="status" aria-label="Default select example" >
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
                         <option value="Terjadwal">Terjadwal</option>
                         <option value="Selesai">Selesai</option>
                         <option value="Sedang Berlangsung">Sedang Berlangsung</option>
@@ -57,7 +59,7 @@
                 </div>
             </div>
     </div>
-    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Tambah</button>
+    <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus-square"></i> Tambah</button>
     </form>
 </div>
 <div class="card-body">

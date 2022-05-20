@@ -23,40 +23,14 @@
 
         .card {
             border: none;
-            border-top: 5px solid rgb(176, 106, 252);
-            background: #212042;
-            color: #57557A
+            border-top: 5px solid rgb(60, 34, 156);
+            background: rgba(0, 0, 0, 0.65);
+            color: #d1d1d1;
         }
 
         p {
             font-weight: 600;
             font-size: 15px
-        }
-
-        .fab {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-            background: #2A284D;
-            height: 40px;
-            width: 90px
-        }
-
-        .fab:hover {
-            cursor: pointer
-        }
-
-        .fa-twitter {
-            color: #56ABEC
-        }
-
-        .fa-facebook {
-            color: #1775F1
-        }
-
-        .fa-google {
-            color: #CB5048
         }
 
         .division {
@@ -95,18 +69,18 @@
 
         .form-control {
             border: 1px solid #57557A;
-            border-radius: 3px;
-            background: #212042;
+            border-radius: 35px;
+            background: rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
             letter-spacing: 1px
         }
 
         .form-control:focus {
             border: 1px solid #57557A;
-            border-radius: 3px;
+            border-radius: 35px;
             box-shadow: none;
-            background: #212042;
-            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgb(216, 216, 216);
             letter-spacing: 1px
         }
 
@@ -123,14 +97,14 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 51%, #4b6cb7 100%);
             border: none;
-            border-radius: 50px
+            border-radius: 23px
         }
 
-        .btn-primary:focus {
-            box-shadow: none;
-            border: none
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #2b5876 0%, #4e4376 51%, #2b5876 100%);
+            border: none;
         }
 
         small {
@@ -145,6 +119,9 @@
             .bn {
                 text-align: right
             }
+        }
+        .option{
+            background: #0d091f
         }
 
         @media(max-width: 767px) {
@@ -168,8 +145,26 @@
                 width: 50%
             }
         }
+        .video-wrap {
+            z-index: -100;
+        }
+
+        .custom-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
 
     </style>
+    <div class="video-wrap">
+        <video autoplay="" loop="" muted="" class="custom-video" poster="">
+            <source src="{{ asset('videos/Mengenal Institut Teknologi Del.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -190,25 +185,52 @@
                             </div>
                         </div>
                     </div>
-                    @if ($errors->any())
-                        @foreach ($errors->all() as $err)
-                            <p class="alert alert-danger">{{ $err }}</p>
-                        @endforeach
-                    @endif
-                    <form class="myform" action="{{ route('register.action') }}" method="POST">
+                    <form class="myform" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group">
-                            <input type="name" class="form-control" placeholder="Nama Pengguna" name="name" value="{{ old('name') }}">
+                            <input type="name" class="form-control" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama Pengguna" name="name" value="">
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control " placeholder="Email" name="email" value="{{ old('email') }}">
+                            <input type="email" class="form-control" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" name="email" value="">
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control " placeholder="Password" name="password">
+                            <input type="password" class="form-control " placeholder="Password" name="password" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password_confirm">
+                            <input type="password" class="form-control" placeholder="Konfirmasi Password" name="password_confirmation" required autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control"  required="required" name="level" aria-label="Default select example" >
+                                <option class="option">-Pilih Role-</option>
+                                <option class="option" value="1">Admin</option>
+                                <option class="option" value="0">Rektor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="avatar">Pilih Foto Profil</label>
+                            <input type="file" id="avatar" class="form-control" name="avatar" @error('avatar') is-invalid @enderror" >
+                            <p class="form-group">File: .jpeg, .png, .jpg, .gif, .svg maksimal: 5 MB</p>
+                            @error('avatar')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group mt-3">
                             <button type="submit" class="btn btn-block btn-primary btn-lg"><small><i

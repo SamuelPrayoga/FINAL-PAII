@@ -18,7 +18,7 @@
                         <th>Kapasitas/Kamar</th>
                         <th>Total</th>
                         <th>Keterangan</th>
-                        <th>Action</th>
+                        <th><center>Action</center></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,20 +32,20 @@
                             <td width="5%">{{ $as->kapasitasruangan }}</td>
                             <td width="5%">{{ $as->total }}</td>
                             <td width="20%">{{ $as->keterangan }}</td>
-                            <td width="18%">
-                                <button type="button" class="btn btn-warning"
+                            <td width="16%"><center>
+                                <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/dataasrama/editasrama/{{ $as->id }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                     data-target="#myModal{{ $as->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                                    Hapus</button></center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahasrama'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahasrama'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -69,8 +69,8 @@
                 <p>Apakah Anda yakin ingin menghapusnya?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger btn-sm"
                     onclick="window.location.href='/dataasrama/deleteasrama/{{ $as->id }}'">Hapus</button>
             </div>
         </div>

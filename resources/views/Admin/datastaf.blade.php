@@ -19,7 +19,7 @@
                         <th>Pendidikan Terakhir</th>
                         <th>Aktif Start</th>
                         <th>Aktif End</th>
-                        <th>Action</th>
+                        <th><center>Action</center></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,20 +34,21 @@
                             <td>{{ $st->pendidikan }}</td>
                             <td>{{ date('d M Y', strtotime($st->aktifstart)) }}</td>
                             <td>{{ date('d M Y', strtotime($st->aktifend)) }}</td>
-                            <td width="20%"><button type="button" class="btn btn-warning"
+                            <td width="22%"><center>
+                                <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/datastaf/editstaf/{{ $st->stafID }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                     data-target="#myModal"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                                    Hapus</button></center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahstaf'">
-                <i class="fas fa-plus-square"></i> Tambah Data</button>
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahstaf'">
+                <i class="fas fa-plus-square "></i> Tambah Data</button>
         </div>
     </div>
 </div>
@@ -63,15 +64,15 @@
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <h4 class="modal-title">Hapus Data Komentar</h4>
+                    <h4 class="modal-title">Hapus Data Staff</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <p>Apakah Anda yakin ingin menghapusnya?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-danger"
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger btn-sm"
                         onclick="window.location.href='/datastaf/deletestaf/{{ $st->stafID }}'">Hapus</button>
                 </div>
             </div>

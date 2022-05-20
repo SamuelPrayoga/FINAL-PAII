@@ -17,33 +17,33 @@
                         <th>Kapasitas/Kamar</th>
                         <th>Jumlah</th>
                         <th>Keterangan</th>
-                        <th>Action</th>
+                        <th><center>Action</center></th>
                     </tr>
                 </thead>
                 <tbody>
                     @php $i=1 @endphp
                     @foreach ($perumahanluar as $pe)
                         <tr>
-                            <td>{{ $i++ }}</td>
+                            <td width="2%">{{ $i++ }}</td>
                             <td>{{ $pe->namaperumahan }}</td>
                             <td>{{ $pe->jumlahkamar }}</td>
                             <td>{{ $pe->kapasitaskamar }}</td>
                             <td>{{ $pe->jumlah }}</td>
                             <td>{{ $pe->keterangan }}</td>
-                            <td width="18%">
-                                <button type="button" class="btn btn-warning"
+                            <td width="16%"><center>
+                                <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/dataperumahanluar/editperumahanluar/{{ $pe->id }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                     data-target="#myModal{{ $pe->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                                    Hapus</button></center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahperumahanluar'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahperumahanluar'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -67,8 +67,8 @@
                 <p>Apakah Anda yakin ingin menghapusnya?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger btn-sm"
                     onclick="window.location.href='/dataperumahanluar/deleteperumahanluar/{{ $pe->id }}'">Hapus</button>
             </div>
         </div>

@@ -5070,13 +5070,13 @@ input[type=submit].btn-block {
 
 .card-footer {
     padding: .75rem 1.25rem;
-    background-color: #f8f9fc;
-    border-top: 1px solid #e3e6f0
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-footer:last-child {
-    border-radius: 0 0 calc(.35rem - 1px) calc(.35rem - 1px)
-}
+    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  }
 
 .card-header-tabs {
     margin-right: -.625rem;
@@ -11362,8 +11362,8 @@ a:focus {
 
 .sidebar .nav-item .nav-link .img-profile,
 .topbar .nav-item .nav-link .img-profile {
-    height: 2rem;
-    width: 2rem
+    height: 2.5rem;
+    width: 2.5rem
 }
 
 .topbar {

@@ -125,8 +125,8 @@
                     </div> <!-- Row END -->
                     <!-- button -->
                     <div class="gap-3 d-md-flex justify-content-md-end text-center">
-                        <button type="button" class="btn btn-secondary">Kembali</button>
-                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Simpan Profile</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Kembali</button>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan Profile</button>
                     </div>
                 </form> <!-- Form END -->
             </div>

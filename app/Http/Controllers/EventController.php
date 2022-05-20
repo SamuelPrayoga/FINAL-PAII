@@ -11,17 +11,6 @@ class EventController extends Controller
     public function index()
     {
         $agendarektor = agendarektor::all();
-        $color = "#000000";
-        foreach ($agendarektor as $agenda) {
-            if (($agenda->status = 'Selesai'))
-                $color = "#5cb85c";
-            elseif (($agenda->status = 'Sedang Berlangsung'))
-                $color = '#f0ad4e';
-            elseif ($agenda->status = 'Dibatalkan')
-                $color = '#d9534f';
-            $agenda->color = $color;
-        }
-
         return view('AgendaRektor', compact('agendarektor'));
     }
 
@@ -40,8 +29,8 @@ class EventController extends Controller
         $tambahagendarektors->namakegiatan = $request->namakegiatan;
         $tambahagendarektors->penyelenggara = $request->penyelenggara;
         $tambahagendarektors->lokasi = $request->lokasi;
-        $tambahagendarektors->mulai = $request->mulai;
-        $tambahagendarektors->selesai = $request->selesai;
+        $tambahagendarektors->tanggal = $request->tanggal;
+        $tambahagendarektors->waktu = $request->waktu;
         $tambahagendarektors->status = $request->status;
         $tambahagendarektors->keterangan = $request->keterangan;
         $tambahagendarektors->save();
@@ -60,8 +49,8 @@ class EventController extends Controller
         $update->namakegiatan = $request->namakegiatan;
         $update->penyelenggara = $request->penyelenggara;
         $update->lokasi = $request->lokasi;
-        $update->mulai = $request->mulai;
-        $update->selesai = $request->selesai;
+        $update->tanggal = $request->tanggal;
+        $update->waktu = $request->waktu;
         $update->status = $request->status;
         $update->keterangan = $request->keterangan;
         $update->save();

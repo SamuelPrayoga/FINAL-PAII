@@ -75,8 +75,15 @@ use App\Exports\DisposalJaringanExport;
 use App\Exports\DisposalMaintananceExport;
 use App\Exports\DisposalTamanExport;
 
+
 class usercontroller extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function indexdosenaktif()
     {
         $dosenaktif = dosenaktif::all();
@@ -86,6 +93,12 @@ class usercontroller extends Controller
 	{
 		return Excel::download(new DosenAktifExport, 'DataDosenAktif.xlsx');
 	}
+    /*public function export_pdf(){
+        $data = mahasiswaaktif::limit(20)->get();
+        $pdf = PDF::loadView('mahasiswaaktif-pdf', compact('data'));
+        $pdf->setPaper('A4','portrait');
+        return $pdf->stream('mahasiswaaktif.pdf');
+    }*/
     ////////////////////////////////////////////////////////////////////////////////
     public function indexdosentugas()
     {
@@ -140,6 +153,7 @@ class usercontroller extends Controller
     public function indexmahasiswaaktif()
     {
         $mahasiswaaktif = mahasiswaaktif::all();
+
         return view('MahasiswaAktif', compact('mahasiswaaktif'));
     }
     public function export_excel6()

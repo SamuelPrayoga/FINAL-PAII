@@ -13,11 +13,13 @@
                         <th>Nama Kegiatan</th>
                         <th>Penyelenggara</th>
                         <th>Lokasi</th>
-                        <th>Mulai</th>
-                        <th>Selesai</th>
+                        <th>Tanggal</th>
+                        <th>Waktu</th>
                         <th>Status</th>
                         <th>Keterangan</th>
-                        <th>Action</th>
+                        <th>
+                            <center>Action</center>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,24 +30,26 @@
                             <td>{{ $agenda->namakegiatan }}</td>
                             <td>{{ $agenda->penyelenggara }}</td>
                             <td>{{ $agenda->lokasi }}</td>
-                            <td>{{ date('l, d M Y  H:i', strtotime($agenda->mulai)) }}</td>
-                            <td>{{ date('l, d M Y  H:i', strtotime($agenda->selesai)) }}</td>
+                            <td>{{ $agenda->tanggal }}</td>
+                            <td>{{ $agenda->waktu }} WIB</td>
                             <td>{{ $agenda->status }}</td>
                             <td>{{ $agenda->keterangan }}</td>
-                            <td width="18%">
-                                <button type="button" class="btn btn-warning"
-                                    onclick="window.location.href='/dataagendarektor/editagendarektor/{{ $agenda->id }}'"><i
-                                        class="fas fa-edit"></i>
-                                    Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#myModal{{ $agenda->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                            <td width="16%">
+                                <center>
+                                    <button type="button" class="btn btn-warning btn-sm"
+                                        onclick="window.location.href='/dataagendarektor/editagendarektor/{{ $agenda->id }}'"><i
+                                            class="fas fa-edit"></i>
+                                        Edit</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#myModal{{ $agenda->id }}"><i class="fas fa-trash-alt"></i>
+                                        Hapus</button>
+                                </center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahagendarektor'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahagendarektor'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -69,8 +73,8 @@
                     <p>Apakah Anda yakin ingin menghapusnya?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-danger"
+                    <button type="button" class="btn btn-secondar btn-smy" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger btn-sm"
                         onclick="window.location.href='/dataagendarektor/deleteagendarektor/{{ $agenda->id }}'">Hapus</button>
                 </div>
             </div>

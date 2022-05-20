@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard Rektor IT Del | Kapasitas Ruangan Kelas</title>
+    <title>Dashboard Rektor IT Del | Panel Admin</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -33,19 +33,21 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dataagendarektor">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/beranda">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"><sup>Admin</sup> Rektor <sup>IT Del</sup></div>
+                    <div class="sidebar-brand-text mx-3">Dashboard Rektor<sup>Admin</sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
+            <li class="nav-item">
+                <a class="nav-link" href="/beranda">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Beranda</span></a>
+            </li>
             <hr class="sidebar-divider d-none d-md-block">
-
             <div class="sidebar-heading">
                 Agenda Rektor / Rektorat
             </div>
@@ -58,7 +60,6 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
             <!-- Heading -->
             <div class="sidebar-heading">
                 Sumber Daya Manusia
@@ -234,20 +235,20 @@
             </div>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/KelolaAkunPengguna">
+                <a class="nav-link" href="/dataakunpengguna">
                     <i class="fas fa-users-cog"></i>
                     <span>Kelola Akun Pengguna</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <div class="sidebar-heading">
-                Kelola IPK Mahasiswa
+                Kelola Jumlah Pendaftar
             </div>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-award"></i>
-                    <span>Kelola IPK Mahasiswa</span></a>
+                <a class="nav-link" href="/datapendaftar">
+                    <i class="fas fa-registered"></i>
+                    <span>Kelola Jumlah Pendaftar</span></a>
             </li>
 
 
@@ -271,75 +272,47 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar border-bottom-primary navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <!-- Topbar Search -->
-
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Messages -->
-                        <!-- Dropdown - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">1</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to
-                                            download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
-
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Sekretarit Rektorat</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                <img class="img-profile rounded-circle" src="{{ asset(Auth::user()->avatar)}}">
+                                <i class="fas fa-solid fa-sort-down"></i>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="/settingsprofile">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
+                                <div class="dropdown-item">
+                                    <i class="fa fa-circle text-success"></i>
+                                        <span class="mr-2 d-none d-lg-inline text-gray-800 small">
+                                            @if (auth()->user()->level == '1')
+                                                Sekretariat Rektorat
+                                                @elseif(auth()->user()->level == '0')
+                                                Rektor IT Del
+                                            @endif
+                                        </span>
+                                </div>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    {{ __('Logout') }}
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
 

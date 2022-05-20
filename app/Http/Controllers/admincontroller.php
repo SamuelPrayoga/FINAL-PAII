@@ -45,6 +45,11 @@ use App\Models\disptaman;
 
 class admincontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function showdosenaktif()
     {
         $dosenaktif = DB::table('dosenaktif')->get();

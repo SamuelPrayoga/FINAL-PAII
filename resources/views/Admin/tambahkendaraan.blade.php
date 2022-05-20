@@ -63,7 +63,7 @@
                 </div>
             </div>
     </div>
-    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i> Tambah</button>
+    <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-plus-square"></i> Tambah</button>
     </form>
 </div>
 <div class="card-body">

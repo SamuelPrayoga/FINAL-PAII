@@ -17,7 +17,9 @@
                         <th>Jabatan</th>
                         <th>Jumlah Kamar</th>
                         <th>Kapasitas Kamar</th>
-                        <th>Action</th>
+                        <th>
+                            <center>Action</center>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,25 +32,27 @@
                             <td>{{ $pe->jabatan }}</td>
                             <td>{{ $pe->jumlahkamar }}</td>
                             <td>{{ $pe->kapasitaskamar }}</td>
-                            <td width="25%">
-                                <button type="button" class="btn btn-success" data-toggle="modal"
-                                data-target="#myModal1{{ $pe->id }}"><i class="fas fa-eye"></i>
-                                Lihat</button>
-
-                                <button type="button" class="btn btn-warning"
-                                    onclick="window.location.href='/dataperumahandalam/editperumahandalam/{{ $pe->id }}'"><i
-                                        class="fas fa-edit"></i>
-                                    Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#myModal{{ $pe->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                            <td width="22%">
+                                <center>
+                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                                        data-target="#myModal1{{ $pe->id }}"><i class="fas fa-eye"></i>
+                                        Lihat</button>
+                                    <button type="button" class="btn btn-warning btn-sm"
+                                        onclick="window.location.href='/dataperumahandalam/editperumahandalam/{{ $pe->id }}'"><i
+                                            class="fas fa-edit"></i>
+                                        Edit</button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                        data-target="#myModal{{ $pe->id }}"><i class="fas fa-trash-alt"></i>
+                                        Hapus</button>
+                                </center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahperumahandalam'"><i
-                    class="fas fa-plus-square"></i> Tambah Data</button>
+            <button type="button" class="btn btn-primary btn-sm"
+                onclick="window.location.href='/tambahperumahandalam'"><i class="fas fa-plus-square"></i> Tambah
+                Data</button>
         </div>
     </div>
 </div>
@@ -57,27 +61,27 @@
 
 <!-- Modal -->
 @foreach ($perumahandalam as $pe)
-<div class="modal fade" id="myModal{{ $pe->id }}" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal fade" id="myModal{{ $pe->id }}" role="dialog">
+        <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
 
-                <h4 class="modal-title">Hapus Data Perumahan Dalam</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <p>Apakah Anda yakin ingin menghapusnya?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
-                    onclick="window.location.href='/dataperumahandalam/deleteperumahandalam/{{ $pe->id }}'">Hapus</button>
+                    <h4 class="modal-title">Hapus Data Perumahan Dalam</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapusnya?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger btn-sm"
+                        onclick="window.location.href='/dataperumahandalam/deleteperumahandalam/{{ $pe->id }}'">Hapus</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endforeach
 
 @foreach ($perumahandalam as $pe)
@@ -95,56 +99,56 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Nama Perumahan</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->namaperumahan}}</div>
+                        <div class="col-md-6">{{ $pe->namaperumahan }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Nama Penghuni</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->namapenghuni}}</div>
+                        <div class="col-md-6">{{ $pe->namapenghuni }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Jabatan</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->jabatan}}</div>
+                        <div class="col-md-6">{{ $pe->jabatan }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Jumlah Kamar</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->jumlahkamar}}</div>
+                        <div class="col-md-6">{{ $pe->jumlahkamar }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Kapasitas Kamar</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->kapasitaskamar}}</div>
+                        <div class="col-md-6">{{ $pe->kapasitaskamar }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>I/S</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->istri}}</div>
+                        <div class="col-md-6">{{ $pe->istri }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>ANAK</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->anak}}</div>
+                        <div class="col-md-6">{{ $pe->anak }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>DLL</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->dll}}</div>
+                        <div class="col-md-6">{{ $pe->dll }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Total</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->total}}</div>
+                        <div class="col-md-6">{{ $pe->total }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Keterangan</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{$pe->keterangan}}</div>
+                        <div class="col-md-6">{{ $pe->keterangan }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>

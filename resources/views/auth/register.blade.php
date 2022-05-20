@@ -60,34 +60,6 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <label for="pendidikan" class="col-md-4 col-form-label text-md-end">{{ __('pendidikan') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="pendidikan" type="text" class="form-control" name="pendidikan" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="jabatan" class="col-md-4 col-form-label text-md-end">{{ __('jabatan') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="jabatan" type="text" class="form-control" name="jabatan" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="no_telepon" class="col-md-4 col-form-label text-md-end">{{ __('no_telepon') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="no_telepon" type="text" class="form-control" name="no_telepon" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="alamat" class="col-md-4 col-form-label text-md-end">{{ __('alamat') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="alamat" type="text" class="form-control" name="alamat" required>
-                            </div>
-                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

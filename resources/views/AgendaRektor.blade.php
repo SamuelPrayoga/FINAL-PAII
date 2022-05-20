@@ -8,11 +8,57 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">[Terbaru] Agenda dan Kegiatan Rektor</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table" id="data" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama Kegiatan</th>
+                            <th>Penyelenggara</th>
+                            <th>Lokasi</th>
+                            <th>Mulai</th>
+                            <th>Selesai</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                            <th><center>Konfirmasi</center></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $i=1 @endphp
+                        @foreach ($agendaterbaru as $agenda )
+                        <tr>
+                            <td width="2%">{{ $i++ }}</td>
+                            <td>{{ $agenda->namakegiatan }}</td>
+                            <td>{{ $agenda->penyelenggara }}</td>
+                            <td>{{ $agenda->lokasi }}</td>
+                            <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
+                            <td>{{ ($agenda->waktu) }} WIB</td>
+                            <td>{{ ($agenda->status) }}</td>
+                            <td>{{ $agenda->keterangan }}</td>
+                            <td width="14%"><center>
+                                <button type="button" class="btn btn-light btn-sm"
+                                onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
+                                    class="fas fa-wrench"></i>
+                                Konfirmasi</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Agenda dan Kegiatan Rektor</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -23,20 +69,27 @@
                             <th>Selesai</th>
                             <th>Status</th>
                             <th>Keterangan</th>
+                            <th><center>Konfirmasi</center></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($agendarektor as $agenda )
                         @php $i=1 @endphp
+                        @foreach ($agendarektor as $agenda )
                         <tr>
                             <td width="2%">{{ $i++ }}</td>
                             <td>{{ $agenda->namakegiatan }}</td>
                             <td>{{ $agenda->penyelenggara }}</td>
                             <td>{{ $agenda->lokasi }}</td>
-                            <td>{{ date('l, d M Y  H:i', strtotime($agenda->mulai)) }}</td>
-                            <td>{{ date('l, d M Y  H:i', strtotime($agenda->selesai)) }}</td>
-                            <td><span style="{{ $agenda->color }}">{{ $agenda->status }}</span></td>
+                            <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
+                            <td>{{ ($agenda->waktu) }} WIB</td>
+                            <td>{{ $agenda->status }}</td>
                             <td>{{ $agenda->keterangan }}</td>
+                            <td width="14%"><center>
+                                <button type="button" class="btn btn-light btn-sm"
+                                onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
+                                    class="fas fa-wrench"></i>
+                                Konfirmasi</button>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

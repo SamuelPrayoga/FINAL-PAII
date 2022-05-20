@@ -18,7 +18,7 @@
                         <th>Jumlah Unit</th>
                         <th>No PR</th>
                         <th>No PO</th>
-                        <th>Action</th>
+                        <th><center>Action</center></th>
                     </tr>
                 </thead>
 
@@ -33,23 +33,23 @@
                             <td>{{ $lg->jumlahunit }}</td>
                             <td>{{ $lg->nopr }}</td>
                             <td>{{ $lg->nopo }}</td>
-                            <td width="25%">
-                                <button type="button" class="btn btn-success" data-toggle="modal"
+                            <td width="22%"><center>
+                                <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
                                 data-target="#myModal1{{ $lg->id }}"><i class="fas fa-eye"></i>
                                 Lihat</button>
-                                <button type="button" class="btn btn-warning"
+                                <button type="button" class="btn btn-warning btn-sm"
                                     onclick="window.location.href='/dataltaman/editltaman/{{ $lg->id }}'"><i
                                         class="fas fa-edit"></i>
                                     Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                     data-target="#myModal{{ $lg->id }}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button>
+                                    Hapus</button></center>
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/tambahltaman'"><i
+            <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='/tambahltaman'"><i
                     class="fas fa-plus-square"></i> Tambah Data</button>
         </div>
     </div>
@@ -73,8 +73,8 @@
                 <p>Apakah Anda yakin ingin menghapusnya?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-danger"
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger btn-sm"
                     onclick="window.location.href='/dataltaman/deleteltaman/{{ $lg->id }}'">Hapus</button>
             </div>
         </div>
@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                 </div>
             </div>
         </div>

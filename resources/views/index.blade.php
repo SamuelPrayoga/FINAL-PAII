@@ -16,9 +16,11 @@
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Mahasiswa Aktif</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mahasiswaaktif }}</div>
+                            @if (auth()->user()->level == 0)
                             <a class="text-xs font-weight-bold text-secondary mb-1" href="/MahasiswaAktif">
                                 Lihat Selengkapnya
                             </a>
+                            @endif
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -37,9 +39,11 @@
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Dosen Aktif</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dosenaktif }}</div>
+                            @if (auth()->user()->level == 0)
                             <a class="text-xs font-weight-bold text-secondary mb-1" href="/DosenAktif">
                                 Lihat Selengkapnya
                             </a>
+                            @endif
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
@@ -58,9 +62,11 @@
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Dosen Tugas Belajar</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dosentugas }}</div>
-                            <a class="text-xs font-weight-bold text-secondary mb-1" href="/DosenTugasBelajar">
-                                Lihat Selengkapnya
-                            </a>
+                            @if (auth()->user()->level == 0)
+                                <a class="text-xs font-weight-bold text-secondary mb-1" href="/DosenTugasBelajar">
+                                    Lihat Selengkapnya
+                                </a>
+                            @endif
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -78,8 +84,11 @@
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Asrama dan Rusunawa</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $asrama }}</div>
+                            @if (auth()->user()->level == 0)
                             <a class="text-xs font-weight-bold text-secondary mb-1" href="/Asrama">Lihat
-                                Selengkapnya</a>
+                                Selengkapnya
+                            </a>
+                            @endif
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-home fa-2x text-gray-300"></i>

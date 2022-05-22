@@ -231,8 +231,24 @@
 {{-- ChartStyle --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
 
-<!--<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
+    <?php
+    $tahun = DB::table('tbl_pendaftar')->distinct()->get();
+
+    $prodi = DB::table('tbl_pendaftar')->distinct()->get();
+
+    foreach($prodi as $pro) {
+
+        foreach($tahun as $th) {
+
+       ${"pendaftar".$th->tahun.$pro->program_studi}= DB::table('tbl_pendaftar')->where('tahun', $th->tahun)->where('program_studi', $pro->program_studi)->sum('jumlah_pendaftar');
+
+        }
+
+    }
+
+    ?>
     Highcharts.chart('chartMaba', {
 
         chart: {
@@ -246,9 +262,9 @@
         },
         xAxis: {
             categories: [
-                '2020',
-                '2021',
-                '2022'
+                @foreach ($tahun as $th )
+                '{{ $th->tahun }}',
+                @endforeach
             ],
             crosshair: true
         },
@@ -274,37 +290,60 @@
         },
         series: [{
             name: 'D3 TK',
-            data: [$pendaftar]
+            data: []
 
         }, {
             name: 'D3 TI',
-            data: [83.6, 78.8, 98.5]
+            data: [
+                @foreach($prodi as $pro)
+                    @if($pro->program_studi == 'D3 TI')
+                        @foreach($tahun as $th)
+                            @if(${"pendaftar".$th->tahun.$pro->program_studi} != 0)
+                            {{ ${"pendaftar".$th->tahun.$pro->program_studi} }},
+                            @endif
+                        @endforeach
+                        @break
+                    @endif
+                @endforeach
+            ]
 
         }, {
             name: 'D4 TRPL',
-            data: [$pendaftar]
+            data: [
+
+                @foreach($prodi as $pro)
+                    @if($pro->program_studi == 'D4 TRPL')
+                        @foreach($tahun as $th)
+                            @if(${"pendaftar".$th->tahun.$pro->program_studi} != 0)
+                            {{ ${"pendaftar".$th->tahun.$pro->program_studi} }},
+                            @endif
+                        @endforeach
+                        @break
+                    @endif
+                @endforeach
+            ]
 
         }, {
             name: 'S1 SI',
-            data: [42.4, 33.2, 34.5]
+            data: [
+
+            ]
 
         }, {
             name: 'S1 IF',
-            data: [42.4, 31.2, 34.5]
+            data: []
 
         }, {
             name: 'S1 MR',
-            data: [42.4, 35.2, 34.6]
+            data: []
 
         }, {
             name: 'S1 BP',
-            data: [42.4, 30.2, 34.5]
+            data: []
 
         }]
     });
 </script>
--->
-
 <script>
     Highcharts.chart('chartDosenTugas', {
         chart: {

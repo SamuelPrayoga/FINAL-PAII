@@ -10,7 +10,9 @@ use App\Models\dosentugas;
 use App\Models\asrama;
 use App\Models\pendaftar;
 use Illuminate\Support\Facades\DB;
+use App\Charts\PendaftarChart;
 use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -37,23 +39,29 @@ class HomeController extends Controller
         $asrama = asrama::count();
         $agendarektor = agendarektor::latest()->take(5)->get();
 
-        //create function get select data from table tbl_pendaftar
+        //create function show data from pendaftar model show to chart
+        /*$users = pendaftar::select(\DB::raw("COUNT(*) as count"))
+            ->whereYear('created_at', date('Y'))
+            ->groupBy(\DB::raw("Month(created_at)"))
+            ->pluck('count');
 
-        $pendaftar = pendaftar::select('jumlah_pendaftar')->where('tahun',2020)->where('prodi','D4TRPL')->get();
-        $pendaftars = pendaftar::select('jumlah_pendaftar')->where('tahun',2021)->where('prodi','D3TK')->get();
-        $pendaftarss = pendaftar::select('jumlah_pendaftar')->where('tahun',2022)->get();
+        $chart = new PendaftarChart;
+        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+        $chart->dataset('New User Register Chart', 'line', $users)->options([
+            'fill' => 'true',
+            'borderColor' => '#51C1C0'
+        ]);*/
 
         return view('index', compact('mahasiswaaktif', 'dosenaktif', 'dosentugas', 'asrama', 'agendarektor'));
     }
     //create function update in table agendarektor
-    public function updatekehadiran (Request $request){
+    public function updatekehadiran(Request $request)
+    {
         //func update kehadiran
-        DB::table('agendarektor')->where('id',$request->id)->updatekehadiran([
+        DB::table('agendarektor')->where('id', $request->id)->updatekehadiran([
             //list update coloum kehadiran
-            'status'=>$request->status,
+            'status' => $request->status,
         ]);
         return redirect('/home');
     }
-
-
 }

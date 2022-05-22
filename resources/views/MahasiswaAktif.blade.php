@@ -28,8 +28,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($mahasiswaaktif as $aktif)
                         @php $i=1 @endphp
+                        @foreach($mahasiswaaktif as $aktif)
                         <tr>
                             <td width="2%">{{ $i++ }}</td>
                             <td>{{ $aktif->prodi }}</td>

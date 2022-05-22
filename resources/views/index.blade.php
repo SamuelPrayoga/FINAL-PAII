@@ -131,14 +131,26 @@
                                         <td>{{ $agenda->namakegiatan }}</td>
                                         <td>{{ $agenda->penyelenggara }}</td>
                                         <td>{{ $agenda->lokasi }}</td>
-                                        <td width="14%"><center>{{ $agenda->status }}</center></td>
+                                        <td width="18%"><center>
+                                            @if($agenda->status == 'Hadir')
+                                                <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                            @if ($agenda->status == 'Tidak Hadir')
+                                                <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                            @if ($agenda->status == 'Menunggu Konfirmasi')
+                                                <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                            @if ($agenda->status == 'Selesai')
+                                                <button class="btn btn-secondary btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                        </center></td>
                                         @if (auth()->user()->level == 0)
-                                        <td width="17%">
+                                        <td width="14%">
                                             <center>
-                                                <button type="button" class="btn btn-info btn-sm"
+                                                <button type="button" class="btn btn-light btn-sm"
                                                 onclick="window.location.href='/AgendaRektor'"><i
-                                                    class="fas fa-eye"></i>
-                                                Lihat Detail</button>
+                                                    class="fas fa-eye"></i> Detail</button>
                                                 </div>
                                             </center>
                                         </td>
@@ -216,8 +228,10 @@
         </div>
     </div>
 </div>
+{{-- ChartStyle --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!--<script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
     Highcharts.chart('chartMaba', {
 
@@ -260,7 +274,7 @@
         },
         series: [{
             name: 'D3 TK',
-            data: [49, 71.5, 106.4]
+            data: [$pendaftar]
 
         }, {
             name: 'D3 TI',
@@ -268,7 +282,7 @@
 
         }, {
             name: 'D4 TRPL',
-            data: [48, 38.8, 39.3]
+            data: [$pendaftar]
 
         }, {
             name: 'S1 SI',
@@ -289,6 +303,7 @@
         }]
     });
 </script>
+-->
 
 <script>
     Highcharts.chart('chartDosenTugas', {

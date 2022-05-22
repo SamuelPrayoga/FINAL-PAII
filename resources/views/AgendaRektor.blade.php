@@ -36,10 +36,23 @@
                             <td>{{ $agenda->lokasi }}</td>
                             <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
                             <td>{{ ($agenda->waktu) }} WIB</td>
-                            <td>{{ ($agenda->status) }}</td>
+                            <td width="18%">
+                                @if($agenda->status == 'Hadir')
+                                    <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
+                                    @endif
+                                @if ($agenda->status == 'Tidak Hadir')
+                                    <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                    @endif
+                                @if ($agenda->status == 'Menunggu Konfirmasi')
+                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                    @endif
+                                @if ($agenda->status == 'Selesai')
+                                    <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
+                                    @endif
+                        </td>
                             <td>{{ $agenda->keterangan }}</td>
                             <td width="14%"><center>
-                                <button type="button" class="btn btn-light btn-sm"
+                                <button type="button" class="btn btn-info btn-sm"
                                 onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
                                     class="fas fa-wrench"></i>
                                 Konfirmasi</button>
@@ -82,7 +95,20 @@
                             <td>{{ $agenda->lokasi }}</td>
                             <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
                             <td>{{ ($agenda->waktu) }} WIB</td>
-                            <td>{{ $agenda->status }}</td>
+                            <td width="18%">
+                                    @if($agenda->status == 'Hadir')
+                                        <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                    @if ($agenda->status == 'Tidak Hadir')
+                                        <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                    @if ($agenda->status == 'Menunggu Konfirmasi')
+                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                    @if ($agenda->status == 'Selesai')
+                                        <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                            </td>
                             <td>{{ $agenda->keterangan }}</td>
                             <td width="14%"><center>
                                 <button type="button" class="btn btn-light btn-sm"

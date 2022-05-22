@@ -56,7 +56,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Keterangan</label>
                 <div class="col-sm-9">
-                    <textarea name="keterangan" class="form-control" id="keterangan" cols="20" rows="3" style="width: 100%;" value="{{$editagendarektor->keterangan}}"></textarea>
+                    <textarea name="keterangan" class="form-control" id="keterangan" cols="20" rows="3" style="width: 100%;">{{$editagendarektor->keterangan}}</textarea>
                 </div>
             </div>
     </div>

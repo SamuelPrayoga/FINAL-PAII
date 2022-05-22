@@ -36,6 +36,13 @@ class HomeController extends Controller
         $dosentugas = dosentugas::count();
         $asrama = asrama::count();
         $agendarektor = agendarektor::latest()->take(5)->get();
+
+        //create function get select data from table tbl_pendaftar
+
+        $pendaftar = pendaftar::select('jumlah_pendaftar')->where('tahun',2020)->where('prodi','D4TRPL')->get();
+        $pendaftars = pendaftar::select('jumlah_pendaftar')->where('tahun',2021)->where('prodi','D3TK')->get();
+        $pendaftarss = pendaftar::select('jumlah_pendaftar')->where('tahun',2022)->get();
+
         return view('index', compact('mahasiswaaktif', 'dosenaktif', 'dosentugas', 'asrama', 'agendarektor'));
     }
     //create function update in table agendarektor
@@ -47,5 +54,6 @@ class HomeController extends Controller
         ]);
         return redirect('/home');
     }
+
 
 }

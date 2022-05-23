@@ -7,8 +7,14 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data Dosen Tugas Belajar</h6>
     </div>
     <div class="card-body">
-        <form action="{{route('datastaf.updatestaf',$editstaf->stafID)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('datastaf.updatestaf',$editstaf->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">ID Staff</label>
+                <div class="col-sm-9">
+                    <input type="text" required="required" id="stafID" name="stafID" class="form-control" value="{{$editstaf->stafID}}">
+                </div>
+            </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Nama Staff</label>
                 <div class="col-sm-9">

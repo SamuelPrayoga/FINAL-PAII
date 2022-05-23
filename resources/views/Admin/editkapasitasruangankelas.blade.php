@@ -9,12 +9,7 @@
     <div class="card-body">
         <form action="{{route('datakapasitasruangankelas.updatekapasitasruangankelas',$editkapasitasruangankelas->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">ID</label>
-                <div class="col-sm-9">
-                    <input type="text" required="required" id="id" name="id" class="form-control" value="{{$editkapasitasruangankelas->id}}">
-                </div>
-            </div>
+
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Ruangan</label>
                 <div class="col-sm-9">

@@ -53,9 +53,9 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/datastaf', [admincontroller::class, 'showstaf']);
     Route::get('/tambahstaf', [admincontroller::class, 'tambahstaf']);
     Route::post('/tambahstaftambah', [admincontroller::class, 'tambahstafs'])->name('staf.tambah');
-    Route::get('/datastaf/editstaf/{stafID}', [admincontroller::class, 'editstaf']);
-    Route::post('/updatestaf/{stafID}', [admincontroller::class, 'updatestaf'])->name('datastaf.updatestaf');
-    Route::get('datastaf/deletestaf/{stafID}', [admincontroller::class, 'deletestaf'])->name('datastaf.deletestaf');
+    Route::get('/datastaf/editstaf/{id}', [admincontroller::class, 'editstaf']);
+    Route::post('/updatestaf/{id}', [admincontroller::class, 'updatestaf'])->name('datastaf.updatestaf');
+    Route::get('datastaf/deletestaf/{id}', [admincontroller::class, 'deletestaf'])->name('datastaf.deletestaf');
 
     Route::get('/dataasistendosen', [admincontroller::class, 'showasistendosen']);
     Route::get('/tambahasistendosen', [admincontroller::class, 'tambahasistendosen']);

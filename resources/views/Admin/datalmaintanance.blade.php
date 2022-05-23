@@ -35,18 +35,18 @@
                             <td>{{ $lg->jumlahunit }}</td>
                             <td>{{ $lg->nopr }}</td>
                             <td>{{ $lg->nopo }}</td>
-                            <td width="22%">
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                        data-target="#myModal1{{ $lg->id }}"><i class="fas fa-eye"></i>
-                                        Lihat</button>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/datalmaintanance/editlmaintanance/{{ $lg->id }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $lg->id }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datalmaintanance/editlmaintanance/{{ $lg->id }}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
                                         data-target="#myModal{{ $lg->id }}"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                    </button>
                                 </center>
                             </td>
                         </tr>

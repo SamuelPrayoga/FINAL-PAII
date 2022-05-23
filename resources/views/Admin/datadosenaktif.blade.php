@@ -28,24 +28,24 @@
                     @foreach ($dosenaktif as $s)
                         <tr>
                             <td>{{ $i++ }}</td>
-                            <td>{{ $s->namaDosen }}</td>
+                            <td width="24%">{{ $s->namaDosen }}</td>
                             <td>{{ $s->nidn }}</td>
-                            <td>{{ $s->prodi }}</td>
+                            <td width="10%">{{ $s->prodi }}</td>
                             <td>{{ $s->jabatanAkademik }}</td>
                             <td>{{ $s->golonganKepangkatan }}</td>
-                            <td>{{ $s->statusIkatan }}</td>
-                            <td width="22%">
+                            <td width="18%">{{ $s->statusIkatan }}</td>
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                        data-target="#myModal1{{ $s->nidn }}"><i class="fas fa-eye"></i>
-                                        Lihat</button>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/datadosenaktif/editdosenaktif/{{ $s->nidn }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->nidn }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datadosenaktif/editdosenaktif/{{ $s->nidn }}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
                                         data-target="#myModal{{ $s->nidn }}"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                    </button>
                                 </center>
                             </td>
                         </tr>

@@ -26,13 +26,13 @@
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
                         <option value="{{$editdosentugas->prodi}}">{{$editdosentugas->prodi}}</option>
-                        <option value="D-III Teknologi Komputer">D-III Teknologi Komputer</option>
-                        <option value="D-III Teknologi Informasi">D-III Teknologi Informasi</option>
-                        <option value="D-IV Teknologi Rekayasa Perangkat Lunak">D-IV Teknologi Rekayasa Perangkat Lunak</option>
-                        <option value="S-1 Sistem Informasi">S-1 Sistem Informasi</option>
-                        <option value="S-1 Informatika">S-1 Informatika</option>
-                        <option value="S-1 Manajemen Rekayasa">S-1 Manajemen Rekayasa</option>
-                        <option value="S-1 Bioteknologi">S-1 Bioteknologi</option>
+                        <option value="D3 TK">D3 TK</option>
+                        <option value="D3 TI">D3 TI</option>
+                        <option value="D4 TRPL">D4 TRPL</option>
+                        <option value="S1 SI">S1 SI</option>
+                        <option value="S1 IF">S1 IF</option>
+                        <option value="S1 MR">S1 MR</option>
+                        <option value="S1 TB">S1 TB</option>
                     </select>
                 </div>
             </div>

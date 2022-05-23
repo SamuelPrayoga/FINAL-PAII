@@ -170,40 +170,44 @@ class admincontroller extends Controller
     public function tambahstafs(Request $request)
     {
         $tambahstafs = new staf();
-        $tambahstafs->namastaf = $request->namastaf;
         $tambahstafs->stafID = $request->stafID;
+        $tambahstafs->namastaf = $request->namastaf;
         $tambahstafs->bagian = $request->bagian;
+        $tambahstafs->jabatan = $request->jabatan;
         $tambahstafs->jabatan = $request->jabatan;
         $tambahstafs->pendidikan = $request->pendidikan;
         $tambahstafs->aktifstart = $request->aktifstart;
         $tambahstafs->aktifend = $request->aktifend;
+
         $tambahstafs->save();
         return redirect('datastaf');
     }
-    public function editstaf($stafID)
+    public function editstaf($id)
     {
-        $editstaf = staf::find($stafID);
+        $editstaf = staf::find($id);
 
         return view('Admin.editstaf', compact('editstaf'));
     }
-    public function updatestaf(Request $request, $stafID)
+    public function updatestaf(Request $request, $id)
     {
-        $update = staf::find($stafID);
+        $update = staf::find($id);
 
-        $update->namastaf = $request->namastaf;
         $update->stafID = $request->stafID;
+        $update->namastaf = $request->namastaf;
         $update->bagian = $request->bagian;
+        $update->jabatan = $request->jabatan;
         $update->jabatan = $request->jabatan;
         $update->pendidikan = $request->pendidikan;
         $update->aktifstart = $request->aktifstart;
         $update->aktifend = $request->aktifend;
+
         $update->save();
 
         return redirect('datastaf');
     }
-    public function deletestaf($stafID)
+    public function deletestaf($id)
     {
-        $deletestaf = staf::find($stafID);
+        $deletestaf = staf::find($id);
         if ($deletestaf->delete()) {
             return redirect()->back();
         }

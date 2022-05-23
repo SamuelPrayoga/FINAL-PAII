@@ -26,14 +26,18 @@
                             <td align="center">{{ $pen->tahun }}</td>
                             <td align="center">{{ $pen->program_studi }}</td>
                             <td align="center">{{ $pen->jumlah_pendaftar }}</td>
-                            <td width="17%"><center>
-                                <button type="button" class="btn btn-warning btn-sm"
-                                    onclick="window.location.href='/datapendaftar/editpendaftar/{{$pen->pendaftar_id}}'"><i
-                                        class="fas fa-edit"></i>
-                                    Edit</button>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                    data-target="#myModal{{$pen->pendaftar_id}}"><i class="fas fa-trash-alt"></i>
-                                    Hapus</button></center>
+                            <td width="9%">
+                                <center>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" onclick="window.location.href='/datapendaftar/editpendaftar/{{$pen->pendaftar_id}}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
+                                        data-target="#myModal{{$pen->pendaftar_id}}"><i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </center>
                             </td>
                         </tr>
                         @endforeach

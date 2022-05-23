@@ -32,18 +32,18 @@
                             <td>{{ $ke->pendidikan }}</td>
                             <td>{{ $ke->jabatan }}</td>
                             <td>{{ $ke->asrama }}</td>
-                            <td width="22%">
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                        data-target="#myModal1{{ $ke->keasramaanID }}"><i class="fas fa-eye"></i>
-                                        Lihat</button>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/datakeasramaan/editkeasramaan/{{ $ke->keasramaanID }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $ke->keasramaanID }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datakeasramaan/editkeasramaan/{{ $ke->keasramaanID }}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
                                         data-target="#myModal{{ $ke->keasramaanID }}"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                    </button>
                                 </center>
                             </td>
                         </tr>
@@ -60,7 +60,7 @@
 
 <!-- Modal -->
 @foreach ($keasramaan as $ke)
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="myModal{{ $ke->keasramaanID }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->

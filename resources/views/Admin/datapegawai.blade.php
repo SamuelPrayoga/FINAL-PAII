@@ -38,15 +38,17 @@
                             <td>{{ $pe->alamat }}</td>
                             <td>{{ $pe->notelp }}</td>
                             <td>{{ date('d M Y', strtotime($pe->aktifstart)) }}</td>
-                            <td width="16%">
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/datapegawai/editpegawai/{{ $pe->pegawaiID }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                        data-target="#myModal"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" onclick="window.location.href='/datapegawai/editpegawai/{{ $pe->pegawaiID }}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
+                                        data-target="#myModal{{ $pe->pegawaiID }}"><i class="fas fa-trash-alt"></i>
+                                    </button>
                                 </center>
                             </td>
                         </tr>
@@ -63,7 +65,7 @@
 
 <!-- Modal -->
 @foreach ($pegawai as $pe)
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="myModal{{ $pe->pegawaiID }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->

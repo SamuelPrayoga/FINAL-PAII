@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table " id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -34,15 +34,17 @@
                             <td>{{ $agenda->waktu }} WIB</td>
                             <td>{{ $agenda->status }}</td>
                             <td>{{ $agenda->keterangan }}</td>
-                            <td width="16%">
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/dataagendarektor/editagendarektor/{{ $agenda->id }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                            class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <button class="dropdown-item" onclick="window.location.href='/dataagendarektor/editagendarektor/{{ $agenda->id }}'">Edit</button>
+                                          </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
                                         data-target="#myModal{{ $agenda->id }}"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                        </button>
                                 </center>
                             </td>
                         </tr>

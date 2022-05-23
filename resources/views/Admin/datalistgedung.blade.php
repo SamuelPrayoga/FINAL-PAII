@@ -16,6 +16,7 @@
                         <th>Nama Gedung</th>
                         <th>Nama Ruangan</th>
                         <th>Kapasitas Ruangan</th>
+                        <th>Keterangan</th>
                         <th>
                             <center>Action</center>
                         </th>
@@ -30,18 +31,19 @@
                             <td>{{ $lg->namagedung }}</td>
                             <td>{{ $lg->namaruangan }}</td>
                             <td>{{ $lg->kapasitasruangan }}</td>
-                            <td width="22%">
+                            <td>{{ $lg->keterangan }}</td>
+                            <td width="9%">
                                 <center>
-                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                                        data-target="#myModal1{{ $lg->gedungid }}"><i class="fas fa-eye"></i>
-                                        Lihat</button>
-                                    <button type="button" class="btn btn-warning btn-sm"
-                                        onclick="window.location.href='/datalistgedung/editlistgedung/{{ $lg->gedungid }}'"><i
-                                            class="fas fa-edit"></i>
-                                        Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                    <button type="button" class="btn btn-transparent-dark btn-sm"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $lg->gedungid }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datalistgedung/editlistgedung/{{ $lg->gedungid }}'"><i class="fas fa-edit"></i> Edit</button>
+                                    </div>
+                                    <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
                                         data-target="#myModal{{ $lg->gedungid }}"><i class="fas fa-trash-alt"></i>
-                                        Hapus</button>
+                                    </button>
                                 </center>
                             </td>
                         </tr>

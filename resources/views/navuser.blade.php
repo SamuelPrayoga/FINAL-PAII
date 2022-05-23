@@ -282,10 +282,6 @@
 
                     <!-- Topbar Search -->
 
-                    <form
-                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-
-                </form>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -297,7 +293,7 @@
 
                                 @auth
                                     <span
-                                        class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+                                        class="mr-2 d-none d-sm-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 @endauth
 
                                 <img class="img-profile rounded-circle" src=" {{ asset(Auth::user()->avatar)}}">

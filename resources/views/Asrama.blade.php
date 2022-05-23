@@ -35,7 +35,14 @@
                         <tr>
                             <td width="5%">{{ $i++ }}</td>
                             <td>{{ $as->namagedung }}</td>
-                            <td width="10%">{{ $as->kategori }}</td>
+                            <td width="10%">
+                                @if($as->kategori == 'ASRAMA')
+                                <button class="btn btn-success btn-sm" disabled>{{ $as->kategori }}</button>
+                                @endif
+                            @if ($as->kategori == 'RUSUNAWA')
+                                <button class="btn btn-warning btn-sm" disabled>{{ $as->kategori }}</button>
+                                @endif
+                            </td>
                             <td width="5%">
                                 <center>{{ $as->jumlahkamar }}</center>
                             </td>

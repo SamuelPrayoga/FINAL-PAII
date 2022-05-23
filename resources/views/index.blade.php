@@ -232,18 +232,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
+
 <script>
     <?php
     $tahun = DB::table('tbl_pendaftar')->distinct()->get();
+    $tahunKategori = DB::table('tbl_pendaftar')->get();
 
     $prodi = DB::table('tbl_pendaftar')->distinct()->get();
 
-    foreach($prodi as $pro) {
+    foreach($tahun as $th) {
 
-        foreach($tahun as $th) {
-
-       ${"pendaftar".$th->tahun.$pro->program_studi}= DB::table('tbl_pendaftar')->where('tahun', $th->tahun)->where('program_studi', $pro->program_studi)->sum('jumlah_pendaftar');
-
+        foreach($prodi as $pro) {
+            ${"pendaftar".$th->tahun.$pro->program_studi}= DB::table('tbl_pendaftar')->where('tahun', $th->tahun)->where('program_studi', $pro->program_studi)->sum('jumlah_pendaftar');
         }
 
     }
@@ -262,8 +262,8 @@
         },
         xAxis: {
             categories: [
-                @foreach ($tahun as $th )
-                '{{ $th->tahun }}',
+                @foreach ($tahunKategori as $thk )
+                {{ $thk->tahun }},
                 @endforeach
             ],
             crosshair: true
@@ -325,9 +325,7 @@
 
         }, {
             name: 'S1 SI',
-            data: [
-
-            ]
+            data: []
 
         }, {
             name: 'S1 IF',

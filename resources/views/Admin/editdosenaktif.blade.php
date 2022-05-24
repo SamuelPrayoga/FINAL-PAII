@@ -18,7 +18,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">NIDN</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="nidn" name="nidn" class="form-control" value="{{$editdosenaktif->nidn}}">
+                    <input type="text" id="nidn" name="nidn" class="form-control" value="{{$editdosenaktif->nidn}}">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -39,13 +39,13 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Jabatan Akademik</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="jabatanAkademik" name="jabatanAkademik" class="form-control" value="{{$editdosenaktif->jabatanAkademik}}">
+                    <input type="text" id="jabatanAkademik" name="jabatanAkademik" class="form-control" value="{{$editdosenaktif->jabatanAkademik}}">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Golongan Kepangkatan</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="golonganKepangkatan" name="golonganKepangkatan" class="form-control" value="{{$editdosenaktif->golonganKepangkatan}}">
+                    <input type="text" id="golonganKepangkatan" name="golonganKepangkatan" class="form-control" value="{{$editdosenaktif->golonganKepangkatan}}">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -54,7 +54,7 @@
                     <select class="form-control"  required="required" name="statusIkatan" aria-label="Default select example" >
                         <option value="{{$editdosenaktif->statusIkatan}}">{{$editdosenaktif->statusIkatan}}</option>
                         <option value="Dosen PNS">Dosen PNS</option>
-                        <option value="Dosen NON-PNS">Dosen NON-PNS</option>
+                        <option value="Dosen Non-PNS">Dosen Non-PNS</option>
                     </select>
                 </div>
             </div>

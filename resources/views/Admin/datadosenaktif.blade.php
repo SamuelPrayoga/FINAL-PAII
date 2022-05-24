@@ -8,7 +8,7 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -30,10 +30,10 @@
                             <td>{{ $i++ }}</td>
                             <td width="24%">{{ $s->namaDosen }}</td>
                             <td>{{ $s->nidn }}</td>
-                            <td width="10%">{{ $s->prodi }}</td>
+                            <td width="8%">{{ $s->prodi }}</td>
                             <td>{{ $s->jabatanAkademik }}</td>
-                            <td>{{ $s->golonganKepangkatan }}</td>
-                            <td width="18%">{{ $s->statusIkatan }}</td>
+                            <td width="8%"><center>{{ $s->golonganKepangkatan }}</center></td>
+                            <td width="14%">{{ $s->statusIkatan }}</td>
                             <td width="9%">
                                 <center>
                                     <button type="button" class="btn btn-transparent-dark btn-sm"
@@ -135,7 +135,7 @@
                     <div class="row">
                         <div class="col-sm-4"><strong>Aktif End</strong></div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($s->aktifEnd)) }}</div>
+                        <div class="col-md-6">{{ $s->aktifEnd }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">

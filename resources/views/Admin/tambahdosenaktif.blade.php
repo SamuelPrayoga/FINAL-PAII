@@ -18,33 +18,33 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">NIDN</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="nidn" name="nidn" class="form-control">
+                    <input type="text" id="nidn" name="nidn" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Program Studi</label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
-                        <option value="D-III Teknologi Komputer">D-III Teknologi Komputer</option>
-                        <option value="D-III Teknologi Informasi">D-III Teknologi Informasi</option>
-                        <option value="D-IV Teknologi Rekayasa Perangkat Lunak">D-IV Teknologi Rekayasa Perangkat Lunak</option>
-                        <option value="S-1 Sistem Informasi">S-1 Sistem Informasi</option>
-                        <option value="S-1 Informatika">S-1 Informatika</option>
-                        <option value="S-1 Manajemen Rekayasa">S-1 Manajemen Rekayasa</option>
-                        <option value="S-1 Bioteknologi">S-1 Bioteknologi</option>
+                        <option value="D3 TK">D3 TK</option>
+                        <option value="D3 TI">D3 TI</option>
+                        <option value="D4 TRPL">D4 TRPL</option>
+                        <option value="S1 SI">S1 SI</option>
+                        <option value="S1 IF">S1 IF</option>
+                        <option value="S1 MR">S1 MR</option>
+                        <option value="S1 TB">S1 TB</option>
                     </select>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Jabatan Akademik</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="jabatanAkademik" name="jabatanAkademik" class="form-control">
+                    <input type="text" id="jabatanAkademik" name="jabatanAkademik" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Golongan Kepangkatan</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="golonganKepangkatan" name="golonganKepangkatan" class="form-control">
+                    <input type="text" id="golonganKepangkatan" name="golonganKepangkatan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -52,7 +52,7 @@
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="statusIkatan" aria-label="Default select example" >
                         <option value="Dosen PNS">Dosen PNS</option>
-                        <option value="Dosen NON-PNS">Dosen NON-PNS</option>
+                        <option value="Dosen Non-PNS">Dosen Non-PNS</option>
                     </select>
                 </div>
             </div>

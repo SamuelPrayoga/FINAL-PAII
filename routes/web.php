@@ -74,9 +74,9 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/datapegawai', [admincontroller::class, 'showpegawai']);
     Route::get('/tambahpegawai', [admincontroller::class, 'tambahpegawai']);
     Route::post('/tambahpegawaitambah', [admincontroller::class, 'tambahpegawais'])->name('pegawai.tambah');
-    Route::get('/datapegawai/editpegawai/{pegawaiID}', [admincontroller::class, 'editpegawai']);
-    Route::post('/updatepegawai/{pegawaiID}', [admincontroller::class, 'updatepegawai'])->name('datapegawai.updatepegawai');
-    Route::get('datapegawai/deletepegawai/{pegawaiID}', [admincontroller::class, 'deletepegawai'])->name('datapegawai.deletepegawai');
+    Route::get('/datapegawai/editpegawai/{id}', [admincontroller::class, 'editpegawai']);
+    Route::post('/updatepegawai/{id}', [admincontroller::class, 'updatepegawai'])->name('datapegawai.updatepegawai');
+    Route::get('datapegawai/deletepegawai/{id}', [admincontroller::class, 'deletepegawai'])->name('datapegawai.deletepegawai');
 
     Route::get('/datamahasiswaaktif', [admincontroller::class, 'showmahasiswaaktif']);
     Route::get('/tambahmahasiswaaktif', [admincontroller::class, 'tambahmahasiswaaktif']);

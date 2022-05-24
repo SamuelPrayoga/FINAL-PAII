@@ -10,55 +10,55 @@
         <form action="{{Route('perumahandalam.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Perumahan</label>
+                <label class="col-sm-3 col-form-label">Nama Perumahan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text"  required="required" id="namaperumahan" name="namaperumahan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Penghuni</label>
+                <label class="col-sm-3 col-form-label">Nama Penghuni <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="namapenghuni" name="namapenghuni" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="jabatan" name="jabatan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah Kamar</label>
+                <label class="col-sm-3 col-form-label">Jumlah Kamar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlahkamar" name="jumlahkamar" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Kapasitas Kamar</label>
+                <label class="col-sm-3 col-form-label">Kapasitas Kamar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" id="kapasitaskamar" name="kapasitaskamar" class="form-control" required="required">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">I/S</label>
+                <label class="col-sm-3 col-form-label">I/S <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" id="istri" name="istri" class="form-control" required="required">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">ANAK</label>
+                <label class="col-sm-3 col-form-label">ANAK <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" id="anak" name="anak" class="form-control" required="required">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">DLL</label>
+                <label class="col-sm-3 col-form-label">DLL <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" id="dll" name="dll" class="form-control" required="required">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Total</label>
+                <label class="col-sm-3 col-form-label">Total <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" id="total" name="total" class="form-control" required="required">
                 </div>

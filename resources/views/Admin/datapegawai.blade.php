@@ -44,10 +44,10 @@
                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <button class="dropdown-item" onclick="window.location.href='/datapegawai/editpegawai/{{ $pe->pegawaiID }}'"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datapegawai/editpegawai/{{ $pe->id }}'"><i class="fas fa-edit"></i> Edit</button>
                                     </div>
                                     <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
-                                        data-target="#myModal{{ $pe->pegawaiID }}"><i class="fas fa-trash-alt"></i>
+                                        data-target="#myModal{{ $pe->id }}"><i class="fas fa-trash-alt"></i>
                                     </button>
                                 </center>
                             </td>
@@ -65,7 +65,7 @@
 
 <!-- Modal -->
 @foreach ($pegawai as $pe)
-    <div class="modal fade" id="myModal{{ $pe->pegawaiID }}" role="dialog">
+    <div class="modal fade" id="myModal{{ $pe->id }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -81,7 +81,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                     <button type="button" class="btn btn-danger btn-sm"
-                        onclick="window.location.href='/datapegawai/deletepegawai/{{ $pe->pegawaiID }}'">Hapus</button>
+                        onclick="window.location.href='/datapegawai/deletepegawai/{{ $pe->id }}'">Hapus</button>
                 </div>
             </div>
         </div>

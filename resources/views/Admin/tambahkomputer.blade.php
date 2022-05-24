@@ -10,43 +10,40 @@
         <form action="{{Route('komputer.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Ruangan/Gedung</label>
+                <label class="col-sm-3 col-form-label">Ruangan/Gedung <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="gedung" name="gedung" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Kategori</label>
+                <label class="col-sm-3 col-form-label">Kategori <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="kategori" aria-label="Default select example" >
                         <option value="Komputer">Komputer</option>
-                        <option value="Proyektor">Proyektor</option>
-                        <option value="Layar Proyektor">Layar Proyektor</option>
-                        <option value="Alat Musik">Alat Musik</option>
-                        <option value="Lainnya">Lainnya</option>
+                        <option value="Proyektor">Laptop</option>
                     </select>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah</label>
+                <label class="col-sm-3 col-form-label">Jumlah <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlah" name="jumlah" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Penanggungjawab</label>
+                <label class="col-sm-3 col-form-label">Penanggungjawab <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="penanggungjawab" name="penanggungjawab" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="jabatan" name="jabatan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Keterangan</label>
+                <label class="col-sm-3 col-form-label">Keterangan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="keterangan" name="keterangan" class="form-control">
                 </div>

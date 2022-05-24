@@ -10,7 +10,7 @@
         <form action="{{route('datadosentugas.updatedosentugas',$editdosentugas->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Dosen</label>
+                <label class="col-sm-3 col-form-label">Nama Dosen <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="namaDosen" name="namaDosen" class="form-control" value="{{$editdosentugas->namaDosen}}">
                 </div>
@@ -18,11 +18,11 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">NIDN</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="nidn" name="nidn" class="form-control" value="{{$editdosentugas->nidn}}">
+                    <input type="text" id="nidn" name="nidn" class="form-control" value="{{$editdosentugas->nidn}}">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
+                <label class="col-sm-3 col-form-label">Program Studi <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
                         <option value="{{$editdosentugas->prodi}}">{{$editdosentugas->prodi}}</option>
@@ -39,11 +39,11 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Lokasi</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="lokasi" name="lokasi" class="form-control" value="{{$editdosentugas->lokasi}}">
+                    <input type="text" id="lokasi" name="lokasi" class="form-control" value="{{$editdosentugas->lokasi}}">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program</label>
+                <label class="col-sm-3 col-form-label">Program <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="program" aria-label="Default select example" >
                         <option value="{{$editdosentugas->program}}">{{$editdosentugas->program}}</option>
@@ -56,19 +56,19 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
+                <label class="col-sm-3 col-form-label">Program Studi <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="programStudi" name="programStudi" class="form-control" value="{{$editdosentugas->programStudi}}">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Mulai Belajar</label>
+                <label class="col-sm-3 col-form-label">Mulai Belajar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="mulaiTugas" name="mulaiTugas" class="form-control" value="{{$editdosentugas->mulaiTugas}}">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Tahun</label>
+                <label class="col-sm-3 col-form-label">Tahun <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="tahun" name="tahun" class="form-control" value="{{$editdosentugas->tahun}}">
                 </div>

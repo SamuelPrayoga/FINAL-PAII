@@ -10,19 +10,19 @@
         <form action="{{Route('staf.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Staff</label>
+                <label class="col-sm-3 col-form-label">Nama Staff <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="namastaf" name="namastaf" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Staff ID</label>
+                <label class="col-sm-3 col-form-label">Staff ID <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="stafID" name="stafID" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Unit Kerja</label>
+                <label class="col-sm-3 col-form-label">Unit Kerja <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="bagian" aria-label="Default select example" >
                         <option value="BAAK">BAAK</option>
@@ -35,19 +35,19 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="jabatan" name="jabatan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Pendidikan Terakhir</label>
+                <label class="col-sm-3 col-form-label">Pendidikan Terakhir <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="pendidikan" name="pendidikan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Aktif Start</label>
+                <label class="col-sm-3 col-form-label">Aktif Start <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="aktifstart" name="aktifstart" class="form-control">
                 </div>

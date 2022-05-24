@@ -10,19 +10,19 @@
         <form action="{{Route('lmebeler.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Item Barang</label>
+                <label class="col-sm-3 col-form-label">Item Barang <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="itembarang" name="itembarang" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Tipe Barang</label>
+                <label class="col-sm-3 col-form-label">Tipe Barang <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="tipebarang" name="tipebarang" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Kode Aset</label>
+                <label class="col-sm-3 col-form-label">Kode Aset <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="kodeaset" name="kodeaset" class="form-control">
                 </div>

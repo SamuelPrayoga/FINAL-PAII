@@ -10,19 +10,19 @@
         <form action="{{Route('rusun3.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nomor Kamar</label>
+                <label class="col-sm-3 col-form-label">Nomor Kamar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="nomorkamar" name="nomorkamar" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Penghuni</label>
+                <label class="col-sm-3 col-form-label">Nama Penghuni <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" id="namapenghuni" name="namapenghuni" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control" name="jabatan" aria-label="Default select example" >
                         <option value=""></option>
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah Kamar</label>
+                <label class="col-sm-3 col-form-label">Jumlah/Kamar</label>
                 <div class="col-sm-9">
                     <input type="number" id="jumlahkamar" name="jumlahkamar" class="form-control">
                 </div>

@@ -10,7 +10,7 @@
         <form action="{{Route('kendaraan.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">No.Plat Kendaraan</label>
+                <label class="col-sm-3 col-form-label">No.Plat Kendaraan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="noplat" name="noplat" class="form-control">
                 </div>
@@ -18,17 +18,17 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Driver</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="driver" name="driver" class="form-control">
+                    <input type="text" id="driver" name="driver" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Penanggung Jawab</label>
+                <label class="col-sm-3 col-form-label">Penanggung Jawab <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="penanggungjawab" name="penanggungjawab" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jenis Kendaraan</label>
+                <label class="col-sm-3 col-form-label">Jenis Kendaraan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="jeniskendaraan" aria-label="Default select example" >
                         <option value="Sepeda Motor">Sepeda Motor</option>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Operasional</label>
+                <label class="col-sm-3 col-form-label">Operasional <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="operasional" aria-label="Default select example" >
                         <option value="Mahasiswa">Mahasiswa</option>
@@ -59,7 +59,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Keterangan</label>
                 <div class="col-sm-9">
-                    <input type="text"  id="keterangan" name="keterangan" class="form-control">
+                    <input type="text" id="keterangan" name="keterangan" class="form-control">
                 </div>
             </div>
     </div>

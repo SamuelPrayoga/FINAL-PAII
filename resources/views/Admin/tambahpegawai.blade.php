@@ -10,19 +10,19 @@
         <form action="{{Route('pegawai.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Pegawai</label>
+                <label class="col-sm-3 col-form-label">Nama Pegawai <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="nama" name="nama" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">ID Pegawai</label>
+                <label class="col-sm-3 col-form-label">ID Pegawai <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="pegawaiID" name="pegawaiID" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Unit Kerja</label>
+                <label class="col-sm-3 col-form-label">Unit Kerja <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="bagian" aria-label="Default select example" >
                         <option value="Security">Security</option>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="jabatan" aria-label="Default select example" >
                         <option value="Koordianator">Koordianator</option>
@@ -42,25 +42,25 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Pendidikan</label>
+                <label class="col-sm-3 col-form-label">Pendidikan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="pendidikan" name="pendidikan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Alamat</label>
+                <label class="col-sm-3 col-form-label">Alamat <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <textarea name="alamat" class="form-control" id="alamat" cols="20" rows="4" style="width: 100%;" required="required"></textarea>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">No.Telepon</label>
+                <label class="col-sm-3 col-form-label">No.Telepon <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="notelp" name="notelp" class="form-control" placeholder="(+62)">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Aktif Start</label>
+                <label class="col-sm-3 col-form-label">Aktif Start <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="aktifstart" name="aktifstart" class="form-control">
                 </div>

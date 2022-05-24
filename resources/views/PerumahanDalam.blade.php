@@ -1,58 +1,60 @@
 @include('navuser')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">DASHBOARD REKTOR IT DEL</h1>
-    <a href="/PerumahanDalam/export_excel" data-target="#dataTable" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+    <a href="/PerumahanLuar/export_excel" data-target="#dataTable"
+        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
         <i class="fas fa-download fa-sm text-white-50"></i> Download Excel</a>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Perumahan Dalam Institut Teknologi Del</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th rowspan="2">
-                                <center>No</center>
-                            </th>
-                            <th rowspan="2">Nama Perumahan</th>
-                            <th rowspan="2">Nama Penghuni</th>
-                            <th rowspan="2"><center>Jabatan</center></th>
-                            <th rowspan="2"><center>Jumlah Kamar</center></th>
-                            <th rowspan="2"><center>Kapasitas / Kamar</center></th>
-                            <th colspan="4"><center>Jumlah</center></th>
-                            <th rowspan="2">Keterangan</th>
-                        </tr>
-                        <tr>
-                            <td>I/S</td>
-                            <td>ANAK</td>
-                            <td>DLL</td>
-                            <td>Total</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $i=1 @endphp
-                        @foreach ($perumahandalam as $dalam)
-                        <tr>
-                            <td>{{ $i++ }}</td>
-                            <td>{{ $dalam->namaperumahan}}</td>
-                            <td>{{ $dalam->namapenghuni}}</td>
-                            <td>{{ $dalam->jabatan}}</td>
-                            <td width="5%"><center>{{ $dalam->jumlahkamar}}</center></td>
-                            <td width="5%"><center>{{ $dalam->kapasitaskamar}}</center></td>
-                            <td><center>{{ $dalam->istri}}</center></td>
-                            <td><center>{{ $dalam->anak}}</center></td>
-                            <td><center>{{ $dalam->dll}}</center></td>
-                            <td><center>{{ $dalam->total}}</center></td>
-                            <td>{{ $dalam->keterangan}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+</div>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Data Perumahan Dalam Institut Teknologi Del</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead class="table-dark">
+                    <tr>
+                        <th rowspan="2">
+                            <center>No</center>
+                        </th>
+                        <th rowspan="2">Nama Perumahan</th>
+                        <th rowspan="2">Nama Penghuni</th>
+                        <th rowspan="2"><center>Jabatan</center></th>
+                        <th rowspan="2"><center>Jumlah Kamar</center></th>
+                        <th rowspan="2"><center>Kapasitas / Kamar</center></th>
+                        <th colspan="4"><center>Jumlah</center></th>
+                        <th rowspan="2">Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>I/S</td>
+                        <td>ANAK</td>
+                        <td>DLL</td>
+                        <td>Total</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php $i=1 @endphp
+                    @foreach ($perumahandalam as $dalam)
+                    <tr>
+                        <td>{{ $i++ }}</td>
+                        <td>{{ $dalam->namaperumahan}}</td>
+                        <td>{{ $dalam->namapenghuni}}</td>
+                        <td>{{ $dalam->jabatan}}</td>
+                        <td width="5%"><center>{{ $dalam->jumlahkamar}}</center></td>
+                        <td width="5%"><center>{{ $dalam->kapasitaskamar}}</center></td>
+                        <td><center>{{ $dalam->istri}}</center></td>
+                        <td><center>{{ $dalam->anak}}</center></td>
+                        <td><center>{{ $dalam->dll}}</center></td>
+                        <td><center>{{ $dalam->total}}</center></td>
+                        <td>{{ $dalam->keterangan}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
+</div>
 </div>
 
 <!--footer-->
@@ -77,39 +79,19 @@
 
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
-<i class="fas fa-angle-up"></i>
+    <i class="fas fa-angle-up"></i>
 </a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-    <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
-    </div>
-</div>
-</div>
-</div>
 
 
 <!-- Bootstrap core JavaScript-->
-<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+<script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 
 
 <!-- Page level plugins -->
@@ -123,7 +105,7 @@ aria-hidden="true">
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#dataTable').DataTable({
             dom: 'Bfrtip',
             buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
@@ -132,8 +114,10 @@ aria-hidden="true">
 </script>
 
 <!-- Page level custom scripts -->
-<script src="{{asset('js/demo/datatables-demo.js')}}"></script>
+<script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
 
 </body>
 
 </html>
+
+

@@ -10,25 +10,25 @@
         <form action="{{Route('keasramaan.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Pembina</label>
+                <label class="col-sm-3 col-form-label">Nama Pembina <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="nama" name="nama" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">ID Keasramaan</label>
+                <label class="col-sm-3 col-form-label">ID Keasramaan </label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="keasramaanID" name="keasramaanID" class="form-control">
+                    <input type="text" id="keasramaanID" name="keasramaanID" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Pendidikan</label>
+                <label class="col-sm-3 col-form-label">Pendidikan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="pendidikan" name="pendidikan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jabatan</label>
+                <label class="col-sm-3 col-form-label">Jabatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="jabatan" aria-label="Default select example" >
                         <option value="Koordinator Keasramaan">Koordinator Keasramaan</option>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Asrama</label>
+                <label class="col-sm-3 col-form-label">Asrama <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="asrama" aria-label="Default select example" >
                         <option value="Asrama Silo">Asrama Silo</option>
@@ -52,19 +52,19 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Asal</label>
+                <label class="col-sm-3 col-form-label">Asal <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="asal" name="asal" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">No.Telepon</label>
+                <label class="col-sm-3 col-form-label">No.Telepon <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="notelp" name="notelp" class="form-control" placeholder="(+62)">
+                    <input type="text" required="required" id="notelp" name="notelp" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Aktif Start</label>
+                <label class="col-sm-3 col-form-label">Aktif Start <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="aktifstart" name="aktifstart" class="form-control">
                 </div>

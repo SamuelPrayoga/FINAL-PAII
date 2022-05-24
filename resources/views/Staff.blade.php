@@ -10,8 +10,8 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="table-dark">
                         <tr>
                             <th>No</th>
                             <th>ID Staff</th>
@@ -33,8 +33,8 @@
                             <td>{{ $st->bagian}}</td>
                             <td>{{ $st->jabatan}}</td>
                             <td width="15%">{{ $st->pendidikan}}</td>
-                            <td>{{ date('d M Y', strtotime($st->aktifstart)) }} </td>
-                            <td>{{ date('d M Y', strtotime($st->aktifend)) }} </td>
+                            <td>{{ $st->aktifstart}} </td>
+                            <td>{{ $st->aktifend }} </td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -68,27 +68,6 @@
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>
 </a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-    <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
-    </div>
-</div>
-</div>
-</div>
-
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>

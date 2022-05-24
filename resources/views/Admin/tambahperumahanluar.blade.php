@@ -10,25 +10,25 @@
         <form action="{{Route('perumahanluar.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Perumahan</label>
+                <label class="col-sm-3 col-form-label">Nama Perumahan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text"  required="required" id="namaperumahan" name="namaperumahan" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah Kamar</label>
+                <label class="col-sm-3 col-form-label">Jumlah Kamar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlahkamar" name="jumlahkamar" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Kapasitas/Kamar</label>
+                <label class="col-sm-3 col-form-label">Kapasitas/Kamar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="kapasitaskamar" name="kapasitaskamar" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah</label>
+                <label class="col-sm-3 col-form-label">Jumlah <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlah" name="jumlah" class="form-control">
                 </div>

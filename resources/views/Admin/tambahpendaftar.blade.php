@@ -10,7 +10,7 @@
         <form action="{{Route('pendaftar.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Tahun</label>
+                <label class="col-sm-3 col-form-label">Tahun <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="tahun" aria-label="Default select example" >
                         <option value="2019">2019</option>
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah Pendaftar</label>
+                <label class="col-sm-3 col-form-label">Jumlah Pendaftar <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlah_pendaftar" name="jumlah_pendaftar" class="form-control">
                 </div>

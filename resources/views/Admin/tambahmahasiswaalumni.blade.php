@@ -10,19 +10,19 @@
         <form action="{{Route('mahasiswaalumni.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Alumni</label>
+                <label class="col-sm-3 col-form-label">Nama Alumni <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="nama" name="nama" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">NIM</label>
+                <label class="col-sm-3 col-form-label">NIM <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="nim" name="nim" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Fakultas</label>
+                <label class="col-sm-3 col-form-label">Fakultas <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="fakultas" aria-label="Default select example" >
                         <option value="Vokasi">Vokasi</option>
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
+                <label class="col-sm-3 col-form-label">Program Studi <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
                         <option value="D-III Teknologi Komputer">D-III Teknologi Komputer</option>
@@ -47,9 +47,9 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Angkatan</label>
+                <label class="col-sm-3 col-form-label">Angkatan <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
-                    <input type="year" id="angkatan" name="angkatan" class="form-control" placeholder="YYYY">
+                    <input type="number" id="angkatan" name="angkatan" class="form-control" placeholder="YYYY">
                 </div>
             </div>
             <div class="mb-3 row">

@@ -10,7 +10,7 @@
         <form action="{{Route('dosenaktif.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Dosen</label>
+                <label class="col-sm-3 col-form-label">Nama Dosen <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="namaDosen" name="namaDosen" class="form-control">
                 </div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
+                <label class="col-sm-3 col-form-label">Program Studi <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
                         <option value="D3 TK">D3 TK</option>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Status Ikatan Kerja</label>
+                <label class="col-sm-3 col-form-label">Status Ikatan Kerja <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="statusIkatan" aria-label="Default select example" >
                         <option value="Dosen PNS">Dosen PNS</option>
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Aktif Start</label>
+                <label class="col-sm-3 col-form-label">Aktif Start <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="aktifStart" name="aktifStart" class="form-control">
                 </div>

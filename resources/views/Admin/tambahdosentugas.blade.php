@@ -10,7 +10,7 @@
         <form action="{{Route('dosentugas.tambah')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Nama Dosen</label>
+                <label class="col-sm-3 col-form-label">Nama Dosen <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="namaDosen" name="namaDosen" class="form-control">
                 </div>
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi Basis</label>
+                <label class="col-sm-3 col-form-label">Program Studi Basis <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
                         <option value="D3 TK">D3 TK</option>
@@ -38,11 +38,11 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Lokasi Tugas Belajar</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="lokasi" name="lokasi" class="form-control">
+                    <input type="text" id="lokasi" name="lokasi" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program</label>
+                <label class="col-sm-3 col-form-label">Program <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="program" aria-label="Default select example" >
                         <option value="Sarjana">Sarjana</option>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
+                <label class="col-sm-3 col-form-label">Program Studi<span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="text" required="required" id="programStudi" name="programStudi" class="form-control">
                 </div>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Tahun Mulai</label>
+                <label class="col-sm-3 col-form-label">Tahun Mulai <span class="text-danger">*</span></label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="tahun" name="tahun" class="form-control">
                 </div>

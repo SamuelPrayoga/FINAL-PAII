@@ -353,15 +353,15 @@ class admincontroller extends Controller
         $tambahpegawais->save();
         return redirect('datapegawai');
     }
-    public function editpegawai($pegawaiID)
+    public function editpegawai($id)
     {
-        $editpegawai = pegawai::find($pegawaiID);
+        $editpegawai = pegawai::find($id);
 
         return view('Admin.editpegawai', compact('editpegawai'));
     }
-    public function updatepegawai(Request $request, $pegawaiID)
+    public function updatepegawai(Request $request, $id)
     {
-        $update = pegawai::find($pegawaiID);
+        $update = pegawai::find($id);
 
         $update->nama = $request->nama;
         $update->pegawaiID = $request->pegawaiID;
@@ -376,9 +376,9 @@ class admincontroller extends Controller
 
         return redirect('datapegawai');
     }
-    public function deletepegawai($pegawaiID)
+    public function deletepegawai($id)
     {
-        $deletepegawai = pegawai::find($pegawaiID);
+        $deletepegawai = pegawai::find($id);
         if ($deletepegawai->delete()) {
             return redirect()->back();
         }

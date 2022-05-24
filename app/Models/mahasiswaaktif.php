@@ -9,5 +9,5 @@ class mahasiswaaktif extends Model
 {
     use HasFactory;
     protected $table = 'mahasiswaaktif';
-    protected $primaryKey = 'nim';
+    protected $primaryKey = 'id';
 }

@@ -123,19 +123,20 @@ class admincontroller extends Controller
         $tambahdosentugass->program = $request->program;
         $tambahdosentugass->programStudi = $request->programStudi;
         $tambahdosentugass->mulaiTugas = $request->mulaiTugas;
+        $tambahdosentugass->tahun = $request->tahun;
         $tambahdosentugass->rencanaAktif = $request->rencanaAktif;
         $tambahdosentugass->save();
         return redirect('datadosentugas');
     }
-    public function editdosentugas($nidn)
+    public function editdosentugas($id)
     {
-        $editdosentugas = dosentugas::find($nidn);
+        $editdosentugas = dosentugas::find($id);
 
         return view('Admin.editdosentugas', compact('editdosentugas'));
     }
-    public function updatedosentugas(Request $request, $nidn)
+    public function updatedosentugas(Request $request, $id)
     {
-        $update = dosentugas::find($nidn);
+        $update = dosentugas::find($id);
 
         $update->namaDosen = $request->namaDosen;
         $update->nidn = $request->nidn;
@@ -144,14 +145,15 @@ class admincontroller extends Controller
         $update->program = $request->program;
         $update->programStudi = $request->programStudi;
         $update->mulaiTugas = $request->mulaiTugas;
+        $update->tahun = $request->tahun;
         $update->rencanaAktif = $request->rencanaAktif;
         $update->save();
 
         return redirect('datadosentugas');
     }
-    public function deletedosentugas($nidn)
+    public function deletedosentugas($id)
     {
-        $deletedosentugas = dosentugas::find($nidn);
+        $deletedosentugas = dosentugas::find($id);
         if ($deletedosentugas->delete()) {
             return redirect()->back();
         }
@@ -238,15 +240,15 @@ class admincontroller extends Controller
         $tambahasistendosens->save();
         return redirect('dataasistendosen');
     }
-    public function editasistendosen($asdosID)
+    public function editasistendosen($id)
     {
-        $editasistendosen = asistendosen::find($asdosID);
+        $editasistendosen = asistendosen::find($id);
 
         return view('Admin.editasistendosen', compact('editasistendosen'));
     }
-    public function updateasistendosen(Request $request, $asdosID)
+    public function updateasistendosen(Request $request, $id)
     {
-        $update = asistendosen::find($asdosID);
+        $update = asistendosen::find($id);
 
         $update->namaasdos = $request->namaasdos;
         $update->asdosID = $request->asdosID;
@@ -261,9 +263,9 @@ class admincontroller extends Controller
 
         return redirect('dataasistendosen');
     }
-    public function deleteasistendosen($asdosID)
+    public function deleteasistendosen($id)
     {
-        $deleteasistendosen = asistendosen::find($asdosID);
+        $deleteasistendosen = asistendosen::find($id);
         if ($deleteasistendosen->delete()) {
             return redirect()->back();
         }
@@ -294,15 +296,15 @@ class admincontroller extends Controller
         $tambahkeasramaans->save();
         return redirect('datakeasramaan');
     }
-    public function editkeasramaan($keasramaanID)
+    public function editkeasramaan($id)
     {
-        $editkeasramaan = keasramaan::find($keasramaanID);
+        $editkeasramaan = keasramaan::find($id);
 
         return view('Admin.editkeasramaan', compact('editkeasramaan'));
     }
-    public function updatekeasramaan(Request $request, $keasramaanID)
+    public function updatekeasramaan(Request $request, $id)
     {
-        $update = keasramaan::find($keasramaanID);
+        $update = keasramaan::find($id);
 
         $update->nama = $request->nama;
         $update->keasramaanID = $request->keasramaanID;
@@ -317,9 +319,9 @@ class admincontroller extends Controller
 
         return redirect('datakeasramaan');
     }
-    public function deletekeasramaan($keasramaanID)
+    public function deletekeasramaan($id)
     {
-        $deletekeasramaan = keasramaan::find($keasramaanID);
+        $deletekeasramaan = keasramaan::find($id);
         if ($deletekeasramaan->delete()) {
             return redirect()->back();
         }
@@ -408,15 +410,15 @@ class admincontroller extends Controller
         $tambahmahasiswaaktifs->save();
         return redirect('datamahasiswaaktif');
     }
-    public function editmahasiswaaktif($nim)
+    public function editmahasiswaaktif($id)
     {
-        $editmahasiswaaktif = mahasiswaaktif::find($nim);
+        $editmahasiswaaktif = mahasiswaaktif::find($id);
 
         return view('Admin.editmahasiswaaktif', compact('editmahasiswaaktif'));
     }
-    public function updatemahasiswaaktif(Request $request, $nim)
+    public function updatemahasiswaaktif(Request $request, $id)
     {
-        $update = mahasiswaaktif::find($nim);
+        $update = mahasiswaaktif::find($id);
 
         $update->nama = $request->nama;
         $update->nim = $request->nim;
@@ -431,9 +433,9 @@ class admincontroller extends Controller
 
         return redirect('datamahasiswaaktif');
     }
-    public function deletemahasiswaaktif($nim)
+    public function deletemahasiswaaktif($id)
     {
-        $deletemahasiswaaktif = mahasiswaaktif::find($nim);
+        $deletemahasiswaaktif = mahasiswaaktif::find($id);
         if ($deletemahasiswaaktif->delete()) {
             return redirect()->back();
         }

@@ -13,7 +13,6 @@
                     <tr>
                         <th><center>No</center></th>
                         <th><center>Tahun</center></th>
-                        <th><center>Program Studi</center></th>
                         <th><center>Jumlah Pendaftar</center></th>
                         <th><center>Action</center></th>
                     </tr>
@@ -24,7 +23,6 @@
                         <tr>
                             <td width="2%">{{ $i++ }}</td>
                             <td align="center">{{ $pen->tahun }}</td>
-                            <td align="center">{{ $pen->program_studi }}</td>
                             <td align="center">{{ $pen->jumlah_pendaftar }}</td>
                             <td width="9%">
                                 <center>

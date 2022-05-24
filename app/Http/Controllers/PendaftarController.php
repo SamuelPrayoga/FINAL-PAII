@@ -26,7 +26,6 @@ class PendaftarController extends Controller
     {
         $tambahpendaftars = new pendaftar();
         $tambahpendaftars->tahun = $request->tahun;
-        $tambahpendaftars->program_studi = $request->program_studi;
         $tambahpendaftars->jumlah_pendaftar = $request->jumlah_pendaftar;
         $tambahpendaftars->save();
         return redirect('datapendaftar');
@@ -42,7 +41,6 @@ class PendaftarController extends Controller
         $update = pendaftar::find($pendaftar_id);
 
         $update->tahun = $request->tahun;
-        $update->program_studi = $request->program_studi;
         $update->jumlah_pendaftar = $request->jumlah_pendaftar;
         $update->save();
 

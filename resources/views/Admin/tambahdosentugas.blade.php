@@ -18,20 +18,20 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">NIDN</label>
                 <div class="col-sm-9">
-                    <input type="text" required="required" id="nidn" name="nidn" class="form-control">
+                    <input type="text" id="nidn" name="nidn" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Program Studi Basis</label>
                 <div class="col-sm-9">
                     <select class="form-control"  required="required" name="prodi" aria-label="Default select example" >
-                        <option value="D-III Teknologi Komputer">D-III Teknologi Komputer</option>
-                        <option value="D-III Teknologi Informasi">D-III Teknologi Informasi</option>
-                        <option value="D-IV Teknologi Rekayasa Perangkat Lunak">D-IV Teknologi Rekayasa Perangkat Lunak</option>
-                        <option value="S-1 Sistem Informasi">S-1 Sistem Informasi</option>
-                        <option value="S-1 Informatika">S-1 Informatika</option>
-                        <option value="S-1 Manajemen Rekayasa">S-1 Manajemen Rekayasa</option>
-                        <option value="S-1 Bioteknologi">S-1 Bioteknologi</option>
+                        <option value="D3 TK">D3 TK</option>
+                        <option value="D3 TI">D3 TI</option>
+                        <option value="D4 TRPL">D4 TRPL</option>
+                        <option value="S1 SI">S1 SI</option>
+                        <option value="S1 IF">S1 IF</option>
+                        <option value="S1 MR">S1 MR</option>
+                        <option value="S1 TB">S1 TB</option>
                     </select>
                 </div>
             </div>
@@ -63,6 +63,12 @@
                 <label class="col-sm-3 col-form-label">Mulai Tugas Belajar</label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="mulaiTugas" name="mulaiTugas" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Tahun Mulai</label>
+                <div class="col-sm-9">
+                    <input type="number" required="required" id="tahun" name="tahun" class="form-control">
                 </div>
             </div>
             <div class="mb-3 row">

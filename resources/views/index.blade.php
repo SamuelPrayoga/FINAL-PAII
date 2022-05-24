@@ -180,7 +180,7 @@
             <div class="card shadow mb-4">
                 <!-- Card Body -->
                 <div class="card-body">
-                    <div id="chartDosenTugas"></div>
+                    <div id="chartMebeler"></div>
                 </div>
             </div>
         </div>
@@ -234,53 +234,27 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 
 <script>
-    <?php
-    $tahun = DB::table('tbl_pendaftar')->distinct()->get();
-    $tahunKategori = DB::table('tbl_pendaftar')->get();
-
-    $prodi = DB::table('tbl_pendaftar')->distinct()->get();
-
-    foreach($tahun as $th) {
-
-        foreach($prodi as $pro) {
-            ${"pendaftar".$th->tahun.$pro->program_studi}= DB::table('tbl_pendaftar')->where('tahun', $th->tahun)->where('program_studi', $pro->program_studi)->sum('jumlah_pendaftar');
-        }
-
-    }
-
-    ?>
     Highcharts.chart('chartMaba', {
 
         chart: {
-            type: 'line'
+            type: 'spline'
         },
         title: {
-            text: 'Jumlah Pendaftar Lulus Seleksi Mahasiswa Baru'
+            text: 'Grafik Jumlah Pendaftar Mahasiswa Baru'
         },
         subtitle: {
-            text: 'Sumber: Badan Administrasi Akademik dan Kemahasiswaan'
+            text: 'Akumulasi PMDK, USM, dan Lainnya'
         },
         xAxis: {
-            categories: [
-                @foreach ($tahunKategori as $thk )
-                {{ $thk->tahun }},
-                @endforeach
-            ],
+            categories:{!!json_encode($categories)!!},
             crosshair: true
         },
+        colors:['#ffd900'],
         yAxis: {
             min: 0,
             title: {
-                text: 'Jumlah Pendaftar'
+                text: 'Jumlah pendaftar'
             }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
         },
         plotOptions: {
             column: {
@@ -289,79 +263,43 @@
             }
         },
         series: [{
-            name: 'D3 TK',
-            data: []
-
-        }, {
-            name: 'D3 TI',
-            data: [
-                @foreach($prodi as $pro)
-                    @if($pro->program_studi == 'D3 TI')
-                        @foreach($tahun as $th)
-                            @if(${"pendaftar".$th->tahun.$pro->program_studi} != 0)
-                            {{ ${"pendaftar".$th->tahun.$pro->program_studi} }},
-                            @endif
-                        @endforeach
-                        @break
-                    @endif
-                @endforeach
-            ]
-
-        }, {
-            name: 'D4 TRPL',
-            data: [
-
-                @foreach($prodi as $pro)
-                    @if($pro->program_studi == 'D4 TRPL')
-                        @foreach($tahun as $th)
-                            @if(${"pendaftar".$th->tahun.$pro->program_studi} != 0)
-                            {{ ${"pendaftar".$th->tahun.$pro->program_studi} }},
-                            @endif
-                        @endforeach
-                        @break
-                    @endif
-                @endforeach
-            ]
-
-        }, {
-            name: 'S1 SI',
-            data: []
-
-        }, {
-            name: 'S1 IF',
-            data: []
-
-        }, {
-            name: 'S1 MR',
-            data: []
-
-        }, {
-            name: 'S1 BP',
-            data: []
-
+            name: 'Jumlah Pendaftar',
+            borderRadius: 2,
+            cursor: 'pointer',
+            states: {
+                select: {
+                    color: '#002aff'
+                }
+            },
+            slicesOffset: 0,
+            point: {
+                events: {
+                    click: function (event) {
+                        this.select(null, true);
+                        console.log(this.series.chart.getSelectedPoints());
+                    }
+                }
+            },
+            data: {!!json_encode($data)!!}
         }]
     });
 </script>
 <script>
-    Highcharts.chart('chartDosenTugas', {
+    Highcharts.chart('chartMebeler', {
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Jumlah Dosen Tugas Belajar per Tahun'
+            text: 'Dosen yang Melaksanakan Tugas Belajar'
         },
         subtitle: {
             text: 'Sumber: Badan Administrasi Akademik dan Kemahasiswaan'
         },
         xAxis: {
-            categories: [
-                '2022',
-                '2023',
-                '2024',
-                '2025',
-            ],
+            categories: {!!json_encode($categoriess)!!},
             crosshair: true
         },
+        colors:['#009e05'],
         yAxis: {
             min: 0,
             title: {
@@ -370,8 +308,6 @@
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
@@ -384,7 +320,23 @@
         },
         series: [{
             name: 'Dosen Tugas Belajar',
-            data: [1, 3, 5, 2]
+            borderRadius: 2,
+            cursor: 'pointer',
+            states: {
+                select: {
+                    color: '#d6921c'
+                }
+            },
+            slicesOffset: 0,
+            point: {
+                events: {
+                    click: function (event) {
+                        this.select(null, true);
+                        console.log(this.series.chart.getSelectedPoints());
+                    }
+                }
+            },
+            data: {!!json_encode($datas)!!}
         }]
     });
 </script>

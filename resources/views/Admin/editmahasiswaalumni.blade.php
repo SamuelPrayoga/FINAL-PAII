@@ -7,7 +7,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data Mahasiswa Alumni</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('datamahasiswaalumni.updatemahasiswaalumni', $editmahasiswaalumni->nim) }}" method="post"
+        <form action="{{ route('datamahasiswaalumni.updatemahasiswaalumni', $editmahasiswaalumni->id) }}" method="post"
             enctype="multipart/form-data">
             {{ csrf_field() }}
 

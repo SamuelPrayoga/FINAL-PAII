@@ -40,11 +40,11 @@
                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->nim }}"><i class="fas fa-eye"></i> View</button>
-                                        <button class="dropdown-item" onclick="window.location.href='/datamahasiswaaktif/editmahasiswaaktif/{{ $s->nim }}'"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->id }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datamahasiswaaktif/editmahasiswaaktif/{{ $s->id }}'"><i class="fas fa-edit"></i> Edit</button>
                                     </div>
                                     <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
-                                        data-target="#myModal{{ $s->nim }}"><i class="fas fa-trash-alt"></i>
+                                        data-target="#myModal{{ $s->id }}"><i class="fas fa-trash-alt"></i>
                                     </button>
                                 </center>
                             </td>
@@ -61,7 +61,7 @@
 </div>
 
 @foreach ($mahasiswaaktif as $s)
-<div class="modal fade" id="myModal{{ $s->nim }}" role="dialog">
+<div class="modal fade" id="myModal{{ $s->id }}" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
@@ -77,7 +77,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                 <button type="button" class="btn btn-danger btn-sm"
-                    onclick="window.location.href='/datamahasiswaaktif/deletemahasiswaaktif/{{ $s->nim }}'">Hapus</button>
+                    onclick="window.location.href='/datamahasiswaaktif/deletemahasiswaaktif/{{ $s->id }}'">Hapus</button>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
 
 @foreach ($mahasiswaaktif as $s )
 <!-- Modal -->
-<div class="modal fade" id="myModal1{{$s->nim}}" role="dialog">
+<div class="modal fade" id="myModal1{{$s->id}}" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

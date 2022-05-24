@@ -7,7 +7,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data Keasramaan</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('datakeasramaan.updatekeasramaan', $editkeasramaan->keasramaanID) }}" method="post"
+        <form action="{{ route('datakeasramaan.updatekeasramaan', $editkeasramaan->id) }}" method="post"
             enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">

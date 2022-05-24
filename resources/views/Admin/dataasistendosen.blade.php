@@ -38,11 +38,11 @@
                                             class="fas fa-ellipsis-v"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->asdosID }}"><i class="fas fa-eye"></i> View</button>
-                                            <button class="dropdown-item" onclick="window.location.href='/dataasistendosen/editasistendosen/{{ $s->asdosID }}'"><i class="fas fa-edit"></i> Edit</button>
+                                            <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->id }}"><i class="fas fa-eye"></i> View</button>
+                                            <button class="dropdown-item" onclick="window.location.href='/dataasistendosen/editasistendosen/{{ $s->id }}'"><i class="fas fa-edit"></i> Edit</button>
                                           </div>
                                     <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
-                                        data-target="#myModal{{ $s->asdosID }}"><i class="fas fa-trash-alt"></i>
+                                        data-target="#myModal{{ $s->id }}"><i class="fas fa-trash-alt"></i>
                                         </button>
                                 </center>
                             </td>
@@ -60,7 +60,7 @@
 
 @foreach ($asistendosen as $s)
     <!-- Modal -->
-    <div class="modal fade" id="myModal{{ $s->asdosID }}" role="dialog">
+    <div class="modal fade" id="myModal{{ $s->id }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -76,7 +76,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                     <button type="button" class="btn btn-danger btn-sm"
-                        onclick="window.location.href='/dataasistendosen/deleteasistendosen/{{ $s->asdosID }}'">Hapus</button>
+                        onclick="window.location.href='/dataasistendosen/deleteasistendosen/{{ $s->id }}'">Hapus</button>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
 @endforeach
 
 @foreach ($asistendosen as $s)
-    <div class="modal fade" id="myModal1{{ $s->asdosID }}" role="dialog">
+    <div class="modal fade" id="myModal1{{ $s->id }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->

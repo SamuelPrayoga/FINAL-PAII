@@ -12,25 +12,29 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Tahun</label>
                 <div class="col-sm-9">
-                    <input type="text" placeholder="YYYY" required="required" id="tahun" name="tahun" class="form-control">
-                </div>
-            </div>
-            <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Program Studi</label>
-                <div class="col-sm-9">
-                    <select class="form-control"  required="required" name="program_studi" aria-label="Default select example" >
-                        <option value="D3 TK">D3 TK</option>
-                        <option value="D3 TI">D3 TI</option>
-                        <option value="D4 TRPL">D4 TRPL</option>
-                        <option value="S1 SI">S1 SI</option>
-                        <option value="S1 IF">S1 IF</option>
-                        <option value="S1 MR">S1 MR</option>
-                        <option value="S1 BP">S1 BP</option>
+                    <select class="form-control"  required="required" name="tahun" aria-label="Default select example" >
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                        <option value="2033">2033</option>
+                        <option value="2034">2034</option>
+                        <option value="2035">2035</option>
                     </select>
                 </div>
             </div>
             <div class="mb-3 row">
-                <label class="col-sm-3 col-form-label">Jumlah Pendaftar Lulus</label>
+                <label class="col-sm-3 col-form-label">Jumlah Pendaftar</label>
                 <div class="col-sm-9">
                     <input type="number" required="required" id="jumlah_pendaftar" name="jumlah_pendaftar" class="form-control">
                 </div>

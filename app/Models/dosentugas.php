@@ -9,5 +9,5 @@ class dosentugas extends Model
 {
     use HasFactory;
     protected $table = 'dosentugas';
-    protected $primaryKey = 'nidn';
+    protected $primaryKey = 'id';
 }

@@ -7,7 +7,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data Dosen Aktif</h6>
     </div>
     <div class="card-body">
-        <form action="{{route('datadosenaktif.updatedosenaktif',$editdosenaktif->nidn)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('datadosenaktif.updatedosenaktif',$editdosenaktif->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Nama Dosen</label>

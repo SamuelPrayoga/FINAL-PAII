@@ -38,11 +38,11 @@
                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $ke->keasramaanID }}"><i class="fas fa-eye"></i> View</button>
-                                        <button class="dropdown-item" onclick="window.location.href='/datakeasramaan/editkeasramaan/{{ $ke->keasramaanID }}'"><i class="fas fa-edit"></i> Edit</button>
+                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $ke->id }}"><i class="fas fa-eye"></i> View</button>
+                                        <button class="dropdown-item" onclick="window.location.href='/datakeasramaan/editkeasramaan/{{ $ke->id }}'"><i class="fas fa-edit"></i> Edit</button>
                                     </div>
                                     <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
-                                        data-target="#myModal{{ $ke->keasramaanID }}"><i class="fas fa-trash-alt"></i>
+                                        data-target="#myModal{{ $ke->id }}"><i class="fas fa-trash-alt"></i>
                                     </button>
                                 </center>
                             </td>
@@ -60,7 +60,7 @@
 
 <!-- Modal -->
 @foreach ($keasramaan as $ke)
-    <div class="modal fade" id="myModal{{ $ke->keasramaanID }}" role="dialog">
+    <div class="modal fade" id="myModal{{ $ke->id }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -76,7 +76,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                     <button type="button" class="btn btn-danger btn-sm"
-                        onclick="window.location.href='/datakeasramaan/deletekeasramaan/{{ $ke->keasramaanID }}'">Hapus</button>
+                        onclick="window.location.href='/datakeasramaan/deletekeasramaan/{{ $ke->id }}'">Hapus</button>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
 @endforeach
 
 @foreach ($keasramaan as $ke)
-    <div class="modal fade" id="myModal1{{ $ke->keasramaanID }}" role="dialog">
+    <div class="modal fade" id="myModal1{{ $ke->id }}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->

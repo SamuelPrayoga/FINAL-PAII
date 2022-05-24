@@ -7,7 +7,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Edit Data Dosen Tugas Belajar</h6>
     </div>
     <div class="card-body">
-        <form action="{{route('datadosentugas.updatedosentugas',$editdosentugas->nidn)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('datadosentugas.updatedosentugas',$editdosentugas->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Nama Dosen</label>
@@ -65,6 +65,12 @@
                 <label class="col-sm-3 col-form-label">Mulai Belajar</label>
                 <div class="col-sm-9">
                     <input type="date" required="required" id="mulaiTugas" name="mulaiTugas" class="form-control" value="{{$editdosentugas->mulaiTugas}}">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Tahun</label>
+                <div class="col-sm-9">
+                    <input type="number" required="required" id="tahun" name="tahun" class="form-control" value="{{$editdosentugas->tahun}}">
                 </div>
             </div>
             <div class="mb-3 row">

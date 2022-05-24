@@ -39,16 +39,16 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/datadosenaktif', [admincontroller::class, 'showdosenaktif']);
     Route::get('/tambahdosenaktif', [admincontroller::class, 'tambahdosenaktif']);
     Route::post('/tambahdosenaktiftambah', [admincontroller::class, 'tambahdosenaktifs'])->name('dosenaktif.tambah');
-    Route::get('/datadosenaktif/editdosenaktif/{nidn}', [admincontroller::class, 'editdosenaktif']);
-    Route::post('/updatedosenaktif/{nidn}', [admincontroller::class, 'updatedosenaktif'])->name('datadosenaktif.updatedosenaktif');
-    Route::get('datadosenaktif/deletedosenaktif/{nidn}', [admincontroller::class, 'deletedosenaktif'])->name('datadosenaktif.deletedosenaktif');
+    Route::get('/datadosenaktif/editdosenaktif/{id}', [admincontroller::class, 'editdosenaktif']);
+    Route::post('/updatedosenaktif/{id}', [admincontroller::class, 'updatedosenaktif'])->name('datadosenaktif.updatedosenaktif');
+    Route::get('datadosenaktif/deletedosenaktif/{id}', [admincontroller::class, 'deletedosenaktif'])->name('datadosenaktif.deletedosenaktif');
 
     Route::get('/datadosentugas', [admincontroller::class, 'showdosentugas']);
     Route::get('/tambahdosentugas', [admincontroller::class, 'tambahdosentugas']);
     Route::post('/tambahdosentugastambah', [admincontroller::class, 'tambahdosentugass'])->name('dosentugas.tambah');
-    Route::get('/datadosentugas/editdosentugas/{nidn}', [admincontroller::class, 'editdosentugas']);
-    Route::post('/updatedosentugas/{nidn}', [admincontroller::class, 'updatedosentugas'])->name('datadosentugas.updatedosentugas');
-    Route::get('datadosentugas/deletedosentugas/{nidn}', [admincontroller::class, 'deletedosentugas'])->name('datadosentugas.deletedosentugas');
+    Route::get('/datadosentugas/editdosentugas/{id}', [admincontroller::class, 'editdosentugas']);
+    Route::post('/updatedosentugas/{id}', [admincontroller::class, 'updatedosentugas'])->name('datadosentugas.updatedosentugas');
+    Route::get('datadosentugas/deletedosentugas/{id}', [admincontroller::class, 'deletedosentugas'])->name('datadosentugas.deletedosentugas');
 
     Route::get('/datastaf', [admincontroller::class, 'showstaf']);
     Route::get('/tambahstaf', [admincontroller::class, 'tambahstaf']);
@@ -60,16 +60,16 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/dataasistendosen', [admincontroller::class, 'showasistendosen']);
     Route::get('/tambahasistendosen', [admincontroller::class, 'tambahasistendosen']);
     Route::post('/tambahasistendosentambah', [admincontroller::class, 'tambahasistendosens'])->name('asistendosen.tambah');
-    Route::get('/dataasistendosen/editasistendosen/{asdosID}', [admincontroller::class, 'editasistendosen']);
-    Route::post('/updateasistendosen/{asdosID}', [admincontroller::class, 'updateasistendosen'])->name('dataasistendosen.updateasistendosen');
-    Route::get('dataasistendosen/deleteasistendosen/{asdosID}', [admincontroller::class, 'deleteasistendosen'])->name('dataasistendosen.deleteasistendosen');
+    Route::get('/dataasistendosen/editasistendosen/{id}', [admincontroller::class, 'editasistendosen']);
+    Route::post('/updateasistendosen/{id}', [admincontroller::class, 'updateasistendosen'])->name('dataasistendosen.updateasistendosen');
+    Route::get('dataasistendosen/deleteasistendosen/{id}', [admincontroller::class, 'deleteasistendosen'])->name('dataasistendosen.deleteasistendosen');
 
     Route::get('/datakeasramaan', [admincontroller::class, 'showkeasramaan']);
     Route::get('/tambahkeasramaan', [admincontroller::class, 'tambahkeasramaan']);
     Route::post('/tambahkeasramaantambah', [admincontroller::class, 'tambahkeasramaans'])->name('keasramaan.tambah');
-    Route::get('/datakeasramaan/editkeasramaan/{keasramaanID}', [admincontroller::class, 'editkeasramaan']);
-    Route::post('/updatekeasramaan/{keasramaanID}', [admincontroller::class, 'updatekeasramaan'])->name('datakeasramaan.updatekeasramaan');
-    Route::get('datakeasramaan/deletekeasramaan/{keasramaanID}', [admincontroller::class, 'deletekeasramaan'])->name('datakeasramaan.deleteasistendosen');
+    Route::get('/datakeasramaan/editkeasramaan/{id}', [admincontroller::class, 'editkeasramaan']);
+    Route::post('/updatekeasramaan/{id}', [admincontroller::class, 'updatekeasramaan'])->name('datakeasramaan.updatekeasramaan');
+    Route::get('datakeasramaan/deletekeasramaan/{id}', [admincontroller::class, 'deletekeasramaan'])->name('datakeasramaan.deleteasistendosen');
 
     Route::get('/datapegawai', [admincontroller::class, 'showpegawai']);
     Route::get('/tambahpegawai', [admincontroller::class, 'tambahpegawai']);
@@ -81,16 +81,16 @@ Route::group(['middleware' => ['auth','admin']], function(){
     Route::get('/datamahasiswaaktif', [admincontroller::class, 'showmahasiswaaktif']);
     Route::get('/tambahmahasiswaaktif', [admincontroller::class, 'tambahmahasiswaaktif']);
     Route::post('/tambahmahasiswaaktiftambah', [admincontroller::class, 'tambahmahasiswaaktifs'])->name('mahasiswaaktif.tambah');
-    Route::get('/datamahasiswaaktif/editmahasiswaaktif/{nim}', [admincontroller::class, 'editmahasiswaaktif']);
-    Route::post('/updatemahasiswaaktif/{nim}', [admincontroller::class, 'updatemahasiswaaktif'])->name('datamahasiswaaktif.updatemahasiswaaktif');
-    Route::get('datamahasiswaaktif/deletemahasiswaaktif/{nim}', [admincontroller::class, 'deletemahasiswaaktif'])->name('datamahasiswaaktif.deletemahasiswaaktif');
+    Route::get('/datamahasiswaaktif/editmahasiswaaktif/{id}', [admincontroller::class, 'editmahasiswaaktif']);
+    Route::post('/updatemahasiswaaktif/{id}', [admincontroller::class, 'updatemahasiswaaktif'])->name('datamahasiswaaktif.updatemahasiswaaktif');
+    Route::get('datamahasiswaaktif/deletemahasiswaaktif/{id}', [admincontroller::class, 'deletemahasiswaaktif'])->name('datamahasiswaaktif.deletemahasiswaaktif');
 
     Route::get('/datamahasiswaalumni', [admincontroller::class, 'showmahasiswaalumni']);
     Route::get('/tambahmahasiswaalumni', [admincontroller::class, 'tambahmahasiswaalumni']);
     Route::post('/tambahmahasiswaalumnitambah', [admincontroller::class, 'tambahmahasiswaalumnis'])->name('mahasiswaalumni.tambah');
-    Route::get('/datamahasiswaalumni/editmahasiswaalumni/{nim}', [admincontroller::class, 'editmahasiswaalumni']);
-    Route::post('/updatemahasiswaalumni/{nim}', [admincontroller::class, 'updatemahasiswaalumni'])->name('datamahasiswaalumni.updatemahasiswaalumni');
-    Route::get('datamahasiswaalumni/deletemahasiswaalumni/{nim}', [admincontroller::class, 'deletemahasiswaalumni'])->name('datamahasiswaalumni.deletemahasiswaalumni');
+    Route::get('/datamahasiswaalumni/editmahasiswaalumni/{id}', [admincontroller::class, 'editmahasiswaalumni']);
+    Route::post('/updatemahasiswaalumni/{id}', [admincontroller::class, 'updatemahasiswaalumni'])->name('datamahasiswaalumni.updatemahasiswaalumni');
+    Route::get('datamahasiswaalumni/deletemahasiswaalumni/{id}', [admincontroller::class, 'deletemahasiswaalumni'])->name('datamahasiswaalumni.deletemahasiswaalumni');
 
     Route::get('/datalistgedung', [admincontroller::class, 'showlistgedung']);
     Route::get('/tambahlistgedung', [admincontroller::class, 'tambahlistgedung']);

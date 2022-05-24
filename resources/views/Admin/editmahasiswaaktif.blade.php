@@ -7,7 +7,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Tambah Data Mahasiswa Aktif</h6>
     </div>
     <div class="card-body">
-        <form action="{{ route('datamahasiswaaktif.updatemahasiswaaktif', $editmahasiswaaktif->nim) }}" method="post">
+        <form action="{{ route('datamahasiswaaktif.updatemahasiswaaktif', $editmahasiswaaktif->id) }}" method="post">
             {{ csrf_field() }}
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Nama Mahasiswa</label>

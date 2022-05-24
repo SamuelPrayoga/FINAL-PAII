@@ -108,8 +108,8 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" id="data" width="100%" cellspacing="2">
-                            <thead>
+                        <table class="table table-hover" id="data" width="100%" cellspacing="2">
+                            <thead class="table-primary">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Kegiatan</th>
@@ -232,6 +232,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 <script>
     Highcharts.chart('chartMaba', {

@@ -1,187 +1,196 @@
 @include('navuser')
 
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">DASHBOARD REKTOR IT DEL</h1>
-    <a href="/AgendaRektor/export_excel" data-target="#dataTable" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-download fa-sm text-white-50"></i> Download Excel</a>
-</div>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">[Terbaru] Agenda dan Kegiatan Rektor</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Penyelenggara</th>
-                            <th>Lokasi</th>
-                            <th>Mulai</th>
-                            <th>Selesai</th>
-                            <th>Status</th>
-                            <th>Keterangan</th>
-                            <th><center>Konfirmasi</center></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $i=1 @endphp
-                        @foreach ($agendaterbaru as $agenda )
-                        <tr>
-                            <td width="2%">{{ $i++ }}</td>
-                            <td>{{ $agenda->namakegiatan }}</td>
-                            <td>{{ $agenda->penyelenggara }}</td>
-                            <td>{{ $agenda->lokasi }}</td>
-                            <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
-                            <td>{{ ($agenda->waktu) }} WIB</td>
-                            <td width="18%">
-                                @if($agenda->status == 'Hadir')
-                                    <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
-                                    @endif
-                                @if ($agenda->status == 'Tidak Hadir')
-                                    <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
-                                    @endif
-                                @if ($agenda->status == 'Menunggu Konfirmasi')
-                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
-                                    @endif
-                                @if ($agenda->status == 'Selesai')
-                                    <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
-                                    @endif
-                        </td>
-                            <td>{{ $agenda->keterangan }}</td>
-                            <td width="14%"><center>
-                                <button type="button" class="btn btn-info btn-sm"
-                                onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
-                                    class="fas fa-wrench"></i>
-                                Konfirmasi</button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>AGENDA REKTOR</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Agenda Rektor</li>
+                    </ol>
+                </div>
             </div>
-        </div>
-    </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Agenda dan Kegiatan Rektor</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Penyelenggara</th>
-                            <th>Lokasi</th>
-                            <th>Mulai</th>
-                            <th>Selesai</th>
-                            <th>Status</th>
-                            <th>Keterangan</th>
-                            <th><center>Konfirmasi</center></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $i=1 @endphp
-                        @foreach ($agendarektor as $agenda )
-                        <tr>
-                            <td width="2%">{{ $i++ }}</td>
-                            <td>{{ $agenda->namakegiatan }}</td>
-                            <td>{{ $agenda->penyelenggara }}</td>
-                            <td>{{ $agenda->lokasi }}</td>
-                            <td>{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
-                            <td>{{ ($agenda->waktu) }} WIB</td>
-                            <td width="18%">
-                                    @if($agenda->status == 'Hadir')
-                                        <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Tidak Hadir')
-                                        <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Menunggu Konfirmasi')
-                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Selesai')
-                                        <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                            </td>
-                            <td>{{ $agenda->keterangan }}</td>
-                            <td width="14%"><center>
-                                <button type="button" class="btn btn-light btn-sm"
-                                onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
-                                    class="fas fa-wrench"></i>
-                                Konfirmasi</button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">[Terbaru] Agenda Rektor</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="exampl2" class="table table-hover">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama Kegiatan</th>
+                                        <th>Penyelenggara</th>
+                                        <th>Lokasi</th>
+                                        <th>Mulai</th>
+                                        <th>Selesai</th>
+                                        <th>Status</th>
+                                        <th>Keterangan</th>
+                                        <th>
+                                            <center>Konfirmasi</center>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $i=1 @endphp
+                                    @foreach ($agendaterbaru as $agenda)
+                                        <tr>
+                                            <td width="2%">{{ $i++ }}</td>
+                                            <td width="20%">{{ $agenda->namakegiatan }}</td>
+                                            <td width="12%">{{ $agenda->penyelenggara }}</td>
+                                            <td width="16%">{{ $agenda->lokasi }}</td>
+                                            <td width="12%">{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
+                                            <td width="11%">{{ $agenda->waktu }} WIB</td>
+                                            <td width="12%">
+                                                @if ($agenda->status == 'Hadir')
+                                                    <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Tidak Hadir')
+                                                    <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Menunggu Konfirmasi')
+                                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Reschedule')
+                                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Selesai')
+                                                    <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                            </td>
+                                            <td>{{ $agenda->keterangan }}</td>
+                                            <td width="14%">
+                                                <center>
+                                                    <button type="button" class="btn btn-info btn-sm"
+                                                        onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
+                                                            class="fas fa-wrench"></i>
+                                                        Konfirmasi</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Agenda Rektor</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="dataTable" class="table table-bordered table-striped">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Kegiatan</th>
+                                        <th>Penyelenggara</th>
+                                        <th>Lokasi</th>
+                                        <th>Mulai</th>
+                                        <th>Selesai</th>
+                                        <th>Status</th>
+                                        <th>Keterangan</th>
+                                        <th>
+                                            <center>Konfirmasi</center>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $i=1 @endphp
+                                    @foreach ($agendarektor as $agenda)
+                                        <tr>
+                                            <td width="2%">{{ $i++ }}</td>
+                                            <td width="20%">{{ $agenda->namakegiatan }}</td>
+                                            <td width="12%">{{ $agenda->penyelenggara }}</td>
+                                            <td width="16%">{{ $agenda->lokasi }}</td>
+                                            <td width="12%">{{ date('l, d M Y', strtotime($agenda->tanggal)) }}</td>
+                                            <td width="11%">{{ $agenda->waktu }} WIB</td>
+                                            <td width="12%">
+                                                @if ($agenda->status == 'Hadir')
+                                                    <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Tidak Hadir')
+                                                    <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Menunggu Konfirmasi')
+                                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Reschedule')
+                                                    <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                                @if ($agenda->status == 'Selesai')
+                                                    <button class="btn btn-primary btn-sm" disabled>{{ $agenda->status }}</button>
+                                                @endif
+                                            </td>
+                                            <td>{{ $agenda->keterangan }}</td>
+                                            <td width="14%">
+                                                <center>
+                                                    <button type="button" class="btn btn-light btn-sm"
+                                                        onclick="window.location.href='/AgendaRektor/editagendarektors/{{ $agenda->id }}'"><i
+                                                            class="fas fa-wrench"></i>
+                                                        Konfirmasi</button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
             </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
 </div>
 
 <!--footer-->
 </div>
 <!-- End of Main Content -->
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Dashboard Rektor Institut Teknologi Del</span>
-        </div>
+<footer class="main-footer">
+    <strong>Copyright &copy; 2022 <a href="https://del.ac.id">Dashboard Rektor IT Del</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0.0
     </div>
 </footer>
-<!-- End of Footer -->
 
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
-<!-- End of Content Wrapper -->
+<!-- ./wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-<i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-        </button>
-    </div>
-    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-    <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
-    </div>
-</div>
-</div>
-</div>
-
-
-<!-- Bootstrap core JavaScript-->
-<script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="{{asset('js/sb-admin-2.min.js')}}"></script>
-
-
+<!-- jQuery -->
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables  & Plugins -->
 <!-- Page level plugins -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -200,10 +209,11 @@ aria-hidden="true">
         });
     });
 </script>
-
-<!-- Page level custom scripts -->
-<script src="{{asset('js/demo/datatables-demo.js')}}"></script>
-
+<!-- AdminLTE App -->
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{asset('dist/js/demo.js')}}"></script>
+<!-- Page specific script -->
 </body>
 
 </html>

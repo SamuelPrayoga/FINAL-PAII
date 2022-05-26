@@ -1,50 +1,81 @@
 @include('navuser')
-<div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">DASHBOARD REKTOR IT DEL</h1>
-    <a href="/PerumahanLuar/export_excel" data-target="#dataTable"
-        class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-        <i class="fas fa-download fa-sm text-white-50"></i> Download Excel</a>
-</div>
-<!-- DataTales Example -->
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Perumahan Dalam Institut Teknologi Del</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
-                <thead class="table-dark">
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Perumahan</th>
-                        <th>Jumlah Kamar</th>
-                        <th>Kapasitas / Kamar</th>
-                        <th>Jumlah</th>
-                        <th>Keterangan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @php $i=1 @endphp
-                    @foreach ($perumahanluar as $luar)
-                        <tr>
-                            <td width="2%">{{ $i++ }}</td>
-                            <td>{{ $luar->namaperumahan }}</td>
-                            <td width="5%">
-                                <center>{{ $luar->jumlahkamar }}</center>
-                            </td>
-                            <td width="5%">
-                                <center>{{ $luar->kapasitaskamar }}</center>
-                            </td>
-                            <td width="5%">
-                                <center>{{ $luar->jumlah }}</center>
-                            </td>
-                            <td>{{ $luar->keterangan }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>PERUMAHAN LUAR</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
+                        <li class="breadcrumb-item">Gedung dan Bangunan</li>
+                        <li class="breadcrumb-item active">Perumahan Luar</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Data Perumahan Luar</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive">
+                            <table id="dataTable" class="table table-bordered table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Perumahan</th>
+                                        <th>Jumlah Kamar</th>
+                                        <th>Kapasitas / Kamar</th>
+                                        <th>Jumlah</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $i=1 @endphp
+                                    @foreach ($perumahanluar as $luar)
+                                        <tr>
+                                            <td width="2%">{{ $i++ }}</td>
+                                            <td>{{ $luar->namaperumahan }}</td>
+                                            <td width="5%">
+                                                <center>{{ $luar->jumlahkamar }}</center>
+                                            </td>
+                                            <td width="5%">
+                                                <center>{{ $luar->kapasitaskamar }}</center>
+                                            </td>
+                                            <td width="5%">
+                                                <center>{{ $luar->jumlah }}</center>
+                                            </td>
+                                            <td>{{ $luar->keterangan }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
         </div>
-    </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
 </div>
 </div>
 
@@ -52,39 +83,27 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Dashboard Rektor Institut Teknologi Del</span>
-        </div>
+<footer class="main-footer">
+    <strong>Copyright &copy; 2022 <a href="https://del.ac.id">Dashboard Rektor IT Del</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0.0
     </div>
 </footer>
-<!-- End of Footer -->
 
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
-<!-- End of Content Wrapper -->
+<!-- ./wrapper -->
 
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-
-<!-- Bootstrap core JavaScript-->
-<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-
+<!-- jQuery -->
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- DataTables  & Plugins -->
 <!-- Page level plugins -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
@@ -96,7 +115,7 @@
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#dataTable').DataTable({
             dom: 'Bfrtip',
             buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
@@ -104,9 +123,11 @@
     });
 </script>
 
-<!-- Page level custom scripts -->
-<script src="{{ asset('js/demo/datatables-demo.js') }}"></script>
+<script src="{{asset('dist/js/adminlte.js')}}"></script>
+
+<script src="{{asset('dist/js/demo.js')}}"></script>
 
 </body>
 
 </html>
+

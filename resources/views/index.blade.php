@@ -1,235 +1,216 @@
 @include('navuser')
-<!-- End of Topbar -->
 
-<!-- Begin Page Content -->
-<div class="container-fluid">
-
-    <!-- Content Row -->
-    <!-- Content Row -->
-    <div class="row">
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                Mahasiswa Aktif</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $mahasiswaaktif }}</div>
-                            @if (auth()->user()->level == 0)
-                            <a class="text-xs font-weight-bold text-secondary mb-1" href="/MahasiswaAktif">
-                                Lihat Selengkapnya
-                            </a>
-                            @endif
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-user fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Dosen Aktif</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dosenaktif }}</div>
-                            @if (auth()->user()->level == 0)
-                            <a class="text-xs font-weight-bold text-secondary mb-1" href="/DosenAktif">
-                                Lihat Selengkapnya
-                            </a>
-                            @endif
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Dosen Tugas Belajar</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dosentugas }}</div>
-                            @if (auth()->user()->level == 0)
-                                <a class="text-xs font-weight-bold text-secondary mb-1" href="/DosenTugasBelajar">
-                                    Lihat Selengkapnya
-                                </a>
-                            @endif
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Pending Requests Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Asrama dan Rusunawa</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $asrama }}</div>
-                            @if (auth()->user()->level == 0)
-                            <a class="text-xs font-weight-bold text-secondary mb-1" href="/Asrama">Lihat
-                                Selengkapnya
-                            </a>
-                            @endif
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-home fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Dashboard</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
-    <div class="row">
-        <div class="col-xl-12 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header  py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-priarmy">Agenda Rektor Terbaru</h6>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $mahasiswaaktif }}</h3>
+
+                            <p>Mahasiswa Aktif</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <a href="/MahasiswaAktif" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                    </div>
                 </div>
-                <!-- Card Body -->
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{ $dosenaktif }}</h3>
+
+                            <p>Dosen Aktif</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+
+                        <a href="/DosenAktif" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ $dosentugas }}</h3>
+
+                            <p>Dosen Tugas Belajar</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        </div>
+                        <a href="/DosenTugasBelajar" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{ $asrama }}</h3>
+
+                            <p>Asrama dan Rusunawa</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </div>
+                        <a href="/Asrama" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+                <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Agenda Rektor Terbaru</h3>
+                </div>
+                <!-- /.card-header -->
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-hover" id="data" width="100%" cellspacing="2">
-                            <thead class="table-primary">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Kegiatan</th>
-                                    <th>Penyelenggara</th>
-                                    <th>Lokasi</th>
-                                    <th><center>Status</center></th>
-                                    @if (auth()->user()->level == 0)
-                                    <th>
-                                        <center>#</center>
-                                    </th>
-                                    @endif
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php $i=1 @endphp
-                                @foreach ($agendarektor as $agenda)
-                                    <tr>
-                                        <td width="2%">{{ $i++ }}</td>
-                                        <td>{{ $agenda->namakegiatan }}</td>
-                                        <td>{{ $agenda->penyelenggara }}</td>
-                                        <td>{{ $agenda->lokasi }}</td>
-                                        <td width="18%"><center>
-                                            @if($agenda->status == 'Hadir')
-                                                <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
-                                                @endif
-                                            @if ($agenda->status == 'Tidak Hadir')
-                                                <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
-                                                @endif
-                                            @if ($agenda->status == 'Menunggu Konfirmasi')
-                                                <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
-                                                @endif
-                                            @if ($agenda->status == 'Selesai')
-                                                <button class="btn btn-secondary btn-sm" disabled>{{ $agenda->status }}</button>
-                                                @endif
-                                        </center></td>
-                                        @if (auth()->user()->level == 0)
-                                        <td width="14%">
-                                            <center>
-                                                <button type="button" class="btn btn-light btn-sm"
-                                                onclick="window.location.href='/AgendaRektor'"><i
-                                                    class="fas fa-eye"></i> Detail</button>
-                                                </div>
-                                            </center>
-                                        </td>
+                  <table id="example" class="table table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Kegiatan</th>
+                            <th>Penyelenggara</th>
+                            <th>Lokasi</th>
+                            <th><center>Status</center></th>
+                            @if (auth()->user()->level == 0)
+                            <th>
+                                <center>#</center>
+                            </th>
+                            @endif
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $i=1 @endphp
+                        @foreach ($agendarektor as $agenda)
+                            <tr>
+                                <td width="2%">{{ $i++ }}</td>
+                                <td>{{ $agenda->namakegiatan }}</td>
+                                <td>{{ $agenda->penyelenggara }}</td>
+                                <td>{{ $agenda->lokasi }}</td>
+                                <td width="18%"><center>
+                                    @if($agenda->status == 'Hadir')
+                                        <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
                                         @endif
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                    @if ($agenda->status == 'Tidak Hadir')
+                                        <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                    @if ($agenda->status == 'Menunggu Konfirmasi')
+                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                    @if ($agenda->status == 'Reschedule')
+                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
+                                    @endif
+                                    @if ($agenda->status == 'Selesai')
+                                        <button class="btn btn-secondary btn-sm" disabled>{{ $agenda->status }}</button>
+                                        @endif
+                                </center></td>
+                                @if (auth()->user()->level == 0)
+                                <td width="14%">
+                                    <center>
+                                        <button type="button" class="btn btn-light btn-sm"
+                                        onclick="window.location.href='/AgendaRektor'"><i
+                                            class="fas fa-eye"></i> Detail</button>
+                                        </div>
+                                    </center>
+                                </td>
+                                @endif
+                            </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <div class="col-xl-7 col-lg-7">
+                    <div class="card shadow mb-4">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div id="chartMaba"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <!-- Area Chart -->
-        <div class="col-xl-7 col-lg-7">
-            <div class="card shadow mb-4">
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div id="chartMaba"></div>
+                <div class="col-xl-5 col-lg-5">
+                    <div class="card shadow mb-4">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div id="chartMebeler"></div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- Area Chart -->
-        <div class="col-xl-5 col-lg-5">
-            <div class="card shadow mb-4">
-                <!-- Card Body -->
-                <div class="card-body">
-                    <div id="chartMebeler"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
 
-<!-- Footer -->
-<footer class="sticky-footer bg-white border-bottom-secondary">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Dashboard Rektor Institut Teknologi Del</span>
+                <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<footer class="main-footer">
+    <strong>Copyright &copy; 2022 <a href="https://del.ac.id">Dashboard Rektor IT Del</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0.0
     </div>
 </footer>
-<!-- End of Footer -->
 
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="{{ route('logout') }}">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
-{{-- ChartStyle --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+<!-- ./wrapper -->
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
@@ -254,7 +235,7 @@
             categories:{!!json_encode($categories)!!},
             crosshair: true
         },
-        colors:['#ffd900'],
+        colors:['#043163'],
         yAxis: {
             min: 0,
             title: {
@@ -345,24 +326,53 @@
         }]
     });
 </script>
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
-<!-- Page level custom scripts -->
-<!--<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>-->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- ChartJS -->
+<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+<!-- Sparkline -->
+<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
+<!-- JQVMap -->
+<script src="{{ asset('plugins/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ asset('plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{ asset('plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+<!-- daterangepicker -->
+<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
+<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<!-- Summernote -->
+<script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- overlayScrollbars -->
+<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('dist/js/adminlte.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('dist/js/demo.js') }}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
-
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 </body>
 
 </html>
+

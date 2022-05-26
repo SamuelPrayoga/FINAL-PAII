@@ -2,319 +2,81 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Dashboard Rektor Institut Teknologi Del</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aplikasi Dashboard Rektor IT Del</title>
 
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="shortcut icon" href="{{ asset('img/icons/itdel.png') }}" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
-
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
 
 </head>
 
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/beranda">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                    <div class="sidebar-brand-text mx-3">Dashboard Rektor <sup>IT Del</sup></div>
-            </a>
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <!--Create route berandasiswa-->
-                <a class="nav-link" href="/beranda">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Beranda</span></a>
-            </li>
-            @if (auth()->user()->level == 1)
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Admin
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+          <!-- Preloader -->
+            <div class="preloader flex-column justify-content-center align-items-center">
+                <img class="animation__shake" src="{{asset('dist/img/itdel.png')}}" alt="ITDelLogo" height="60" width="60">
             </div>
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <!--Create route berandasiswa-->
-                    <a class="nav-link" href="/dataagendarektor">
-                        <i class="fas fa-table"></i>
-                        <span>Admin Panel</span></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
-            <hr class="sidebar-divider d-none d-md-block">
-            @endif
+            </ul>
 
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
+                        role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
 
-            @if (auth()->user()->level == 0)
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                Agenda Rektor / Rektorat
-            </div>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/AgendaRektor">
-                    <i class="fas fa-calendar"></i>
-                    <span>Agenda Rektor</span></a>
-            </li>
+                    <div class="dropdown">
+                        <a class=""  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Sumber Daya Manusia
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <span>Dosen</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Dosen:</h6>
-                        <a class="collapse-item" href="/DosenAktif">Dosen Aktif</a>
-                        <a class="collapse-item" href="/DosenTugasBelajar">Dosen Tugas Belajar</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-users"></i>
-                    <span>Staff dan Asisten Dosen</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Staff dan Asisten Dosen</h6>
-                        <a class="collapse-item" href="/Staff">Staff</a>
-                        <a class="collapse-item" href="/AsistenDosen">Asisten Dosen</a>
-                        <a class="collapse-item" href="/Keasramaan">Keasramaan</a>
-                        <a class="collapse-item" href="/Pegawai">Pegawai</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMahasiswa"
-                    aria-expanded="true" aria-controls="collapseMahasiswa">
-                    <i class="fas fa-user-graduate"></i>
-                    <span>Mahasiswa</span>
-                </a>
-                <div id="collapseMahasiswa" class="collapse" aria-labelledby="headingMahasiswa"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Mahasiswa</h6>
-                        <a class="collapse-item" href="/MahasiswaAktif">Mahasiswa Aktif</a>
-                        <a class="collapse-item" href="/MahasiswaAlumni">Mahasiswa Alumni</a>
-                    </div>
-                </div>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Asset dan Fasilitas Kampus
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-building"></i>
-                    <span>Gedung & Bangunan</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gedung Dalam Kampus:</h6>
-                        <a class="collapse-item" href="/ListGedung">List Gedung</a>
-                        <a class="collapse-item" href="/KapasitasRuanganKelas">Kapasitas Ruangan Kelas</a>
-                        <a class="collapse-item" href="/Kantin">Kantin</a>
-                        <a class="collapse-item" href="/PerumahanDalam">Perumahan Dalam IT Del</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Gedung Luar Kampus:</h6>
-                        <a class="collapse-item" href="/PerumahanLuar">Perumahan Luar IT Del</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAsrama"
-                    aria-expanded="true" aria-controls="collapseAsrama">
-                    <i class="fas fa-home"></i>
-                    <span>Asrama dan Rusunawa</span>
-                </a>
-                <div id="collapseAsrama" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Asrama dan Rusunawa</h6>
-                        <a class="collapse-item" href="/Asrama">Asrama/Rusunawa</a>
-                        <a class="collapse-item" href="/Rusun3">Data Rusunawa 3</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventaris"
-                    aria-expanded="true" aria-controls="collapseInventaris">
-                    <i class="fas fa-bookmark"></i>
-                    <span>Inventaris Kampus</span>
-                </a>
-                <div id="collapseInventaris" class="collapse" aria-labelledby="headingInventaris"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Inventaris</h6>
-                        <a class="collapse-item" href="/Komputer">Komputer</a>
-                        <a class="collapse-item" href="/KendaraanKampus">Kendaraan Kampus</a>
-                    </div>
-                </div>
-            </li>
-            <hr class="sidebar-divider">
-            <div class="sidebar-heading">
-                List Aset IT Del
-            </div>
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseaset"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-clipboard"></i>
-                    <span>Penambahan Aset</span>
-                </a>
-                <div id="collapseaset" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Kategori</h6>
-                        <a class="collapse-item" href="/Mebeler">Mebeler</a>
-                        <a class="collapse-item" href="/AlatTulis">Alat Tulis/PC/Notebook</a>
-                        <a class="collapse-item" href="/AudioVisual">Audio Visual</a>
-                        <a class="collapse-item" href="/PeralatanRumahTangga">Peralatan Rumah Tangga</a>
-                        <a class="collapse-item" href="/PersediaanKampus">Persediaan Kampus</a>
-                        <a class="collapse-item" href="/AlatLaboratorium">Alat-Alat Lab</a>
-                        <a class="collapse-item" href="/Jaringan">Jaringan</a>
-                        <a class="collapse-item" href="/PerlengkapanMaintanance">Perlengkapan Maintanance</a>
-                        <a class="collapse-item" href="/PerlengkapanTaman">Perlengkapan Taman</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsedisposal"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-recycle"></i>
-                    <span>Disposal Aset</span>
-                </a>
-                <div id="collapsedisposal" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Kategori</h6>
-                        <a class="collapse-item" href="/DisposalMebeler">Mebeler</a>
-                        <a class="collapse-item" href="/DisposalAlatTulis">Alat Tulis/PC/Notebook</a>
-                        <a class="collapse-item" href="/DisposalAudioVisual">Audio Visual</a>
-                        <a class="collapse-item" href="/DisposalPeralatanRumahTangga">Peralatan Rumah Tangga</a>
-                        <a class="collapse-item" href="/DisposalPersediaanKampus">Persediaan Kampus</a>
-                        <a class="collapse-item" href="/DisposalAlatLaboratorium">Alat-Alat Lab</a>
-                        <a class="collapse-item" href="/DisposalJaringan">Jaringan</a>
-                        <a class="collapse-item" href="/DisposalPerlengkapanMaintanance">Perlengkapan Maintanance</a>
-                        <a class="collapse-item" href="/DisposalPerlengkapanTaman">Perlengkapan Taman</a>
-                    </div>
-                </div>
-            </li>
-            @endif
-
-            <!-- Nav Item - Dashboard -->
-
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-                <nav class="navbar border-bottom-primary navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                                @auth
-                                    <span
-                                        class="mr-2 d-none d-sm-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                @endauth
-
-                                <img class="img-profile rounded-circle" src=" {{ asset(Auth::user()->avatar)}}">
-                                <i class="fas fa-solid fa-sort-down"></i>
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <div class="dropdown-item">
-                                    <i class="fa fa-circle text-success"></i>
-                                        <span class="mr-2 d-none d-lg-inline text-gray-800 small">
-                                            @if (auth()->user()->level == '1')
-                                                Sekretariat Rektorat
-                                                @elseif(auth()->user()->level == '0')
-                                                Rektor IT Del
-                                            @endif
-                                        </span>
-                                </div>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                            @auth
+                            <span class="text-dark">{{ Auth::user()->name }}</span>
+                            @endauth
+                            <img src="{{ asset(Auth::user()->avatar)}}" class="img-circles elevation-1" alt="User Image">
+                            <i class="fas fa-solid fa-sort-down"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     {{ __('Logout') }}
@@ -322,9 +84,394 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                            </div>
-                        </li>
+                        </div>
+                      </div>
+                </li>
 
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/beranda" class="brand-link">
+                <img src="{{asset('dist/img/itdel.png')}}" alt="IT Del Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light">DASHBOARD REKTOR</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+                    <div class="image">
+
+                    </div>
+                    <div class="info">
+
+                    </div>
+
+                </div>
+
+                <!-- SidebarSearch Form -->
+                @if (auth()->user()->level == 0)
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <li class="nav-item menu">
+                            <a href="/beranda" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        @if (auth()->user()->level == 1)
+                        <li class="nav-header">ADMIN PANEL</li>
+                        <li class="nav-item">
+                            <a href="/dataagendarektor" class="nav-link">
+                                <i class="nav-icon fa fa-cogs" aria-hidden="true"></i>
+                                <p>
+                                    Admin Panel
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+
+                        @if (auth()->user()->level == 0)
+                        <li class="nav-header">AGENDA REKTOR</li>
+                        <li class="nav-item">
+                            <a href="/AgendaRektor" class="nav-link">
+                                <i class="nav-icon fa fa-calendar"></i>
+                                <p>
+                                    Agenda Rektor
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-header">SUMBER DAYA MANUSIA</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-graduation-cap"></i>
+                                <p>
+                                    Data Dosen
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/DosenAktif" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dosen Aktif</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DosenTugasBelajar" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dosen Tugas Belajar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-users"></i>
+                                <p>
+                                    Staff dan Asisten Dosen
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Staff" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Staff</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/AsistenDosen" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Asisten Dosen</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Keasramaan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Keasramaan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Pegawai" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Pegawai</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-user"></i>
+                                <p>
+                                    Mahasiswa
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/MahasiswaAktif" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Mahasiswa Aktif</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/MahasiswaAlumni" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Mahasiswa Alumni</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">SARANA PRASARANA KAMPUS</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-building"></i>
+                                <p>
+                                    Gedung dan Bangunan
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/ListGedung" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>List Gedung</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/KapasitasRuanganKelas" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kapasitas Ruangan Kelas</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Kantin" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kantin</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PerumahanDalam" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Perumahan Dalam</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PerumahanLuar" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Perumahan Luar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-home"></i>
+                                <p>
+                                    Asrama dan Rusunawa
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Asrama" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Asrama/Rusunawa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Rusun3" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rusunawa 3</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-suitcase"></i>
+                                <p>
+                                    Inventaris Kampus
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Komputer" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Komputer</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/KendaraanKampus" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kendaraan Kampus</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-header">ASET KAMPUS</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-archive"></i>
+                                <p>
+                                    Penambahan Aset
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Mebeler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Mebeler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/AlatTulis" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Alat Tulis/PC/Notebook</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/AudioVisual" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Audio Visual</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PeralatanRumahTangga" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Peralatan Rumah Tangga</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PersediaanKampus" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Persediaan Kampus</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/AlatLaboratorium" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Peralatan Laboratorium</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Jaringan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Jaringan Kampus</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PerlengkapanMaintanance" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Maintanance</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/PerlengkapanTaman" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Perlengkapan Taman</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fa fa-recycle"></i>
+                                <p>
+                                    Pemusnahan Aset
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/DisposalMebeler" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Mebeler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalAlatTulis" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Alat Tulis/PC/Notebook</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalAudioVisual" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Audio Visual</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalPeralatanRumahTangga" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Peralatan Rumah Tangga</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalPersediaanKampus" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Persediaan Kampus</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalAlatLaboratorium" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Peralatan Laboratorium</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalJaringan" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Jaringan Kampus</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalPerlengkapanMaintanance" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Maintanance</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/DisposalPerlengkapanTaman" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Perlengkapan Taman</p>
+                                    </a>
+                                </li>
+                                @endif
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
-                <div class="container-fluid">
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>

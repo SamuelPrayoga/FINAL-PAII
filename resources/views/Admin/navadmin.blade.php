@@ -266,7 +266,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="//datakapasitasruangankelas" class="nav-link">
+                                    <a href="/datakapasitasruangankelas" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Kapasitas Ruangan Kelas</p>
                                     </a>

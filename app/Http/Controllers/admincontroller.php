@@ -194,6 +194,7 @@ class admincontroller extends Controller
     {
         $update = staf::find($id);
 
+        $update->id = $request->id;
         $update->stafID = $request->stafID;
         $update->namastaf = $request->namastaf;
         $update->bagian = $request->bagian;

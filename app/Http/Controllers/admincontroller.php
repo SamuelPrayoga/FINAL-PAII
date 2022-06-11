@@ -194,20 +194,18 @@ class admincontroller extends Controller
     {
         $update = staf::find($id);
 
-        $update->id = $request->id;
         $update->stafID = $request->stafID;
         $update->namastaf = $request->namastaf;
         $update->bagian = $request->bagian;
         $update->jabatan = $request->jabatan;
-        $update->jabatan = $request->jabatan;
         $update->pendidikan = $request->pendidikan;
         $update->aktifstart = $request->aktifstart;
         $update->aktifend = $request->aktifend;
-
         $update->save();
 
         return redirect('datastaf');
     }
+
     public function deletestaf($id)
     {
         $deletestaf = staf::find($id);
@@ -511,7 +509,6 @@ class admincontroller extends Controller
     public function tambahlistgedungs(Request $request)
     {
         $tambahlistgedungs = new listgedung();
-        $tambahlistgedungs->gedungid = $request->gedungid;
         $tambahlistgedungs->namagedung = $request->namagedung;
         $tambahlistgedungs->penomoran = $request->penomoran;
         $tambahlistgedungs->namaruangan = $request->namaruangan;
@@ -534,7 +531,6 @@ class admincontroller extends Controller
     {
         $update = listgedung::find($gedungid);
 
-        $update->gedungid = $request->gedungid;
         $update->namagedung = $request->namagedung;
         $update->penomoran = $request->penomoran;
         $update->namagedung = $request->namagedung;

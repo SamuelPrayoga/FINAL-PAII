@@ -179,17 +179,17 @@
                             <div class="col-3">
                                 <div class="line l"></div>
                             </div>
-                            <div class="col-6"><span>Register Akun</span></div>
+                            <div class="col-6"><span>Tambah Akun Pengguna</span></div>
                             <div class="col-3">
                                 <div class="line r"></div>
                             </div>
                         </div>
                     </div>
                     <form class="myform" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
+                        {{ csrf_field() }}
 
                         <div class="form-group">
-                            <input type="name" class="form-control" @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama Pengguna" name="name" value="">
+                            <input type="name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama Pengguna" name="name" value="">
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -197,7 +197,7 @@
                         @enderror
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" name="email" value="">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email" name="email" value="">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -205,7 +205,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control " placeholder="Password" name="password" @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror " placeholder="Password" name="password"  name="password" required autocomplete="new-password">
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="form-group">
                             <label for="avatar">Pilih Foto Profil</label>
-                            <input type="file" id="avatar" class="form-control" name="avatar" @error('avatar') is-invalid @enderror" >
+                            <input type="file" id="avatar" class="form-control @error('avatar') is-invalid @enderror" name="avatar"  >
                             <p class="form-group">File: .jpeg, .png, .jpg, .gif, .svg maksimal: 5 MB</p>
                             @error('avatar')
                                 <span class="invalid-feedback" role="alert">

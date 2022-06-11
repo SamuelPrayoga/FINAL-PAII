@@ -49,10 +49,6 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-            </ul>
-
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -64,28 +60,55 @@
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+            </ul>
 
-                    <div class="dropdown">
-                        <a class=""  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
 
-                            @auth
-                            <span class="text-dark">{{ Auth::user()->name }}</span>
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        @auth
+                        <img src="{{ asset(Auth::user()->avatar) }}"
+                            class="img-circles elevation-1" alt="User Image" />
+                        <span class="text-dark"> {{ Auth::user()->name }} <i class="caret"></i></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+
+                            <img src="{{ asset(Auth::user()->avatar) }}"
+                                class="img-circles elevation-1" alt="User Image" />
+
+                            <p>
+                                {{ Auth::user()->name }} <small>
+                                    Workgroups:
+                                    <br>
+                                    @if (auth()->user()->level == 0)
+                                        <button class="btn btn-primary btn-xs" disabled>Rektor IT Del</button>
+                                        <button class="btn btn-warning btn-xs" disabled>Rektorat</button>
+                                    @endif
+                                    @if (auth()->user()->level == 1)
+                                    <button class="btn btn-success btn-xs" disabled>Admin Rektorat</button>
+                                    <button class="btn btn-warning btn-xs" disabled>Rektorat</button>
+                                    @endif
+                                </small>
+                            </p>
                             @endauth
-                            <img src="{{ asset(Auth::user()->avatar)}}" class="img-circles elevation-1" alt="User Image">
-                            <i class="fas fa-solid fa-sort-down"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="{{ route('logout') }}"
+                        </li>
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                        </div>
-                      </div>
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                 {{ __('Sign Out') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                class="d-none">
+                                @csrf
+                            </form>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>
@@ -111,7 +134,7 @@
 
                     </div>
                     <div class="info">
-                        <a class="text-warning">ADMIN DASHBOARD</a>
+                        <a class="">ADMIN PANEL</a>
                     </div>
 
                 </div>
@@ -203,7 +226,7 @@
                                 <li class="nav-item">
                                     <a href="/datastaf" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Data Staff</p>
+                                        <p>Staff</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">

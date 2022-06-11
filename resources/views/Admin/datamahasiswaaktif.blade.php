@@ -49,13 +49,13 @@
                                     @foreach ($mahasiswaaktif as $s)
                                         <tr>
                                             <td>{{ $i++}}</td>
-                                            <td>{{ $s->nama }}</td>
+                                            <td width="24%">{{ $s->nama }}</td>
                                             <td>{{ $s->nim }}</td>
                                             <td>{{ $s->fakultas }}</td>
                                             <td>{{ $s->prodi }}</td>
                                             <td><center>{{ $s->angkatan }}</center></td>
                                             <td>{{ $s->jalurmasuk }}</td>
-                                            <td>{{ $s->dosenwali }}</td>
+                                            <td width="24%">{{ $s->dosenwali }}</td>
                                             <td width="9%">
                                                 <center>
                                                     <button type="button" class="btn btn-transparent-dark btn-sm"
@@ -213,7 +213,9 @@
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables  & Plugins -->
 <!-- Page level plugins -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>

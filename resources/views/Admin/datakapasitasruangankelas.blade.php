@@ -48,7 +48,7 @@
                                         <tr>
                                             <td>{{ $i++ }}</td>
                                             <td>{{ $kapasitas->ruangan }}</td>
-                                            <td>{{ $kapasitas->keterangan }}</td>
+                                            <td width="19%">{{ $kapasitas->keterangan }}</td>
                                             <td><center>{{ $kapasitas->luas }}</center></td>
                                             <td><center>{{ $kapasitas->kapasitasnormal }}</center></td>
                                             <td><center>{{ $kapasitas->perkiraan }}</center></td>

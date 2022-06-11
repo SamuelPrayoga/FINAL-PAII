@@ -38,7 +38,7 @@
                                         <th>Nama Gedung</th>
                                         <th>Nama Ruangan</th>
                                         <th>Kapasitas Ruangan</th>
-                                        <th>Keterangan</th>
+                                        <th>Nama Pemakai</th>
                                         <th>
                                             <center>Action</center>
                                         </th>
@@ -53,7 +53,7 @@
                                             <td>{{ $lg->namagedung }}</td>
                                             <td>{{ $lg->namaruangan }}</td>
                                             <td>{{ $lg->kapasitasruangan }}</td>
-                                            <td>{{ $lg->keterangan }}</td>
+                                            <td>{{ $lg->namapemakai }}</td>
                                             <td width="9%">
                                                 <center>
                                                     <button type="button" class="btn btn-transparent-dark btn-sm"
@@ -127,11 +127,6 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-4"><strong>ID Gedung</strong></div>
-                        <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $lg->gedungid }}</div>
-                    </div>
                     <div class="row">
                         <div class="col-sm-4"><strong>Penomoran Gedung</strong></div>
                         <div class="col-sm-2">:</div>

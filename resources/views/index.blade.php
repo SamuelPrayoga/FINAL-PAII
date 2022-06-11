@@ -7,7 +7,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard</h1>
+                    <div class="dashboard-date">
+                        <h4 class="text-secondary">
+                        <?php
+                        echo ' ' . date('l, d M Y h:i A');
+                        ?>
+                        </h4>
+                    </div><br>
+                    <h1 class="m-0">DASHBOARD</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -36,7 +43,12 @@
                         <div class="icon">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </div>
-                        <a href="/MahasiswaAktif" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                        <a href="/MahasiswaAktif" class="small-box-footer">
+                            @if (auth()->user()->level == 0)
+                                Lihat Selengkapnya
+                                <i class="fas fa-arrow-circle-right"></i>
+                            @endif
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -52,7 +64,12 @@
                             <i class="fa fa-graduation-cap" aria-hidden="true"></i>
                         </div>
 
-                        <a href="/DosenAktif" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                        <a href="/DosenAktif" class="small-box-footer">
+                            @if (auth()->user()->level == 0)
+                                Lihat Selengkapnya
+                                <i class="fas fa-arrow-circle-right"></i>
+                            @endif
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -67,7 +84,12 @@
                         <div class="icon">
                             <i class="fa fa-user-plus" aria-hidden="true"></i>
                         </div>
-                        <a href="/DosenTugasBelajar" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                        <a href="/DosenTugasBelajar" class="small-box-footer">
+                            @if (auth()->user()->level == 0)
+                                Lihat Selengkapnya
+                                <i class="fas fa-arrow-circle-right"></i>
+                            @endif
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -82,117 +104,131 @@
                         <div class="icon">
                             <i class="fa fa-home" aria-hidden="true"></i>
                         </div>
-                        <a href="/Asrama" class="small-box-footer">@if (auth()->user()->level == 0)Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>@endif</a>
+                        <a href="/Asrama" class="small-box-footer">
+                            @if (auth()->user()->level == 0)
+                                Lihat Selengkapnya
+                                <i class="fas fa-arrow-circle-right"></i>
+                            @endif
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
             </div>
-                <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">Agenda Rektor Terbaru</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table id="example" class="table table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Penyelenggara</th>
-                            <th>Lokasi</th>
-                            <th><center>Status</center></th>
-                            @if (auth()->user()->level == 0)
-                            <th>
-                                <center>#</center>
-                            </th>
-                            @endif
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php $i=1 @endphp
-                        @foreach ($agendarektor as $agenda)
-                            <tr>
-                                <td width="2%">{{ $i++ }}</td>
-                                <td>{{ $agenda->namakegiatan }}</td>
-                                <td>{{ $agenda->penyelenggara }}</td>
-                                <td>{{ $agenda->lokasi }}</td>
-                                <td width="18%"><center>
-                                    @if($agenda->status == 'Hadir')
-                                        <button class="btn btn-success btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Tidak Hadir')
-                                        <button class="btn btn-danger btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Menunggu Konfirmasi')
-                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                    @if ($agenda->status == 'Reschedule')
-                                        <button class="btn btn-warning btn-sm" disabled>{{ $agenda->status }}</button>
-                                    @endif
-                                    @if ($agenda->status == 'Selesai')
-                                        <button class="btn btn-secondary btn-sm" disabled>{{ $agenda->status }}</button>
-                                        @endif
-                                </center></td>
-                                @if (auth()->user()->level == 0)
-                                <td width="14%">
-                                    <center>
-                                        <button type="button" class="btn btn-light btn-sm"
-                                        onclick="window.location.href='/AgendaRektor'"><i
-                                            class="fas fa-eye"></i> Detail</button>
-                                        </div>
-                                    </center>
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Agenda Rektor Terbaru</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive">
+                                    <table id="example" class="table table-hover">
+                                        <thead class="table">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Kegiatan</th>
+                                                <th>Penyelenggara</th>
+                                                <th>Lokasi</th>
+                                                <th>
+                                                    <center>Status</center>
+                                                </th>
+                                                @if (auth()->user()->level == 0)
+                                                    <th>
+                                                        <center>#</center>
+                                                    </th>
+                                                @endif
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php $i=1 @endphp
+                                            @foreach ($agendarektor as $agenda)
+                                                <tr>
+                                                    <td width="2%">{{ $i++ }}</td>
+                                                    <td>{{ $agenda->namakegiatan }}</td>
+                                                    <td>{{ $agenda->penyelenggara }}</td>
+                                                    <td>{{ $agenda->lokasi }}</td>
+                                                    <td width="18%">
+                                                        <center>
+                                                            @if ($agenda->status == 'Hadir')
+                                                                <button class="btn btn-success btn-sm"
+                                                                    disabled>{{ $agenda->status }}</button>
+                                                            @endif
+                                                            @if ($agenda->status == 'Tidak Hadir')
+                                                                <button class="btn btn-danger btn-sm"
+                                                                    disabled>{{ $agenda->status }}</button>
+                                                            @endif
+                                                            @if ($agenda->status == 'Menunggu Konfirmasi')
+                                                                <button class="btn btn-warning btn-sm"
+                                                                    disabled>{{ $agenda->status }}</button>
+                                                            @endif
+                                                            @if ($agenda->status == 'Reschedule')
+                                                                <button class="btn btn-warning btn-sm"
+                                                                    disabled>{{ $agenda->status }}</button>
+                                                            @endif
+                                                            @if ($agenda->status == 'Selesai')
+                                                                <button class="btn btn-secondary btn-sm"
+                                                                    disabled>{{ $agenda->status }}</button>
+                                                            @endif
+                                                        </center>
+                                                    </td>
+                                                    @if (auth()->user()->level == 0)
+                                                        <td width="14%">
+                                                            <center>
+                                                                <button type="button" class="btn btn-light btn-sm"
+                                                                    onclick="window.location.href='/AgendaRektor'"><i
+                                                                        class="fas fa-eye"></i> Detail</button>
+                                </div>
+                                </center>
                                 </td>
                                 @endif
-                            </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
                 </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-              <!-- /.card -->
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
+                <!-- /.row -->
         </div>
         <!-- /.container-fluid -->
-      </section>
-            <!-- /.row -->
-            <!-- Main row -->
-            <div class="row">
-                <!-- Left col -->
-                <div class="col-xl-7 col-lg-7">
-                    <div class="card shadow mb-4">
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div id="chartMaba"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5">
-                    <div class="card shadow mb-4">
-                        <!-- Card Body -->
-                        <div class="card-body">
-                            <div id="chartMebeler"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.Left col -->
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
-
-                <!-- right col -->
-            </div>
-            <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
     </section>
-    <!-- /.content -->
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <div class="col-xl-7 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="chartMaba"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="chartMebeler"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+        <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
+</div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
@@ -232,10 +268,10 @@
             text: 'Akumulasi PMDK, USM, dan Lainnya'
         },
         xAxis: {
-            categories:{!!json_encode($categories)!!},
+            categories: {!! json_encode($categories) !!},
             crosshair: true
         },
-        colors:['#043163'],
+        colors: ['#043163'],
         yAxis: {
             min: 0,
             title: {
@@ -260,13 +296,13 @@
             slicesOffset: 0,
             point: {
                 events: {
-                    click: function (event) {
+                    click: function(event) {
                         this.select(null, true);
                         console.log(this.series.chart.getSelectedPoints());
                     }
                 }
             },
-            data: {!!json_encode($data)!!}
+            data: {!! json_encode($data) !!}
         }]
     });
 </script>
@@ -282,10 +318,10 @@
             text: 'Sumber: Badan Administrasi Akademik dan Kemahasiswaan'
         },
         xAxis: {
-            categories: {!!json_encode($categoriess)!!},
+            categories: {!! json_encode($categoriess) !!},
             crosshair: true
         },
-        colors:['#009e05'],
+        colors: ['#009e05'],
         yAxis: {
             min: 0,
             title: {
@@ -316,13 +352,13 @@
             slicesOffset: 0,
             point: {
                 events: {
-                    click: function (event) {
+                    click: function(event) {
                         this.select(null, true);
                         console.log(this.series.chart.getSelectedPoints());
                     }
                 }
             },
-            data: {!!json_encode($datas)!!}
+            data: {!! json_encode($datas) !!}
         }]
     });
 </script>
@@ -360,8 +396,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 
-<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
@@ -375,4 +411,3 @@
 </body>
 
 </html>
-

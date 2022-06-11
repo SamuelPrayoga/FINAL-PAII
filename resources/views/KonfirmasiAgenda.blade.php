@@ -46,25 +46,25 @@
                                     <div class="form-group row">
                                       <label for="penyelenggara" class="col-sm-2 col-form-label">Penyelenggara</label>
                                       <div class="col-sm-10">
-                                        <input type="ptext" class="form-control" id="penyelenggara" name="penyelenggara" value="{{$editagendarektors->penyelenggara}}" readonly>
+                                        <input type="text" class="form-control" id="penyelenggara" name="penyelenggara" value="{{$editagendarektors->penyelenggara}}" readonly>
                                       </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="lokasi" class="col-sm-2 col-form-label">Lokasi</label>
                                         <div class="col-sm-10">
-                                          <input type="ptext" class="form-control" id="lokasi" name="lokasi" value="{{$editagendarektors->lokasi}}" readonly>
+                                          <input type="text" class="form-control" id="lokasi" name="lokasi" value="{{$editagendarektors->lokasi}}" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
                                         <div class="col-sm-10">
-                                          <input type="ptext" class="form-control" id="tanggal" name="tanggal" value="{{$editagendarektors->tanggal}}" readonly>
+                                          <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{$editagendarektors->tanggal}}" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="waktu" class="col-sm-2 col-form-label">Waktu</label>
                                         <div class="col-sm-10">
-                                          <input type="ptext" class="form-control" id="waktu" name="waktu" value="{{$editagendarektors->waktu}}" readonly>
+                                          <input type="time" class="form-control" id="waktu" name="waktu" value="{{$editagendarektors->waktu}}" readonly>
                                         </div>
                                     </div>
                                     <div class="form-group row">

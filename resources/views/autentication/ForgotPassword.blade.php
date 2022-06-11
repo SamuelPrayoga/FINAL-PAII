@@ -50,10 +50,10 @@
                                     @endif
                                     <form class="user" method="POST" action="{{ route('password.email') }}">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Masukkan Alamat Email..."
-                                                @error('email') is-invalid @enderror" name="email"
+                                                 name="email"
                                                 value="{{ old('email') }}" required autocomplete="email" autofocus>
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">

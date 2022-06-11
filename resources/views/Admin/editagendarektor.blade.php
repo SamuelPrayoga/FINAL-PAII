@@ -1,4 +1,4 @@
-@include('navuser')
+@include('Admin.navadmin')
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -58,13 +58,13 @@
                                     <div class="form-group row">
                                         <label for="tanggal" class="col-sm-2 col-form-label">Tanggal</label>
                                         <div class="col-sm-10">
-                                          <input type="ptext" class="form-control" id="tanggal" name="tanggal" value="{{$editagendarektor->tanggal}}">
+                                          <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{$editagendarektor->tanggal}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="waktu" class="col-sm-2 col-form-label">Waktu</label>
                                         <div class="col-sm-10">
-                                          <input type="ptext" class="form-control" id="waktu" name="waktu" value="{{$editagendarektor->waktu}}">
+                                          <input type="time" class="form-control" id="waktu" name="waktu" value="{{$editagendarektor->waktu}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">

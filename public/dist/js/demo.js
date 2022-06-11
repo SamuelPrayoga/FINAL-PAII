@@ -52,7 +52,7 @@
   // Checkboxes
 
   $container.append(
-    '<h5>Customize Dashboard Rektor</h5><hr class="mb-2"/>'
+    '<h5 class="text-primary">Customize Dashboard Rektor IT Del</h5><hr class="mb-2"/>'
   )
 
   var $dark_mode_checkbox = $('<input />', {

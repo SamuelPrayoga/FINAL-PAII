@@ -1,5 +1,4 @@
-@include('navuser')
-
+@include('Admin.navadmin')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -38,12 +37,6 @@
                                     {{ csrf_field() }}
                                     <div class="card-body">
                                         <div class="mb-3 row">
-                                            <label class="col-sm-3 col-form-label">ID Gedung</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" required="required" id="gedungid" name="gedungid" class="form-control" value="{{ $editlistgedung->gedungid }}">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Penomoran</label>
                                             <div class="col-sm-9">
                                                 <select class="form-control"  required="required" name="penomoran" aria-label="Default select example" >
@@ -78,7 +71,7 @@
                                         <div class="mb-3 row">
                                             <label class="col-sm-3 col-form-label">Kapasitas Ruangan</label>
                                             <div class="col-sm-9">
-                                                <input type="text" required="required" id="kapasitasruangan" name="kapasitasruangan" class="form-control" value="{{ $editlistgedung->kapasitasruangan }}">
+                                                <input type="text" id="kapasitasruangan" name="kapasitasruangan" class="form-control" value="{{ $editlistgedung->kapasitasruangan }}">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">

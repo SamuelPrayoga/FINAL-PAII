@@ -111,7 +111,7 @@
                     <p>Apakah Anda yakin ingin menghapusnya?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondar btn-smy" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondar btn-smy" data-dismiss="modal">Tutup</button>
                     <button type="button" class="btn btn-danger btn-sm"
                         onclick="window.location.href='/dataagendarektor/deleteagendarektor/{{ $agenda->id }}'">Hapus</button>
                 </div>

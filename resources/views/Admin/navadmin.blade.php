@@ -99,7 +99,7 @@
                             <div class="pull-right">
                                 <a class="btn btn-default btn-flat" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                {{-- <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> --}}
                                  {{ __('Sign Out') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"

@@ -36,7 +36,7 @@
                                         <th>No</th>
                                         <th>Nama Asisten Dosen</th>
                                         <th>Asisten Dosen ID</th>
-                                        <th>Mata Kuliah yang Diasistensi</th>
+                                        <th>Mata Kuliah</th>
                                         <th>Fakultas</th>
                                         <th>Program Studi</th>
                                         <th>Pendidikan Terakhir</th>
@@ -130,53 +130,53 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-4"><strong>Nama Asisten Dosen</strong></div>
+                        <div class="col-sm-4">Nama Asisten Dosen</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $s->namaasdos }}</div>
+                        <div class="col-md-6 text-primary">{{ $s->namaasdos }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>ID Asisten Dosen</strong></div>
+                        <div class="col-sm-4">ID Asisten Dosen</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $s->asdosID }}</div>
+                        <div class="col-md-6 ">{{ $s->asdosID }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Mata Kuliah yang Diasistensi</strong></div>
+                        <div class="col-sm-4">Mata Kuliah</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->matakuliah }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Fakultas</strong></div>
+                        <div class="col-sm-4">Fakultas</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->fakultas }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Program Studi</strong></div>
+                        <div class="col-sm-4">Program Studi</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->prodi }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Pendidikan Terakhir</strong></div>
+                        <div class="col-sm-4">Pendidikan Terakhir</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->pendidikan }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Tahun Lulus</strong></div>
+                        <div class="col-sm-4">Tahun Lulus</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->tahun }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif Start</strong></div>
+                        <div class="col-sm-4">Aktif Start</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($s->aktifstart))}}</div>
+                        <div class="col-md-6">{{ $s->aktifstart}}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif End</strong></div>
+                        <div class="col-sm-4">Aktif End</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($s->aktifend)) }}</div>
+                        <div class="col-md-6">{{ $s->aktifend }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

@@ -37,7 +37,7 @@ class HomeController extends Controller
         $dosenaktif = dosenaktif::count();
         $dosentugas = dosentugas::count();
         $asrama = asrama::count();
-        $agendarektor = agendarektor::latest()->take(10)->get();
+        $agendarektor = agendarektor::where('status', '=', 'Menunggu Konfirmasi')->get();
         $tahun = \App\Models\pendaftar::all();
 
         $categories =[];

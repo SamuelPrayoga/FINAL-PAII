@@ -42,6 +42,7 @@
                                         <th>Alamat</th>
                                         <th>No Telepon</th>
                                         <th>Aktif Start</th>
+                                        {{-- <th>Aktif End</th> --}}
                                         <th>
                                             <center>Action</center>
                                         </th>
@@ -60,6 +61,7 @@
                                             <td>{{ $pe->alamat }}</td>
                                             <td>{{ $pe->notelp }}</td>
                                             <td>{{ $pe->aktifstart}}</td>
+                                            {{-- <td>{{ $pe->aktifend}}</td> --}}
                                             <td width="9%">
                                                 <center>
                                                     <button type="button" class="btn btn-transparent-dark btn-sm"

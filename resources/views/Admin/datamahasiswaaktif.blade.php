@@ -62,7 +62,7 @@
                                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                                         aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModal1{{ $s->id }}"><i class="fas fa-eye"></i> View</button>
+                                                        <button class="dropdown-item" data-toggle="modal" data-target="#myModals{{ $s->id }}"><i class="fas fa-eye"></i> View</button>
                                                         <button class="dropdown-item" onclick="window.location.href='/datamahasiswaaktif/editmahasiswaaktif/{{ $s->id }}'"><i class="fas fa-edit"></i> Edit</button>
                                                     </div>
                                                     <button type="button" class="btn btn-transparent-dark btn-sm" data-toggle="modal"
@@ -119,64 +119,64 @@
 
 @foreach ($mahasiswaaktif as $s )
 <!-- Modal -->
-<div class="modal fade" id="myModal1{{$s->id}}" role="dialog">
+<div class="modal fade" id="myModals{{$s->id}}" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
 
-                <h4 class="modal-title"><strong>Lihat Detail Mahasiswa Aktif</h4>
+                <h4 class="modal-title">Lihat Detail Mahasiswa Aktif</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-sm-4"><strong>Nama Mahasiswa</strong></div>
+                    <div class="col-sm-4">Nama Mahasiswa</div>
                     <div class="col-sm-2">:</div>
-                    <div class="col-md-6">{{$s->nama}}</div>
+                    <div class="col-md-6 text-primary">{{$s->nama}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>NIM</strong></div>
+                    <div class="col-sm-4">NIM</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->nim}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Fakultas</strong></div>
+                    <div class="col-sm-4">Fakultas</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->fakultas}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Program Studi</strong></div>
+                    <div class="col-sm-4">Program Studi</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->prodi}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Kelas</strong></div>
+                    <div class="col-sm-4">Kelas</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->kelas}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Angkatan</strong></div>
+                    <div class="col-sm-4">Angkatan</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->angkatan}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Jalur Masuk</strong></div>
+                    <div class="col-sm-4">Jalur Masuk</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->jalurmasuk}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Nomor Telepon</strong></div>
+                    <div class="col-sm-4">Nomor Telepon</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->notelp}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Email Aktif</strong></div>
+                    <div class="col-sm-4">Email Aktif</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->emailaktif}}</div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4"><strong>Dosen Wali</strong></div>
+                    <div class="col-sm-4">Dosen Wali</div>
                     <div class="col-sm-2">:</div>
                     <div class="col-md-6">{{$s->dosenwali}}</div>
                 </div>

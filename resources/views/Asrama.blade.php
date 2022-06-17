@@ -57,10 +57,10 @@
                                             <td>{{ $as->namagedung }}</td>
                                             <td width="10%">
                                                 @if($as->kategori == 'ASRAMA')
-                                                <button class="btn btn-success btn-sm" disabled>{{ $as->kategori }}</button>
+                                                <button class="btn btn-primary btn-xs" disabled>{{ $as->kategori }}</button>
                                                 @endif
                                             @if ($as->kategori == 'RUSUNAWA')
-                                                <button class="btn btn-warning btn-sm" disabled>{{ $as->kategori }}</button>
+                                                <button class="btn btn-info btn-xs" disabled>{{ $as->kategori }}</button>
                                                 @endif
                                             </td>
                                             <td width="5%">
@@ -72,7 +72,7 @@
                                             <td>
                                                 <center>{{ $as->total }}</center>
                                             </td>
-                                            <td width="30%">{{ $as->keterangan }}</td>
+                                            <td width="35%">{{ $as->keterangan }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

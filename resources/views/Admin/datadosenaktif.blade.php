@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>DATA AGENDA REKTOR</h1>
+                    <h1>DATA DOSEN AKTIF</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -37,9 +37,10 @@
                                         <th>Nama Dosen</th>
                                         <th>NIDN</th>
                                         <th>Prodi</th>
-                                        <th>Jabatan Akademik</th>
-                                        <th>Golongan Kepangkatan</th>
+                                        <th>Jabatan</th>
+                                        <th>Golongan</th>
                                         <th>Status Ikatan</th>
+                                        <th>Aktif Start</th>
                                         <th>
                                             <center>Action</center>
                                         </th>
@@ -53,10 +54,11 @@
                                             <td width="24%">{{ $s->namaDosen }}</td>
                                             <td>{{ $s->nidn }}</td>
                                             <td width="8%">{{ $s->prodi }}</td>
-                                            <td>{{ $s->jabatanAkademik }}</td>
-                                            <td width="8%"><center>{{ $s->golonganKepangkatan }}</center></td>
+                                            <td width="14%">{{ $s->jabatanAkademik }}</td>
+                                            <td width="2%"><center>{{ $s->golonganKepangkatan }}</center></td>
                                             <td width="14%">{{ $s->statusIkatan }}</td>
-                                            <td width="9%">
+                                            <td width="10%">{{ $s->aktifStart }}</td>
+                                            <td width="7%">
                                                 <center>
                                                     <button type="button" class="btn btn-transparent-dark btn-sm"
                                                         id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
@@ -131,48 +133,48 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-4"><strong>Nama Dosen</strong></div>
+                        <div class="col-sm-4">Nama Dosen</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $s->namaDosen }}</div>
+                        <div class="col-md-6 text-primary">{{ $s->namaDosen }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>NIDN</strong></div>
+                        <div class="col-sm-4">NIDN</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->nidn }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Program Studi</strong></div>
+                        <div class="col-sm-4">Program Studi</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->prodi }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Jabatan Akademik</strong></div>
+                        <div class="col-sm-4">Jabatan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->jabatanAkademik }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Golongan Kepangkatan</strong></div>
+                        <div class="col-sm-4">Golongan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->golonganKepangkatan }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Status Ikatan</strong></div>
+                        <div class="col-sm-4">Status Ikatan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->statusIkatan }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif Start</strong></div>
+                        <div class="col-sm-4">Aktif Start</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($s->aktifStart)) }}</div>
+                        <div class="col-md-6">{{ $s->aktifStart }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif End</strong></div>
+                        <div class="col-sm-4">Aktif End</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $s->aktifEnd }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

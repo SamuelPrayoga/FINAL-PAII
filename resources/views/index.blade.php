@@ -220,13 +220,9 @@
                 </div>
             </div>
         </div>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-
-        <!-- right col -->
     </div>
     <!-- /.row (main row) -->
-</div><!-- /.container-fluid -->
+</div>
 </section>
 <!-- /.content -->
 </div>

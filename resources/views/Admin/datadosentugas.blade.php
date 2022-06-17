@@ -109,7 +109,7 @@
                     <p>Apakah Anda yakin ingin menghapusnya? </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
                     <button type="button" class="btn btn-danger btn-sm"
                         onclick="window.location.href='/datadosentugas/deletedosentugas/{{ $dt->id }}'">Hapus</button>
                 </div>
@@ -126,48 +126,48 @@
             <div class="modal-content">
                 <div class="modal-header">
 
-                    <h4 class="modal-title">Lihat Data Dosen Aktif</h4>
+                    <h4 class="modal-title">Lihat Data Dosen Tugas Belajar</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-4"><strong>Nama Dosen</strong></div>
+                        <div class="col-sm-4">Nama Dosen</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $dt->namaDosen }}</div>
+                        <div class="col-md-6 text-primary">{{ $dt->namaDosen }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>NIDN</strong></div>
+                        <div class="col-sm-4">NIDN</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->nidn }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Program Basis</strong></div>
+                        <div class="col-sm-4">Program Basis</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->prodi }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Lokasi Tugas Belajar</strong></div>
+                        <div class="col-sm-4">Lokasi Tugas Belajar</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->lokasi }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Program Studi Lanjutan</strong></div>
+                        <div class="col-sm-4">Program Studi Lanjutan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->programStudi }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Mulai Tugas Belajar</strong></div>
+                        <div class="col-sm-4">Mulai Tugas Belajar</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->mulaiTugas }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Rencana Aktif</strong></div>
+                        <div class="col-sm-4">Rencana Aktif</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $dt->rencanaAktif }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

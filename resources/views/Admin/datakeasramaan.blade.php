@@ -48,7 +48,7 @@
                                     @php $i=1 @endphp
                                     @foreach ($keasramaan as $ke)
                                         <tr>
-                                            <td>{{ $i++ }}</td>
+                                            <td width="2%">{{ $i++ }}</td>
                                             <td>{{ $ke->nama }}</td>
                                             <td>{{ $ke->keasramaanID }}</td>
                                             <td>{{ $ke->pendidikan }}</td>
@@ -129,53 +129,53 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-sm-4"><strong>Nama Pembina</strong></div>
+                        <div class="col-sm-4">Nama Pembina</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ $ke->nama }}</div>
+                        <div class="col-md-6 text-primary">{{ $ke->nama }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>ID Keasramaan</strong></div>
+                        <div class="col-sm-4">ID Keasramaan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->keasramaanID }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Pendidikan Terakhir</strong></div>
+                        <div class="col-sm-4">Pendidikan Terakhir</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->pendidikan }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Jabatan</strong></div>
+                        <div class="col-sm-4">Jabatan</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->jabatan }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Asrama</strong></div>
+                        <div class="col-sm-4">Asrama</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->asrama }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Asal</strong></div>
+                        <div class="col-sm-4">Asal</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->asal }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>No Telepon</strong></div>
+                        <div class="col-sm-4">No Telepon</div>
                         <div class="col-sm-2">:</div>
                         <div class="col-md-6">{{ $ke->notelp }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif Start</strong></div>
+                        <div class="col-sm-4">Aktif Start</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($ke->aktifstart)) }}</div>
+                        <div class="col-md-6">{{ $ke->aktifstart }}</div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4"><strong>Aktif End</strong></div>
+                        <div class="col-sm-4">Aktif End</div>
                         <div class="col-sm-2">:</div>
-                        <div class="col-md-6">{{ date('d M Y', strtotime($ke->aktifend)) }}</div>
+                        <div class="col-md-6">{{ $ke->aktifend }}</div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 </div>
             </div>
         </div>

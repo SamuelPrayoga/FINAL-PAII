@@ -34,7 +34,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
-                                <form action="{{ route('datapegawai.updatepegawai', $editpegawai->pegawaiID) }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('datapegawai.updatepegawai', $editpegawai->id) }}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="card-body">
                                         <div class="mb-3 row">
